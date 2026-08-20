@@ -46,6 +46,7 @@ plugins:
 # folder + nav block; the deploy workflow's path filter keeps builds scoped to changes.
 nav:
   - Home: index.md
+  - Help &amp; Support: support.md
   - Moodle RAGflow Suite:
       - moodle-ragflow/index.md
       - Set up RAGflow: moodle-ragflow/setup-ragflow.md
