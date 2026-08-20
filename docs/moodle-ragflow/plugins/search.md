@@ -1,5 +1,9 @@
 # Search block
 
+!!! info "Repository &amp; issue tracker"
+    - **Repository:** [https://github.com/ragcon-ai/moodle-block_ragflowsearch](https://github.com/ragcon-ai/moodle-block_ragflowsearch){ target="_blank" rel="noopener" }
+    - **Issues / bug tracker:** [https://github.com/ragcon-ai/moodle-block_ragflowsearch/issues](https://github.com/ragcon-ai/moodle-block_ragflowsearch/issues){ target="_blank" rel="noopener" }
+
 **Component:** `block_ragflowsearch` · **Release:** 0.3.1 · **Requires:** Moodle 5.0–5.2 · **Depends on:** `aiprovider_ragflow`
 
 A Moodle block that adds a search box to any page and searches one or more RAGflow **knowledge bases**

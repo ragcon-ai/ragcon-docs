@@ -1,5 +1,9 @@
 # Helpdesk placement
 
+!!! info "Repository &amp; issue tracker"
+    - **Repository:** [https://github.com/ragcon-ai/moodle-aiplacement_ragflowhelpdesk](https://github.com/ragcon-ai/moodle-aiplacement_ragflowhelpdesk){ target="_blank" rel="noopener" }
+    - **Issues / bug tracker:** [https://github.com/ragcon-ai/moodle-aiplacement_ragflowhelpdesk/issues](https://github.com/ragcon-ai/moodle-aiplacement_ragflowhelpdesk/issues){ target="_blank" rel="noopener" }
+
 **Component:** `aiplacement_ragflowhelpdesk` · **Release:** 0.3.1 · **Requires:** Moodle 5.0–5.2 · **Depends on:** `aiprovider_ragflow`
 
 A site-wide **help drawer** (an AI *placement*). It adds a "RAGflow Helpdesk" item to the site's

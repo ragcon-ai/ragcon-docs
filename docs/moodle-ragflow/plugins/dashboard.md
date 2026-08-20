@@ -1,5 +1,9 @@
 # Usage dashboard
 
+!!! info "Repository &amp; issue tracker"
+    - **Repository:** [https://github.com/ragcon-ai/moodle-local_ragflowdashboard](https://github.com/ragcon-ai/moodle-local_ragflowdashboard){ target="_blank" rel="noopener" }
+    - **Issues / bug tracker:** [https://github.com/ragcon-ai/moodle-local_ragflowdashboard/issues](https://github.com/ragcon-ai/moodle-local_ragflowdashboard/issues){ target="_blank" rel="noopener" }
+
 **Component:** `local_ragflowdashboard` · **Release:** 0.5.3 · **Requires:** Moodle 5.0–5.2 · **Depends on:** `aiprovider_ragflow`
 
 An admin-only report that visualises **how the suite is used**: request volume, success/failure rates,
