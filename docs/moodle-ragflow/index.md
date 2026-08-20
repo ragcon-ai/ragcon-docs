@@ -17,7 +17,8 @@ several placements/blocks consume it.
 
 ## Requirements
 
-- **Moodle 5.0, 5.1 or 5.2** (PHP 8.1–8.3; PostgreSQL or MariaDB/MySQL).
+- **Moodle 5.0, 5.1 or 5.2** (PHP 8.1–8.3; PostgreSQL or MariaDB/MySQL) — see
+  [Moodle version specifics](moodle-version-notes.md).
 - A reachable **RAGflow instance** and an **API key** (self-hosted or hosted). The suite is a client
   for RAGflow — it does not bundle or run RAGflow itself.
 - Ability to install plugins (site administrator).
