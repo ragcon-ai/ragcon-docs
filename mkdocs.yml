@@ -6,6 +6,7 @@ edit_uri: edit/main/docs/
 
 theme:
   name: material
+  custom_dir: overrides
   features:
     - navigation.sections
     - navigation.top
@@ -57,4 +58,7 @@ nav:
           - Helpdesk placement: moodle-ragflow/plugins/helpdesk.md
           - Usage dashboard: moodle-ragflow/plugins/dashboard.md
       - Moodle version specifics: moodle-ragflow/moodle-version-notes.md
-      - User guide: moodle-ragflow/user-guide.md
+      - User guides:
+          - For administrators: moodle-ragflow/guides/admin.md
+          - For trainers: moodle-ragflow/guides/trainer.md
+          - For students: moodle-ragflow/guides/student.md

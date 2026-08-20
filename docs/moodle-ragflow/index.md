@@ -36,4 +36,6 @@ The provider is a dependency of every other plugin, so install it **first**:
 1. **[Set up RAGflow](setup-ragflow.md)** — connect Moodle to your RAGflow instance and create an
    assistant + knowledge base.
 2. Enable the plugins you want (tutor, search, helpdesk, dashboard).
-3. See the **[user guide](user-guide.md)** for day-to-day use.
+3. See the user guides for day-to-day use — for
+   **[administrators](guides/admin.md)**, **[trainers](guides/trainer.md)** and
+   **[students](guides/student.md)**.

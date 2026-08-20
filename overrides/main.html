@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{#
+  Global per-page footer note, appended to the content of EVERY page (current and future):
+  a transparency note that the documentation was AI-assisted, plus where to report errors.
+#}
+{% block content %}
+  {{ super() }}
+  <hr>
+  <div class="ragcon-ai-notice" style="font-size:0.75rem;color:var(--md-default-fg-color--light);margin-top:1.5rem">
+    <p>
+      <strong>Note:</strong> This documentation was created with the help of AI.
+      Spotted an error, an omission, or something unclear? Please report it in the
+      <a href="https://github.com/ragcon-ai/ragcon-docs/issues">ragcon-docs GitHub repository</a>
+      so we can fix it.
+    </p>
+  </div>
+{% endblock %}
