@@ -1,11 +1,25 @@
 {% extends "base.html" %}
 
 {#
-  Global per-page footer note, appended to the content of EVERY page (current and future):
-  a transparency note that the documentation was AI-assisted, plus where to report errors.
+  - A mobile/tablet services box at the top of the content (shown only when the
+    right ToC sidebar — which carries the desktop services box — is hidden).
+  - A global per-page footer note (AI-assisted + where to report errors),
+    appended to the content of EVERY page (current and future).
 #}
 {% block content %}
+  <div class="ragcon-services ragcon-services--inline">
+    <p class="ragcon-services__title">Professional services</p>
+    <p class="ragcon-services__lead">Need expert help? <strong>RAGcon</strong> offers:</p>
+    <ul class="ragcon-services__list">
+      <li>RAGflow Support</li>
+      <li>RAGflow Hosting</li>
+      <li>Moodle Support</li>
+    </ul>
+    <a class="ragcon-services__cta" href="https://www.ragcon.ai" target="_blank" rel="noopener">Talk to RAGcon &rarr;</a>
+  </div>
+
   {{ super() }}
+
   <hr>
   <div class="ragcon-ai-notice" style="font-size:0.75rem;color:var(--md-default-fg-color--light);margin-top:1.5rem">
     <p>
