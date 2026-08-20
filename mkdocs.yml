@@ -1,0 +1,58 @@
+site_name: RAGCon Documentation
+site_description: Documentation for RAGCon products, starting with the Moodle RAGflow plugin suite.
+site_url: https://ragcon-ai.github.io/ragcon-docs/
+repo_url: https://github.com/ragcon-ai/ragcon-docs
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - search
+
+# Sections are top-level folders under docs/. Add a new RAGCon product as its own
+# folder + nav block; the deploy workflow's path filter keeps builds scoped to changes.
+nav:
+  - Home: index.md
+  - Moodle RAGflow Suite:
+      - moodle-ragflow/index.md
+      - Set up RAGflow: moodle-ragflow/setup-ragflow.md
+      - Plugins:
+          - AI provider (RAGflow): moodle-ragflow/plugins/provider.md
+          - Tutor block: moodle-ragflow/plugins/tutor.md
+          - Search block: moodle-ragflow/plugins/search.md
+          - Helpdesk placement: moodle-ragflow/plugins/helpdesk.md
+          - Usage dashboard: moodle-ragflow/plugins/dashboard.md
+      - User guide: moodle-ragflow/user-guide.md
