@@ -1,0 +1,42 @@
+/* Persistent "Professional services" box in the right ToC sidebar. */
+.ragcon-services {
+  margin: 1.25rem 0 0.5rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.3rem;
+  background: var(--md-default-fg-color--lightest);
+  font-size: 0.68rem;
+  line-height: 1.4;
+}
+.ragcon-services__title {
+  margin: 0 0 0.35rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 0.62rem;
+  color: var(--md-default-fg-color--light);
+}
+.ragcon-services__lead {
+  margin: 0 0 0.4rem;
+}
+.ragcon-services__list {
+  margin: 0 0 0.55rem;
+  padding-left: 0.95rem;
+}
+.ragcon-services__list li {
+  margin: 0.1rem 0;
+}
+.ragcon-services__cta {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--md-primary-fg-color);
+}
+.ragcon-services__cta:hover {
+  text-decoration: underline;
+}
+
+/* Give the wordmark logo a little more room in the header. */
+.md-header__button.md-logo img {
+  height: 1.4rem;
+  width: auto;
+}

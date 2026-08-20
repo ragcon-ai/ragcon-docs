@@ -10,6 +10,8 @@ copyright: >
 theme:
   name: material
   custom_dir: overrides
+  logo: assets/ragcon-logo.png
+  favicon: assets/ragcon-logo.png
   features:
     - navigation.sections
     - navigation.top
@@ -42,6 +44,9 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.tabbed:
       alternate_style: true
+
+extra_css:
+  - assets/extra.css
 
 plugins:
   - search
