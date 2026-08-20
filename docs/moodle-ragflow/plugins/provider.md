@@ -23,8 +23,10 @@ proxy that the Tutor, Search and Helpdesk plugins consume. **Install and configu
 - **Knowledge-base scoping & metadata filtering:** answers can be filtered to *this Moodle* (course +
   site), the *whole KB*, or *external/shared* documents, and restricted to the current course or the
   user's enrolled courses via a document metadata field.
-- **Source citations:** optionally returns the source documents behind an answer as a linked list —
-  linking to the Moodle activity when known, otherwise through a secure proxy.
+- **Source citations:** optionally returns the source documents behind an answer, built **from the
+  model's own `[ID]` citations** (only the documents actually used). They are numbered per answer as
+  `[answer.source]` (e.g. `[1.1]`, `[2.1]`), shown on a `Sources:` line at the end of the answer and as a
+  linked list — linking to the Moodle activity when known, otherwise through a secure proxy.
 - **Secure download proxy (`download.php`):** streams a RAGflow document server-side so the API key
   never reaches the browser; per-click **signed, time-limited** links (token mode) or **token-less**
   context-authorised links, with a strict content-type allowlist (`nosniff`, forced attachment for

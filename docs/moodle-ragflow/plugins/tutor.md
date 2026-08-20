@@ -77,6 +77,27 @@ Fields are shown according to the editor's capabilities (site admins see all).
     On save, only the fields the current user may change are written, so a trainer editing the greeting
     cannot clear the admin-only knowledge-base / source settings.
 
+## Sources & citations
+
+When **Include sources** is on, the Tutor lists the documents behind each answer **from the model's own
+citations** — i.e. only the documents the answer actually used, not a separate, blind similarity search.
+This avoids weakly-related documents showing up as "sources".
+
+- Each answer ends with a short **`Sources:` line** (e.g. `Sources: [1.1]`) and the drawer's **Sources
+  panel** lists the matching files, each prefixed with the same reference.
+- References are numbered **per answer** as `[answer.source]`: the first answer's sources are `[1.1]`,
+  `[1.2]`, …, the second answer's are `[2.1]`, `[2.2]`, and so on — so it stays clear which files belong
+  to which answer as the conversation (and the stacked Sources panel) grows.
+- A cited document is always listed, even if it is an **image or other low-text-similarity file** — the
+  model's citation is the relevance signal.
+- If the model cites nothing (rare), the Tutor falls back to a topical document list for the question, so
+  the Sources panel is never empty.
+
+!!! note "Keep the `[ID]` markers in a custom system instruction"
+    The citation list depends on the model emitting its `[ID]` reference markers. The default **System
+    instruction** asks the model to keep them; if you customise it per course, do **not** tell the model
+    to omit `[ID]` references, or the source list falls back to the topical list.
+
 ## Capabilities
 
 | Capability | Default roles | Purpose |

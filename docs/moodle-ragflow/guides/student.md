@@ -8,8 +8,10 @@ your teachers and administrators.
 If your course has a **RAGflow Tutor**, you'll see a chat you can open on the course page.
 
 1. Open the tutor and type your question.
-2. The answer is based on your course's documents. If **sources** are shown, you can open the cited
-   files to read more.
+2. The answer is based on your course's documents. If **sources** are shown, the answer ends with a
+   `Sources:` line (e.g. `Sources: [1.1]`) and a **Sources** list appears below it, where you can open the
+   cited files to read more. References are numbered per answer — `[1.1]`, `[1.2]` for your first answer,
+   `[2.1]` for the next — so you can tell which files belong to which answer.
 3. Ask follow-up questions — the tutor keeps the topic in context.
 
 The tutor answers in **your Moodle language**, so if your profile is set to German you'll get German
@@ -52,4 +54,6 @@ again later or ask your teacher to add the material.
 Yes — answers follow your Moodle profile language.
 
 **Can I see where an answer came from?**
-If your teacher enabled sources, a "Sources" list appears under the answer with links to the documents.
+If your teacher enabled sources, a "Sources" list appears under the answer with links to the documents,
+and each answer ends with a `Sources:` line referencing them by number (`[1.1]`, `[1.2]`, …). Only the
+documents the answer actually used are listed.
