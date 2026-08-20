@@ -3,7 +3,7 @@
 Source for the RAGCon documentation site, built with [MkDocs](https://www.mkdocs.org/) +
 [Material](https://squidfunk.github.io/mkdocs-material/) and published to GitHub Pages.
 
-**Live site:** https://ragcon-ai.github.io/ragcon-docs/
+**Live site:** https://docs.ragcon.ai/
 
 ## Structure
 

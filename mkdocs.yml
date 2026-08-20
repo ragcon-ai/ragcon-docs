@@ -1,6 +1,6 @@
 site_name: RAGCon Documentation
 site_description: Documentation for RAGCon products, starting with the Moodle RAGflow plugin suite.
-site_url: https://ragcon-ai.github.io/ragcon-docs/
+site_url: https://docs.ragcon.ai/
 repo_url: https://github.com/ragcon-ai/ragcon-docs
 edit_uri: edit/main/docs/
 
