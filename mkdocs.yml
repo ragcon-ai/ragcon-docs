@@ -1,8 +1,11 @@
-site_name: RAGCon Documentation
-site_description: Documentation for RAGCon products, starting with the Moodle RAGflow plugin suite.
+site_name: RAGcon Documentation
+site_description: Documentation for RAGcon products, starting with the Moodle RAGflow plugin suite.
 site_url: https://docs.ragcon.ai/
 repo_url: https://github.com/ragcon-ai/ragcon-docs
 edit_uri: edit/main/docs/
+# Shown in the footer on every page.
+copyright: >
+  &copy; RAGcon GmbH &middot; <a href="https://www.ragcon.ai/impressum/">Impressum</a>
 
 theme:
   name: material
@@ -43,10 +46,11 @@ markdown_extensions:
 plugins:
   - search
 
-# Sections are top-level folders under docs/. Add a new RAGCon product as its own
+# Sections are top-level folders under docs/. Add a new RAGcon product as its own
 # folder + nav block; the deploy workflow's path filter keeps builds scoped to changes.
 nav:
   - Home: index.md
+  - RAGcon Homepage: https://www.ragcon.ai
   - Help &amp; Support: support.md
   - Moodle RAGflow Suite:
       - moodle-ragflow/index.md

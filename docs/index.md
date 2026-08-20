@@ -1,6 +1,6 @@
-# RAGCon Documentation
+# RAGcon Documentation
 
-Welcome to the documentation for RAGCon products.
+Welcome to the documentation for RAGcon products.
 
 ## Products
 
@@ -14,5 +14,5 @@ drawer, and a usage dashboard, all driven by a shared AI provider.
 
 ---
 
-More RAGCon products will be documented here over time. Each product lives in its own section;
+More RAGcon products will be documented here over time. Each product lives in its own section;
 this site is built from Markdown and published automatically via GitHub Actions.

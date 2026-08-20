@@ -1,17 +1,17 @@
-# RAGCon Documentation
+# RAGcon Documentation
 
-Source for the RAGCon documentation site, built with [MkDocs](https://www.mkdocs.org/) +
+Source for the RAGcon documentation site, built with [MkDocs](https://www.mkdocs.org/) +
 [Material](https://squidfunk.github.io/mkdocs-material/) and published to GitHub Pages.
 
 **Live site:** https://docs.ragcon.ai/
 
 ## Structure
 
-Each RAGCon product is a top-level folder under `docs/` and a nav block in `mkdocs.yml`:
+Each RAGcon product is a top-level folder under `docs/` and a nav block in `mkdocs.yml`:
 
 ```
 docs/
-├─ index.md               # RAGCon docs home
+├─ index.md               # RAGcon docs home
 └─ moodle-ragflow/        # section 1: the Moodle RAGflow plugin suite
    ├─ index.md
    ├─ setup-ragflow.md    # shared setup (done once)
