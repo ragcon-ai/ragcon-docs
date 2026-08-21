@@ -9,6 +9,23 @@ provider, so you only do this setup a single time.
     - At least one RAGflow **assistant (chat)** bound to a **knowledge base / dataset** that contains
       your documents. See [Prepare a knowledge base](#1-prepare-a-knowledge-base-in-ragflow) below.
 
+## Before you start: configure your models
+
+New RAGflow accounts do **not** receive default models automatically — each account adds its **own**
+models under *Model providers* (a **chat**, an **embedding** and, optionally, a **rerank** model) and then
+picks defaults under *Set default models*. Do this **before** using the Moodle plugins.
+
+!!! warning "The default embedding model matters"
+    A knowledge base is embedded with your account's **current default embedding model** at the moment it
+    is created — including knowledge bases the **Tutor block creates for you**. The plugins never hard-code
+    an embedding model; they always use your account's current default. Therefore:
+
+    - Set a **working** default embedding model in *Set default models* first.
+    - The embedding model of an **existing** knowledge base **cannot be changed** afterwards — if it is
+      wrong, recreate the knowledge base.
+    - If the default is missing or points at an unconfigured provider, embedding/retrieval fails with
+      *"Provider not found for model …"* (see the [admin FAQ](guides/admin.md#faq)).
+
 ## 1. Prepare a knowledge base in RAGflow
 
 In your RAGflow instance:

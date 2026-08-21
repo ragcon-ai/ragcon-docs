@@ -57,6 +57,7 @@ content). Mind data protection and the retention setting.
 | *Unexpected response from RAGflow* + `HTTP 502/504` | RAGflow unreachable / down | Check the RAGflow service; confirm the base URL is reachable from the Moodle server |
 | *Unexpected response* + `HTTP 401/403` | Bad API key | Regenerate the key in RAGflow, update the provider instance |
 | Embedding / context-window error | Query too long for the embedding model | Use a larger-context embedding model |
+| *Provider not found for model …*, or a new knowledge base has the wrong embedding model | No / wrong **default embedding model** in the RAGflow account | Set a working default in RAGflow (*Model providers → Set default models*); recreate any KB created with the wrong one (the embedding model of an existing KB can't be changed) |
 | Empty answers, no sources | Dataset not parsed, or assistant not bound to it | Confirm parsing finished and the assistant is bound to the dataset |
 | Helpdesk item not in the menu | Placement disabled or no assistant selected | Enable the placement and select an assistant |
 | Answer claims the knowledge base is *"empty"* for a question that has no match | RAGflow assistant's **system prompt** (its default) mishandles no-hit questions | Adjust the assistant's prompt in RAGflow — see [Answer wording](#answer-wording-when-nothing-is-found) below |
@@ -98,6 +99,15 @@ it for your team.
 **Do I need to run RAGflow myself?**
 Yes — the suite is a client for a RAGflow instance (self-hosted or hosted). It does not bundle RAGflow.
 You provide a reachable base URL and an API key.
+
+**Which models does the suite set up in RAGflow?**
+None. New RAGflow accounts do **not** get default models automatically — you add your own (chat,
+embedding, optionally rerank) under *Model providers* and choose defaults under *Set default models*
+before using the plugins. Knowledge bases — including those the Tutor block creates — are embedded with
+your account's **current default embedding model**; the plugins never hard-code one. The embedding model
+of an existing knowledge base **cannot be changed** afterwards, so if a KB got the wrong one (e.g. no
+default was set, or it pointed at an unconfigured provider — the *"Provider not found for model …"*
+error), fix the default in RAGflow and **recreate** the affected knowledge bases.
 
 **Is one provider instance enough for all plugins?**
 Yes. Configure the provider once; the Helpdesk, Tutor and Search all use it. Each surface still selects
