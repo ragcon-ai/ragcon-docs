@@ -39,7 +39,7 @@ message, and their saves cannot clear the choice).
 | **Knowledge base(s)** (`config_datasets`) | autocomplete (multiple) | none (required) | The RAGflow dataset(s) this block searches. Select one or more; the block does not search until at least one is chosen. |
 | **Search scope** (`config_scope`) | select | `Whole knowledge base` | *Whole knowledge base* or *Current course only* (matched via the course metadata field). On pages without a course, the whole KB is searched. |
 | **Course metadata field** (`config_coursefield`) | text | `course_id` | RAGflow document metadata field holding the Moodle course id. Only used when scope is *Current course only*. |
-| **Rerank model** (`config_rerankmodel`) | text | empty (off) | *Optional.* A RAGflow rerank model id (e.g. a bge-reranker configured in your RAGflow). When set, RAGflow reorders the candidates with a cross-encoder for markedly better precision. Empty = plain vector/keyword ranking. |
+| **Rerank model** (`config_rerankmodel`) | select | None (off) | *Optional.* A **dropdown of the rerank models available in your RAGflow** (fetched live; a hint is shown if none is configured). When set, RAGflow reorders the candidates with a cross-encoder for markedly better precision. Choose *None* for plain vector/keyword ranking. |
 
 ## Result quality (fewer, better matches)
 
