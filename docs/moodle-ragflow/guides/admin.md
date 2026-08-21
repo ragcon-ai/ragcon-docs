@@ -59,6 +59,39 @@ content). Mind data protection and the retention setting.
 | Embedding / context-window error | Query too long for the embedding model | Use a larger-context embedding model |
 | Empty answers, no sources | Dataset not parsed, or assistant not bound to it | Confirm parsing finished and the assistant is bound to the dataset |
 | Helpdesk item not in the menu | Placement disabled or no assistant selected | Enable the placement and select an assistant |
+| Answer claims the knowledge base is *"empty"* for a question that has no match | RAGflow assistant's **system prompt** (its default) mishandles no-hit questions | Adjust the assistant's prompt in RAGflow — see [Answer wording](#answer-wording-when-nothing-is-found) below |
+
+### Answer wording when nothing is found
+
+The wording of an answer — including what the assistant says when a question has **no relevant
+matches** — comes from the **RAGflow assistant's own system prompt**, not from Moodle. RAGflow's default
+prompt instructs the model to "list the knowledge-base entries", so on a question with no hits (for
+example a greeting like *"Hallo"*) the model may wrongly claim the *knowledge base is empty*, even though
+it contains documents — there were simply no matches for that question.
+
+Assistants **created through the Tutor block** get a clean prompt automatically. An assistant you created
+**manually in RAGflow** keeps RAGflow's default and may need adjusting. RAGflow **ignores prompt changes
+made through its API** on an existing assistant, so edit it **in the RAGflow UI** (open the assistant →
+*Prompt engine* → *System prompt*). A prompt that avoids the problem:
+
+```
+You are a helpful assistant. Answer the question using only the knowledge base below, and
+reply in the same language as the question. Take the chat history into account.
+
+Do not list or enumerate the knowledge-base entries — just give the answer.
+
+If the knowledge base contains nothing relevant to the question, briefly say that nothing
+was found for this question. Do NOT claim that the knowledge base is empty or has no
+entries — there were simply no matches for this question.
+
+Knowledge base:
+{knowledge}
+```
+
+Keep the `{knowledge}` placeholder (RAGflow injects the retrieved content there), and do **not** add a
+rule forbidding `[ID]` references — the source list relies on them. The prompt language does not dictate
+the answer language (answers follow the question's language), so you can keep it in English or translate
+it for your team.
 
 ## FAQ
 

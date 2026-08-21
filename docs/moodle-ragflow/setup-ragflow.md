@@ -18,6 +18,13 @@ In your RAGflow instance:
 3. Create an **assistant (chat)** and bind it to that dataset.
 4. Note the assistant so you can select it in Moodle.
 
+!!! warning "Check the assistant's system prompt"
+    RAGflow's **default** assistant prompt tells the model to "list the knowledge-base entries", which
+    makes it wrongly answer *"the knowledge base is empty"* when a question has no matches (even though
+    the dataset has content). If you create the assistant manually, replace its system prompt with a
+    cleaner one — see [Answer wording when nothing is found](guides/admin.md#answer-wording-when-nothing-is-found)
+    in the admin guide. (Assistants the Tutor block creates already get a clean prompt.)
+
 !!! tip "Embedding model & context window"
     Retrieval embeds your query with the dataset's embedding model. Very long queries can exceed a
     small model's context window. The suite already keeps queries short, but choose an embedding
