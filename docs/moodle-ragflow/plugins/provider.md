@@ -4,7 +4,7 @@
     - **Repository:** [https://github.com/ragcon-ai/moodle-aiprovider_ragflow](https://github.com/ragcon-ai/moodle-aiprovider_ragflow){ target="_blank" rel="noopener" }
     - **Issues / bug tracker:** [https://github.com/ragcon-ai/moodle-aiprovider_ragflow/issues](https://github.com/ragcon-ai/moodle-aiprovider_ragflow/issues){ target="_blank" rel="noopener" }
 
-**Component:** `aiprovider_ragflow` · **Release:** 0.5.0 · **Requires:** Moodle 5.0–5.2 · **Depends on:** — (root of the suite)
+**Component:** `aiprovider_ragflow` · **Release:** 0.5.13 · **Requires:** Moodle 5.0–5.2 · **Depends on:** — (root of the suite)
 
 The RAGflow AI provider plugs into Moodle's core **AI subsystem** and connects Moodle's text AI
 actions to an external [RAGflow](https://ragflow.io) instance. Answers are produced by a RAGflow

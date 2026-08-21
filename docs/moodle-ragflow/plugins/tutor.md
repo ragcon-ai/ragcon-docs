@@ -4,7 +4,7 @@
     - **Repository:** [https://github.com/ragcon-ai/moodle-block_ragflowtutor](https://github.com/ragcon-ai/moodle-block_ragflowtutor){ target="_blank" rel="noopener" }
     - **Issues / bug tracker:** [https://github.com/ragcon-ai/moodle-block_ragflowtutor/issues](https://github.com/ragcon-ai/moodle-block_ragflowtutor/issues){ target="_blank" rel="noopener" }
 
-**Component:** `block_ragflowtutor` · **Release:** 0.2.3 · **Requires:** Moodle 5.0–5.2 · **Depends on:** `aiprovider_ragflow`
+**Component:** `block_ragflowtutor` · **Release:** 0.2.4 · **Requires:** Moodle 5.0–5.2 · **Depends on:** `aiprovider_ragflow`
 
 A per-course **AI tutor** delivered as a Moodle block. Placed on a course or activity page, it renders
 a chat drawer that answers students' questions grounded in a RAGflow knowledge base scoped to that
