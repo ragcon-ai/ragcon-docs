@@ -4,7 +4,7 @@
     - **Repository:** [https://github.com/ragcon-ai/moodle-block_ragflowsearch](https://github.com/ragcon-ai/moodle-block_ragflowsearch){ target="_blank" rel="noopener" }
     - **Issues / bug tracker:** [https://github.com/ragcon-ai/moodle-block_ragflowsearch/issues](https://github.com/ragcon-ai/moodle-block_ragflowsearch/issues){ target="_blank" rel="noopener" }
 
-**Component:** `block_ragflowsearch` · **Release:** 0.3.2 · **Requires:** Moodle 5.0–5.2 · **Depends on:** `aiprovider_ragflow`
+**Component:** `block_ragflowsearch` · **Display name:** *RAGflow file search* · **Release:** 0.3.4 · **Requires:** Moodle 5.0–5.2 · **Depends on:** `aiprovider_ragflow`
 
 A Moodle block that adds a search box to any page and searches one or more RAGflow **knowledge bases**
 semantically, listing the matching source documents. It is **retrieval only — no LLM** (fast, cheap,
@@ -40,11 +40,15 @@ message, and their saves cannot clear the choice).
 | **Search scope** (`config_scope`) | select | `Whole knowledge base` | *Whole knowledge base* or *Current course only* (matched via the course metadata field). On pages without a course, the whole KB is searched. |
 | **Course metadata field** (`config_coursefield`) | text | `course_id` | RAGflow document metadata field holding the Moodle course id. Only used when scope is *Current course only*. |
 | **Rerank model** (`config_rerankmodel`) | select | None (off) | *Optional.* A **dropdown of the rerank models available in your RAGflow** (fetched live; a hint is shown if none is configured). When set, RAGflow reorders the candidates with a cross-encoder for markedly better precision. Choose *None* for plain vector/keyword ranking. |
+| **Minimum relevance** (`config_minsimilarity`) | number | `0.35` | Text results below this score (0–1) are dropped. Higher = fewer/stricter, lower = more/looser. Images/media keep their own, lower floor. |
+| **Maximum results** (`config_maxresults`) | number | `5` | Upper bound on the text results shown (images/media form their own small group in addition). |
+| **Relevance cliff** (`config_cliffratio`) | number | `0.6` | Keep a result only while its score stays within this fraction (0–1) of the top hit. Lower = keep more mid-ranked results; `0` = off. |
 
 ## Result quality (fewer, better matches)
 
-The search is tuned to return a **short, relevant list** instead of a fixed number of hits. This needs
-**no configuration** — the defaults are sensible; only the optional rerank model is a setting.
+The search is tuned to return a **short, relevant list** instead of a fixed number of hits. The defaults
+are sensible and work out of the box; the **minimum relevance**, **maximum results** and **relevance
+cliff** can be tuned per block (see the config table above), and reranking is opt-in.
 
 - **Relevance floor** — matches below a minimum score are dropped, so weakly related documents no longer
   clutter the list.
