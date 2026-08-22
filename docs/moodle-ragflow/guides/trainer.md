@@ -27,8 +27,8 @@ defaults: teachers can use, add and manage files; managers can also create/chang
 
 ## Build the knowledge base
 
-For a **This course** (Moodle-managed) knowledge base, the block shows a **knowledge-base panel** with a
-status light and a file area:
+For a **This block instance** (Moodle-managed) knowledge base, the block shows a **knowledge-base panel**
+with a status light and a file area:
 
 - **Add file** — upload one or more documents. They are virus-scanned and sent to RAGflow, then parsed.
 - **Status lights:** green = ready, yellow = still linking or a file is still parsing, red = a problem.
@@ -62,8 +62,8 @@ Check the knowledge-base panel: is the file green (parsed)? A yellow/red file is
 Re-process it if needed, and make sure the document actually contains the answer.
 
 **Can I limit the tutor to just my course's materials?**
-Yes — a *This course* knowledge base (the default for a block-created KB) answers only from the files
-you upload to that block.
+Yes — a *This block instance* knowledge base (the default for a block-created KB) answers only from the
+files you upload to that block.
 
 **Who can see and manage the uploaded files?**
 All trainers and admins of the course. Students only chat with the tutor; they don't see the file panel.

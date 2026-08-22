@@ -67,7 +67,7 @@ The provider counts as *configured* only when both API key and base URL are set.
 |---|---|---|---|
 | **RAGflow chat assistant** (`chatid`) | select (live) / text (required) | — | The assistant to answer with. Its model and knowledge base(s) are used. Pick a KB assistant for RAG, or a KB-less one to use RAGflow as a plain LLM. |
 | **System instruction** (`systeminstruction`) | textarea | action default | Instructions prepended as a system message to steer the response. |
-| **Document source** (`datasource`) | select | `thismoodle` | `wholekb` (no filter), `thismoodle` (filter: course + site), or `external` (shared documents only). |
+| **Document source** (`datasource`) | select | `thismoodle` | `wholekb` — *RAGflow knowledge base* (no filter); `thismoodle` — *This Moodle via Moodle Connector* (filter: course + site); or `external` — *External Moodle via Moodle Connector* (shared documents only). The two *Moodle Connector* sources require RAGflow's built-in Moodle connector to have written that metadata. |
 | **Restrict to course(s)** (`coursescope`) | select | off | `Current course` or `The user's enrolled courses`. Hidden for *whole KB* / *external*. |
 | **Course metadata field** (`coursemetadatafield`) | text | `course_id` | RAGflow document metadata field holding the Moodle course id. |
 | **Include sources** (`includesources`) | checkbox | off | Return source documents and append them as a linked list. |
