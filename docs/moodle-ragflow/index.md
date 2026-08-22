@@ -19,8 +19,10 @@ several placements/blocks consume it.
 
 - **Moodle 5.0, 5.1 or 5.2** (PHP 8.1–8.3; PostgreSQL or MariaDB/MySQL) — see
   [Moodle version specifics](moodle-version-notes.md).
-- A reachable **RAGflow instance** and an **API key** (self-hosted or hosted). The suite is a client
-  for RAGflow — it does not bundle or run RAGflow itself.
+- A reachable **RAGflow instance, version 0.25 or later**, and an **API key** (self-hosted or hosted).
+  The suite is a client for RAGflow — it does not bundle or run RAGflow itself. RAGflow 0.25 introduced
+  the native Memory API used by the optional long-term memory and is the supported baseline (the core
+  retrieval/chat features work on earlier versions).
 - Ability to install plugins (site administrator).
 
 ## Install order (important)
