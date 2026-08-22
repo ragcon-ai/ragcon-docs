@@ -39,3 +39,25 @@ The provider is a dependency of every other plugin, so install it **first**:
 3. See the user guides for day-to-day use — for
    **[administrators](guides/admin.md)**, **[trainers](guides/trainer.md)** and
    **[students](guides/student.md)**.
+
+## Built on Moodle and RAGflow
+
+!!! info "The software this suite builds on"
+    **Moodle** is software by **Moodle Pty Ltd**, released under the **GNU GPL v3 or later**.
+
+    - Source: <https://github.com/moodle/moodle>
+    - Bug tracker: <https://moodle.atlassian.net/jira/projects>
+
+    *The word Moodle and associated Moodle logos are trademarks or registered trademarks of
+    Moodle Pty Ltd or its related affiliates.*
+
+    ---
+
+    **RAGflow** is open-source software by **InfiniFlow Inc.**, released under the **Apache License 2.0**.
+
+    - Web: <https://ragflow.io>
+    - Source: <https://github.com/infiniflow/ragflow>
+    - Bug tracker: <https://github.com/infiniflow/ragflow/issues>
+
+    This suite is an independent integration; it is not affiliated with or endorsed by Moodle Pty Ltd
+    or InfiniFlow Inc.
