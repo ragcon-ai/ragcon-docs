@@ -24,7 +24,7 @@ shared [AI provider](provider.md).
 - **In-block knowledge-base panel** (for managers/trainers with *manage files*): a status line with a
   traffic-light indicator (green ready / yellow linking-or-parsing / red error), a refresh button, the
   file list and an upload area. It auto-polls while the KB is linking or files are still parsing.
-- **File management** (only for a "This block instance" Moodle-managed KB):
+- **File management** (only when the block manages the files — a new KB with *Manage files from this block*):
     - **Upload** multiple files (streamed as multipart, so large files are fine); each is virus-scanned
       (Moodle antivirus), size-checked, pushed into the KB and parsed.
     - **Re-process** a file, **delete** a file (with confirmation), **download** a file through a
@@ -67,11 +67,18 @@ Fields are shown according to the editor's capabilities (site admins see all).
 
 | Field | Type | Default | Meaning |
 |---|---|---|---|
-| **Document source** (`config_datasource`) | select | `thiscourse` | `This block instance` (a dedicated Moodle-managed KB — the **only** source with file management), `RAGflow knowledge base` (the whole KB, no filter), `This Moodle via Moodle Connector` (metadata-filtered to the course), or `External Moodle via Moodle Connector` (shared documents only). The two *Moodle Connector* sources require RAGflow's built-in Moodle connector to have written the metadata; without it the tutor always answers "nothing found". **Fixed after creation** — the source is chosen when the block is first configured and shown read-only afterwards (to change it, remove and re-add the block). |
-| **Course metadata field** (`config_coursemetadatafield`) | text | `course_id` | Metadata field used to filter (only for *This Moodle via Moodle Connector*). |
+| **Manage files from this block** (`config_managefiles`) | checkbox | on | *Shown only when creating a **new** knowledge base.* On (default) the block owns the knowledge base and you upload/manage its documents from the in-block panel. Off connects Moodle to the new knowledge base only — you then add and manage its documents in **RAGflow** itself (no in-block file panel). |
+| **Metadata filtering** (`config_metadatafilter`) | select | `No` | *Shown only when connecting to an **existing** knowledge base.* `No` (whole KB, no filter), `Moodle Connector` (restrict to the current course by `course_id` + site URL), or `External sharing` (only documents with `external_sharing = 1`). The two connector options require RAGflow's built-in Moodle connector to have written that metadata; without it the tutor answers "nothing found". |
+| **Course metadata field** (`config_coursemetadatafield`) | text | `course_id` | Metadata field used to filter (only for the *Moodle Connector* option). |
 | **Include sources** (`config_includesources`) | checkbox | off | Show source links with answers. |
 | **Serve source files via RAGflow proxy** (`config_serveviaproxy`) | checkbox | off | Stream sources through the secure proxy (hidden unless *Include sources* is on). |
 | **Extra parameters (JSON)** (`config_extraparams`) | textarea | — | Extra JSON merged into the request. |
+
+!!! info "Document source is fixed after creation"
+    The document source is structural (it decides the metadata filter and is bound to the knowledge base
+    chosen at creation). It is chosen **once**, via *Manage files from this block* (new KB) or *Metadata
+    filtering* (existing KB); after the block is bound to a knowledge base the choice is shown **read-only**
+    with a short summary. To change it, remove the block and add a new one.
 
 !!! tip "Trainers can't overwrite admin settings"
     On save, only the fields the current user may change are written, so a trainer editing the greeting
