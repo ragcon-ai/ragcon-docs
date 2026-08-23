@@ -35,7 +35,10 @@ counts) and a colour-coded data table (a swatch per row) under each categorical 
   Off unless the raw-API-log toggle is on; the **API key is never logged**.
 - **Errors** — **failures by error type** (labelled, e.g. *RAGflow server error (5xx)*, *Query too long for
   embedding model*, *Rate limited*) and a collapsible **recent-errors** list.
-- **Export** — download the usage log (metrics only) for a date range, scoped to the current view.
+- **Export** — download the usage log (metrics only) for a date range as **CSV** (default), **XML** or
+  **PDF**. The export covers **all views** in one file: rows are labelled with the view (source) that owns
+  them and grouped by view — a *View* column in CSV/XML, one section per view in the PDF (with a KPI
+  summary). The acting user resolves to a name, or a dash when anonymisation is on.
 
 Other: a **usage log — metrics only** (no message content, safe for the standard log store); an optional
 **per-feature debug capture** (bounded request/response, admin-only, only while enabled); a daily
