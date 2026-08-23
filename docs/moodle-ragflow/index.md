@@ -9,10 +9,10 @@ several placements/blocks consume it.
 
 | Plugin | Type | What it does |
 |---|---|---|
-| **[AI provider (RAGflow)](plugins/provider.md)** | `aiprovider_ragflow` | The backend. Configured as an AI-provider instance; handles chat, search, sources and (optional) conversation memory against RAGflow. **The shared backend every other plugin builds on — they depend on it; it depends on nothing and runs on its own.** |
+| **[AI provider (RAGflow)](plugins/provider.md)** | `aiprovider_ragflow` | The backend. Configured as an AI-provider instance; handles chat, search, sources and (optional) conversation + long-term memory against RAGflow. **The shared backend every other plugin builds on — they depend on it; it depends on nothing and runs on its own.** |
 | **[Tutor block](plugins/tutor.md)** | `block_ragflowtutor` | A per-course tutor chat with its own knowledge base (upload course documents, ask questions). |
 | **[Search block](plugins/search.md)** | `block_ragflowsearch` | A knowledge-base search box that returns ranked source documents. |
-| **[Helpdesk placement](plugins/helpdesk.md)** | `aiplacement_ragflowhelpdesk` | A site-wide help drawer (bottom-right) answering from a central knowledge base. |
+| **[Helpdesk placement](plugins/helpdesk.md)** | `aiplacement_ragflowhelpdesk` | A site-wide help chat, reached from the site (more) menu, answering from a central knowledge base. |
 | **[Usage dashboard](plugins/dashboard.md)** | `local_ragflowdashboard` | Admin KPIs, charts and logs of usage and failures (metrics only; optional debug capture). **Optional premium add-on — the other plugins work fully without it.** |
 
 ## Requirements

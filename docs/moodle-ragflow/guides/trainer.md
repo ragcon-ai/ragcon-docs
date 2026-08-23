@@ -21,9 +21,12 @@ defaults: teachers can use, add and manage files; managers can also create/chang
 3. Open the block's **Configure** screen and choose a **knowledge base / assistant**:
     - pick an existing one, or
     - (if allowed) choose **➕ Create new knowledge base…** and give it a name — the block creates a
-      fresh RAGflow knowledge base for this course.
-4. Optionally set a **greeting** and a **system instruction** (tone, rules, "answer only from the course
-   materials", etc.).
+      fresh RAGflow knowledge base for this course. Leave **Manage files from this block** ticked (the
+      default) to upload and manage its documents from the in-block panel; untick it to only connect
+      Moodle to the new knowledge base and manage the documents in RAGflow itself. This choice is fixed
+      once the block is created.
+4. Optionally set a **greeting**, a **system instruction** (tone, rules, "answer only from the course
+   materials", etc.) and whether to **show sources** with answers (*Include sources*).
 
 ## Build the knowledge base
 

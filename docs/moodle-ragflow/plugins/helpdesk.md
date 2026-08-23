@@ -20,8 +20,8 @@ and drives the shared chat engine from the [AI provider](provider.md).
 - **Long-term memory** — optional — carries durable facts about the user (name, role, language,
   preferences, recurring goals) across conversations via RAGflow's native Memory.
 - **Configurable greeting**, optional **source citations**, and answers in the user's Moodle language.
-- **Private/incognito mode** and a **New conversation / Forget memory** control in the drawer (from the
-  shared engine).
+- **Private/incognito mode** and drawer controls — **New conversation**, **New private conversation** and
+  **Delete all memories about me** (from the shared engine).
 
 ## Configuration
 
@@ -36,6 +36,13 @@ and drives the shared chat engine from the [AI provider](provider.md).
 | **RAGflow memory** (`memoryid`) | select (live) | — | The RAGflow memory used for long-term memory (create a "semantic" memory in RAGflow). One shared memory serves all users; Moodle separates them per user. |
 | **Include sources** (`includesources`) | checkbox | on | Append linked sources to answers. |
 | **Serve source files via RAGflow proxy** (`serveviaproxy`) | checkbox | off | Stream source files through the secure Moodle proxy. |
+| **Write log data** (`logtomoodle`) | checkbox | off | Write a concise usage/error entry (metrics only, no message content) to the Moodle standard log per request; independent of the RAGflow [dashboard](dashboard.md). |
+
+!!! note "Safe assistant / memory selection"
+    The **Chat assistant** and **RAGflow memory** selectors always keep the currently saved value
+    selectable even when RAGflow is temporarily unreachable, so saving the settings can never silently
+    clear your choice. A status line above the field flags a saved id that **no longer exists** in
+    RAGflow (red) or that **cannot be verified** right now (amber).
 
 ## Capabilities
 

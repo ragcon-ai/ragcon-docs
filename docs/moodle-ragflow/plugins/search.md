@@ -28,14 +28,16 @@ the shared [AI provider](provider.md); the block chooses the knowledge base and 
 - **Scope: whole KB or current course** (course scope filters by a configurable metadata field; on
   pages without a course the whole KB is searched).
 - **Login-gated** (no content for logged-out users or guests); **one instance per page**.
-- **Helpful empty states:** a *not configured* hint for users who can add the block, and a
-  *no knowledge bases available* message if the provider isn't enabled.
+- **Helpful empty states:** a *not configured* hint for users who can add the block, a
+  *no knowledge bases available* message if the provider isn't enabled, and a *knowledge base was deleted
+  in RAGflow* notice when a search returns nothing because a configured dataset no longer exists
+  (privileged users additionally see which dataset).
 
 ## Configuration
 
-There is **no site-wide settings page** — all configuration is **per block instance**, and only **site
-administrators** may set it (non-admins see an "only site administrators can choose the knowledge base"
-message, and their saves cannot clear the choice).
+Almost all configuration is **per block instance**, and only **site administrators** may set it
+(non-admins see an "only site administrators can choose the knowledge base" message, and their saves
+cannot clear the choice). The only **site-wide** setting is an optional logging toggle (below).
 
 ### Per-instance block config (*Configure this RAGflow search block*)
 
@@ -47,8 +49,14 @@ message, and their saves cannot clear the choice).
 | **Rerank model** (`config_rerankmodel`) | select | None (off) | *Optional.* A **dropdown of the rerank models available in your RAGflow** (fetched live; a hint is shown if none is configured). When set, RAGflow reorders the candidates with a cross-encoder for markedly better precision. Choose *None* for plain vector/keyword ranking. |
 | **Semantic weight** (`config_vectorweight`) | number | `0.7` | Balances **meaning-based (vector)** vs. **literal keyword** matching (0–1). Higher = questions asked in full-sentence form match by meaning; lower = literal keyword matching dominates. RAGflow's own default (0.3) is keyword-heavy and scores sentence questions poorly. |
 | **Minimum relevance** (`config_minsimilarity`) | number | `0.35` | Text results below this score (0–1) are dropped. Higher = fewer/stricter, lower = more/looser. Images/media keep their own, lower floor. |
-| **Maximum results** (`config_maxresults`) | number | `5` | Upper bound on the text results shown (images/media form their own small group in addition). |
+| **Maximum results** (`config_maxresults`) | number | `5` | Upper bound on the number of text (non-media) results kept. Images/media are kept under their own lower relevance floor (up to 3 more) and shown inline in the single match-ranked list. |
 | **Relevance cliff** (`config_cliffratio`) | number | `0.6` | Keep a result only while its score stays within this fraction (0–1) of the top hit. Lower = keep more mid-ranked results; `0` = off. |
+
+### Site-wide setting — *Site administration → Plugins → Blocks → RAGflow file search*
+
+| Setting | Type | Default | Meaning |
+|---|---|---|---|
+| **Write log data** (`logtomoodle`) | checkbox | off | Write a concise usage/error entry (metrics only) to the Moodle standard log per search; independent of the RAGflow [dashboard](dashboard.md). |
 
 ## Result quality (fewer, better matches)
 

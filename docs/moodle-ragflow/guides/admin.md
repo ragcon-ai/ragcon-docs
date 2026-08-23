@@ -31,14 +31,14 @@ key. The provider is the shared backend for every other plugin.
 | Surface | Where to configure | Key settings |
 |---|---|---|
 | **[Helpdesk drawer](../plugins/helpdesk.md)** | *AI → AI placements → RAGflow Helpdesk* | assistant, greeting, conversation memory (on), long-term memory (off), sources |
-| **[Tutor block](../plugins/tutor.md)** | Block added per course; admin setting under *Blocks → RAGflow Tutor* | upload limit; per-block: assistant/KB, document source, sources |
-| **[Search block](../plugins/search.md)** | Block added per page (admin-only config) | knowledge base(s), scope |
-| **[Usage dashboard](../plugins/dashboard.md)** | *Plugins → Local plugins → RAGflow Dashboard settings* | retention, anonymise, debug per feature |
+| **[Tutor block](../plugins/tutor.md)** | Block added per course; admin setting under *Blocks → RAGflow Tutor* | upload limit, log-to-Moodle; per-block: assistant/KB, document source, sources |
+| **[Search block](../plugins/search.md)** | Block added per page (admin-only config); site-wide toggle under *Blocks → RAGflow file search* | per-block: knowledge base(s), scope, semantic weight; site-wide: log-to-Moodle |
+| **[Usage dashboard](../plugins/dashboard.md)** | *Plugins → Local plugins → RAGflow Dashboard settings* | retention, anonymise, debug content limit, per-feature debug, raw API-call log |
 
 ## 4. Permissions
 
 - `aiprovider/ragflow:viewerrordetails` — who sees the **technical cause** of a failed chat (default
-  Manager + Teacher; admins always). Keep it off for ordinary users, as it can reveal server internals.
+  Manager + editing Teacher; admins always). Keep it off for ordinary users, as it can reveal server internals.
 - `aiplacement/ragflowhelpdesk:use` — who sees the Helpdesk drawer (default: any authenticated user).
 - `block/ragflowtutor:*` — tutor use, add, edit content, change/create KB, manage files.
 - `local/ragflowdashboard:view` — who sees the dashboard (default: Manager only).
@@ -144,7 +144,7 @@ content). See each plugin's Privacy section.
 **PHP 8.3** (5.0 rejects PHP 8.4). See [Moodle version specifics](../moodle-version-notes.md).
 
 **Can teachers see the technical error details?**
-Only if they hold `aiprovider/ragflow:viewerrordetails` (default Manager + Teacher). Ordinary users only
+Only if they hold `aiprovider/ragflow:viewerrordetails` (default Manager + editing Teacher). Ordinary users only
 see the generic message. The gate is enforced server-side.
 
 **How do I stop capturing user content?**

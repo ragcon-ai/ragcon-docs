@@ -44,6 +44,7 @@ shared [AI provider](provider.md).
 | Setting | Type | Default | Meaning |
 |---|---|---|---|
 | **Upload limit for Moodle knowledge bases** (`uploadlimit`) | select | `50` MB | Max size per document uploaded to a Moodle-managed KB (50 MB / 500 MB / Unlimited). The effective ceiling is the smaller of this and Moodle's own max upload size. |
+| **Write log data** (`logtomoodle`) | checkbox | off | Write a concise usage/error entry (metrics only, no message content) to the Moodle standard log per request; independent of the RAGflow [dashboard](dashboard.md). |
 
 ### Per-instance block config (*Configure this RAGflow Tutor block*)
 
@@ -68,7 +69,7 @@ Fields are shown according to the editor's capabilities (site admins see all).
 | Field | Type | Default | Meaning |
 |---|---|---|---|
 | **Manage files from this block** (`config_managefiles`) | checkbox | on | *Shown only when creating a **new** knowledge base.* On (default) the block owns the knowledge base and you upload/manage its documents from the in-block panel. Off connects Moodle to the new knowledge base only — you then add and manage its documents in **RAGflow** itself (no in-block file panel). |
-| **Metadata filtering** (`config_metadatafilter`) | select | `No` | *Shown only when connecting to an **existing** knowledge base.* `No` (whole KB, no filter), `Moodle Connector` (restrict to the current course by `course_id` + site URL), or `External sharing` (only documents with `external_sharing = 1`). The two connector options require RAGflow's built-in Moodle connector to have written that metadata; without it the tutor answers "nothing found". |
+| **Metadata filtering** (`config_metadatafilter`) | select | `No` | *Shown only when connecting to an **existing** knowledge base.* `No` (whole KB, no filter), `Moodle Connector` (restrict to the current course by `course_id` + site URL; on the site home, where there is no course, no filter is applied), or `External sharing` (only documents with `external_sharing = 1`). The two connector options require RAGflow's built-in Moodle connector to have written that metadata; without it the tutor answers "nothing found". |
 | **Course metadata field** (`config_coursemetadatafield`) | text | `course_id` | Metadata field used to filter (only for the *Moodle Connector* option). |
 | **Include sources** (`config_includesources`) | checkbox | off | Show source links with answers. |
 | **Serve source files via RAGflow proxy** (`config_serveviaproxy`) | checkbox | off | Stream sources through the secure proxy (hidden unless *Include sources* is on). |

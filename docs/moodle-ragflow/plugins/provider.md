@@ -71,7 +71,7 @@ The provider counts as *configured* only when both API key and base URL are set.
 | **Restrict to course(s)** (`coursescope`) | select | off | `Current course` or `The user's enrolled courses`. Hidden for *whole KB* / *external*. |
 | **Course metadata field** (`coursemetadatafield`) | text | `course_id` | RAGflow document metadata field holding the Moodle course id. |
 | **Include sources** (`includesources`) | checkbox | off | Return source documents and append them as a linked list. |
-| **Extra parameters (JSON)** (`extraparams`) | textarea | empty | Optional JSON merged into the request body (e.g. `{"extra_body": {"reference": true}}`). Validated as JSON. |
+| **Extra parameters (JSON)** (`modelextraparams`) | textarea | empty | Optional JSON merged into the request body (e.g. `{"extra_body": {"reference": true}}`). Validated as JSON. |
 
 !!! note "Where the chat/drawer settings live"
     The Tutor block and Helpdesk placement each carry their **own** copy of the chat settings
@@ -83,7 +83,7 @@ The provider counts as *configured* only when both API key and base URL are set.
 
 | Capability | Default roles | Purpose |
 |---|---|---|
-| `aiprovider/ragflow:viewerrordetails` | Manager, Teacher (site admins always) | See the **technical cause** of a failed chat (a *Details* disclosure). The cause can reveal server-side internals (e.g. a RAGflow embedding error or `HTTP 502`), so it is withheld from ordinary users — enforced server-side, `RISK_CONFIG`. |
+| `aiprovider/ragflow:viewerrordetails` | Manager, Editing teacher (site admins always) | See the **technical cause** of a failed chat (a *Details* disclosure). The cause can reveal server-side internals (e.g. a RAGflow embedding error or `HTTP 502`), so it is withheld from ordinary users — enforced server-side, `RISK_CONFIG`. |
 
 ## Privacy
 
@@ -91,7 +91,9 @@ By default the plugin stores **no personal data** in Moodle. Prompts (and, with 
 the ongoing conversation and remembered facts) are **sent to and stored in RAGflow** (a third-party
 processor). A small local table references RAGflow **conversation sessions** for the Helpdesk memory.
 On user deletion, the plugin deletes those sessions and **forgets** the user's RAGflow memory. Users
-can self-disable long-term memory via **private/incognito mode** in the chat.
+can self-disable long-term memory via **private/incognito mode** in the chat; that choice is stored as
+a per-user Moodle preference (`aiprovider_ragflow_privatemode`) and is exported and deleted with the
+user's data.
 
 See also: [Moodle version specifics](../moodle-version-notes.md) for `public/` layout and
 version-guarded error handling.

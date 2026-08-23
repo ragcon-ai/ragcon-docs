@@ -46,7 +46,9 @@ counts) and a colour-coded data table (a swatch per row) under each categorical 
   **by provider instance**. See *What is counted* below.
 - **API calls** — the raw RAGflow API-call log (one collapsible row per call) with a per-page selector
   (10 / 20 / 50), **paging**, a **live** auto-reload and **filters** (HTTP status, free text, date range).
-  Off unless the raw-API-log toggle is on; the **API key is never logged**.
+  Off unless the raw-API-log toggle is on; the **API key is never logged**. Below the log, a **Debug
+  captures** panel lists the most recent captured request/response pairs (only for features whose debug
+  toggle is on).
 - **Errors** — **failures by error type** (labelled, e.g. *RAGflow server error (5xx)*, *Query too long for
   embedding model*, *Rate limited*) and a collapsible **recent-errors** list.
 - **Export** — download the usage log (metrics only) for a date range as **CSV** (default), **XML** or
@@ -79,6 +81,7 @@ work).
 | **Debug content limit (characters)** (`detailmaxlen`) | integer | `2000` | Max characters stored per captured question and response. |
 | **Per-feature debug mode** (heading) | — | — | When enabled for a feature, the (bounded) request/response content is stored for troubleshooting — this captures user messages and answers, so enable only temporarily and mind data protection. |
 | **Debug: {feature}** (`debug_<component>`) | checkbox | off | One toggle **per feature** owned by an installed source (Tutor / Helpdesk / Search, and any future `rfdsource_*`). When on, that feature's request/response content is captured. |
+| **Raw RAGflow API call log** (`debug_apiraw`) | checkbox | off | Log every RAGflow API call (URL, request, response, status, duration) — this powers the **API calls** tab. The API key is never stored. Verbose; enable only for diagnosis. |
 
 ## Capabilities
 
