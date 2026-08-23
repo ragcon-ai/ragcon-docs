@@ -20,10 +20,24 @@ The report opens at *Site administration → Reports → RAGflow Dashboard* and 
 Moodle's built-in Chart API with a consistent palette (green = success, red = errors, blue for neutral
 counts) and a colour-coded data table (a swatch per row) under each categorical chart.
 
-- **Status** — is the provider configured and reachable, and is each configured instance (Tutor / Helpdesk
-  / Search) correctly linked (assistant valid + bound, knowledge base parsed)? Each check is a collapsible
-  row that shows the concrete **API call** used as proof and links to the relevant Moodle config page; a
-  per-area refresh re-runs just that check.
+- **Status** — is the provider configured and reachable, and is each configured reference correctly linked?
+  The tab has four kinds of box:
+    - **Suite plugins** — which of the five suite plugins are installed (green) or absent (red). The
+      dashboard depends only on the provider and works with any subset of the feature plugins, so this
+      simply makes the install state visible. Shown even when RAGflow is unreachable (no API call needed).
+    - **Provider & connection** — is the provider configured, and does a probe reach RAGflow?
+    - **Provider actions** — for each configured core_ai action (generate / summarise / explain text), the
+      health of the assistant it uses.
+    - **Per instance** (Tutor / Helpdesk / Search) — is the assistant valid + bound and the knowledge base
+      parsed?
+  Every reference verdict comes from **one shared check** and is shown as a traffic light with five
+  states: **OK** (green), **degraded** (amber — usable but e.g. the knowledge base has no documents yet or
+  is not parsed), **missing** (red — the assistant/knowledge base was deleted in RAGflow), **could not be
+  verified** (amber — RAGflow was unreachable, so this is a connection problem, *not* a configuration
+  fault) and **not configured** (red). *Missing* and *could not be verified* are never conflated. Each
+  check is a collapsible row; the concrete **API call** used as proof is shown only to users with the
+  *view error details* capability. A per-area refresh re-runs just that box and refreshes the shared result
+  for the other surfaces too.
 - **Usage** — KPI cards (Requests, Success rate, Failures, Average latency), requests per day (successful
   vs failed), requests by feature, **Top 10 users**, requests **by user group** (trainers vs.
   students/users) and **by course**. Sections are collapsible — one open at a time, remembered across

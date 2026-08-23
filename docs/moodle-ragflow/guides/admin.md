@@ -61,6 +61,27 @@ content). Mind data protection and the retention setting.
 | Empty answers, no sources | Dataset not parsed, or assistant not bound to it | Confirm parsing finished and the assistant is bound to the dataset |
 | Helpdesk item not in the menu | Placement disabled or no assistant selected | Enable the placement and select an assistant |
 | Answer claims the knowledge base is *"empty"* for a question that has no match | RAGflow assistant's **system prompt** (its default) mishandles no-hit questions | Adjust the assistant's prompt in RAGflow — see [Answer wording](#answer-wording-when-nothing-is-found) below |
+| *This assistant is currently unavailable* (privileged users also see *…assistant no longer exists (id …)*) | The assistant was **deleted in RAGflow** | Pick a valid assistant in the relevant settings — see [When a reference is no longer available](#when-a-reference-is-no-longer-available) |
+| A search shows *…unavailable, ask your administrator to reconnect its knowledge base* | The block's **knowledge base was deleted** in RAGflow | Reconnect a valid knowledge base on the block; the old id stays selectable and is never dropped on save |
+
+### When a reference is no longer available
+
+Every place that uses a RAGflow reference (an **assistant**, a **knowledge base** or a **memory**) shares
+**one** availability check, which is careful to separate two very different situations:
+
+- **Missing** — the list loaded fine, but the stored reference is **no longer in it**: it was deleted in
+  RAGflow. This is a real configuration problem. Settings forms keep the old value selectable, labelled
+  *Unavailable — no longer in RAGflow (…)*, so a save **never silently drops it**; you fix it by choosing a
+  valid reference. At runtime, users see a short *currently unavailable* message (privileged users also see
+  the id and how to fix it).
+- **Could not be verified** — RAGflow could **not be reached** to check (it was down, timed out or the key
+  was rejected). This is a **connection** problem, **not** a configuration one: nothing about your setup
+  changed. Forms show the stored value labelled *Current — could not be verified* and change nothing; the
+  Dashboard shows an amber note. Once RAGflow is reachable again the reference verifies normally.
+
+The Dashboard **Status** tab is the quickest way to tell them apart: *missing* is red, *could not be
+verified* is amber. A save on any settings page is guaranteed never to change a stored reference on its
+own — you always have to pick a new value explicitly.
 
 ### Answer wording when nothing is found
 
