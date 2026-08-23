@@ -17,11 +17,14 @@ the shared [AI provider](provider.md); the block chooses the knowledge base and 
 
 - **Placeable on any page** (courses, the Dashboard, the front page, …).
 - **Semantic search over one or more RAGflow datasets**, chosen per block instance.
-- **Ranked results** with a relevance score and snippet, each linking to the source document through
-  the provider's secure download proxy (the RAGflow API key never reaches the browser).
+- **One ranked list of matches** (documents and media together, ordered by match score). Each row shows a
+  **file-type icon**, the file name and the **match score**; the matching text excerpt appears **on hover**
+  (info icon). Each result links to the source document through the provider's secure download proxy (the
+  RAGflow API key never reaches the browser).
 - **Fewer, better matches** — a relevance floor, a relevance "cliff" and a result cap trim weak hits;
-  **images/media** get their own group so they aren't lost; an **optional rerank model** sharpens
-  precision further (see [Result quality](#result-quality-fewer-better-matches)).
+  **images/media** keep a lower floor so they aren't lost; a **semantic weight** makes questions asked in
+  full sentences match by meaning; and an **optional rerank model** sharpens precision further (see
+  [Result quality](#result-quality-fewer-better-matches)).
 - **Scope: whole KB or current course** (course scope filters by a configurable metadata field; on
   pages without a course the whole KB is searched).
 - **Login-gated** (no content for logged-out users or guests); **one instance per page**.
@@ -42,6 +45,7 @@ message, and their saves cannot clear the choice).
 | **Search scope** (`config_scope`) | select | `Whole knowledge base` | *Whole knowledge base* or *Current course only* (matched via the course metadata field). On pages without a course, the whole KB is searched. |
 | **Course metadata field** (`config_coursefield`) | text | `course_id` | RAGflow document metadata field holding the Moodle course id. Only used when scope is *Current course only*. |
 | **Rerank model** (`config_rerankmodel`) | select | None (off) | *Optional.* A **dropdown of the rerank models available in your RAGflow** (fetched live; a hint is shown if none is configured). When set, RAGflow reorders the candidates with a cross-encoder for markedly better precision. Choose *None* for plain vector/keyword ranking. |
+| **Semantic weight** (`config_vectorweight`) | number | `0.7` | Balances **meaning-based (vector)** vs. **literal keyword** matching (0–1). Higher = questions asked in full-sentence form match by meaning; lower = literal keyword matching dominates. RAGflow's own default (0.3) is keyword-heavy and scores sentence questions poorly. |
 | **Minimum relevance** (`config_minsimilarity`) | number | `0.35` | Text results below this score (0–1) are dropped. Higher = fewer/stricter, lower = more/looser. Images/media keep their own, lower floor. |
 | **Maximum results** (`config_maxresults`) | number | `5` | Upper bound on the text results shown (images/media form their own small group in addition). |
 | **Relevance cliff** (`config_cliffratio`) | number | `0.6` | Keep a result only while its score stays within this fraction (0–1) of the top hit. Lower = keep more mid-ranked results; `0` = off. |
@@ -49,16 +53,21 @@ message, and their saves cannot clear the choice).
 ## Result quality (fewer, better matches)
 
 The search is tuned to return a **short, relevant list** instead of a fixed number of hits. The defaults
-are sensible and work out of the box; the **minimum relevance**, **maximum results** and **relevance
-cliff** can be tuned per block (see the config table above), and reranking is opt-in.
+are sensible and work out of the box; the **semantic weight**, **minimum relevance**, **maximum results**
+and **relevance cliff** can be tuned per block (see the config table above), and reranking is opt-in.
 
 - **Relevance floor** — matches below a minimum score are dropped, so weakly related documents no longer
   clutter the list.
 - **Relevance "cliff" + result cap** — once the scores fall away from the best hit (or the cap of 5 is
   reached) the list stops. A query with two strong matches returns two, not a padded eight.
-- **Images & media handled separately** — images (and other media) embed with **low text similarity**, so
-  a single floor would wrongly hide them. They get a **lower floor** and appear in their own **"Images &
-  media"** group below the text results, rather than being dropped or diluting the text ranking.
+- **Semantic weight (sentence questions)** — the hybrid search blends meaning-based (vector) and keyword
+  scoring. A higher **semantic weight** (default `0.7`) lets meaning dominate, so a question asked as a full
+  sentence matches the right document instead of only its literal keywords. RAGflow's own default is
+  keyword-heavy, which scores sentence questions poorly; raising the weight is the main fix.
+- **Images & media kept, not lost** — images (and other media) embed with **low text similarity**, so a
+  single floor would wrongly hide them. They keep a **lower floor** so they still surface; all results
+  (documents and media) then appear in **one list ordered by match score**, so media naturally sit with
+  their (lower) scores rather than being dropped or diluting the ranking.
 - **Optional reranking** — set a **rerank model** (above) and RAGflow reorders the retrieved candidates
   with a cross-encoder. This is the single biggest precision gain: the truly relevant documents rise to
   the top and the tail is cut by the cliff. It is opt-in (needs a rerank model in your RAGflow) and adds a
