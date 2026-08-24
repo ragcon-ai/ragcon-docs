@@ -6,7 +6,7 @@
     Moodle Marketplace** — so there is no public source repository for it.
 
     - **Moodle Marketplace listing:** *link to follow*
-    - **Public issue tracker:** *link to follow*
+    - **Public issue tracker:** [https://github.com/ragcon-ai/moodle-local_ragflowdashboard/issues](https://github.com/ragcon-ai/moodle-local_ragflowdashboard/issues){ target="_blank" rel="noopener" }
 
     It remains **GPLv3**: buyers receive the complete source with their purchase. The paywall gates
     access, updates and support — not the code.
@@ -148,7 +148,7 @@ Search and Helpdesk plugins and the AI provider are free and open-source).
   plugin ZIP like any other Moodle plugin.
 - **Licence:** **GPLv3**. The purchase includes the complete source code; the fee covers access, updates and
   support, not the code itself.
-- **Support &amp; bug reports:** the **public issue tracker** — *link to follow*.
+- **Support &amp; bug reports:** the **[public issue tracker](https://github.com/ragcon-ai/moodle-local_ragflowdashboard/issues)**.
 
 ## Privacy
 
