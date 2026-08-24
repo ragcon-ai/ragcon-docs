@@ -74,3 +74,4 @@ nav:
           - For administrators: moodle-ragflow/guides/admin.md
           - For trainers: moodle-ragflow/guides/trainer.md
           - For students: moodle-ragflow/guides/student.md
+      - FAQ: moodle-ragflow/faq.md
