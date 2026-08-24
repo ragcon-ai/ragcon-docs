@@ -10,7 +10,7 @@ on the [Moodle plugins directory](https://moodle.org/plugins) once published.
 ## 0.7.0 — Initial public release
 
 The first public release of the suite: the **RAGflow AI provider** plus the **Tutor block**, **Search
-block**, **Helpdesk placement** and the optional **Usage dashboard**. See each [plugin page](index.md) for
+block**, **Helpdesk placement** and the optional **Usage dashboard**. See the [plugin pages](index.md#whats-in-the-suite) for
 its features and settings.
 
 - **AI provider (RAGflow)** `0.7.0` — initial public release: the shared backend (chat, search, sources,

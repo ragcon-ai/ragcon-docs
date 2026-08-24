@@ -9,7 +9,7 @@ own [student guide](student.md).
 - Add a **RAGflow Tutor** to your course — a chat that answers from your course documents.
 - Build and manage the tutor's **knowledge base** (upload, re-process, delete, download files).
 - Set the **greeting** and **system instruction** to shape how the tutor responds.
-- Add a **RAGflow Search** box for document look-up.
+- Add a **RAGflow file search** box for document look-up.
 
 Exactly which of these you can do depends on the capabilities your administrator granted (typical
 defaults: teachers can use, add and manage files; managers can also create/change the knowledge base).
@@ -51,7 +51,7 @@ with a status light and a file area:
 
 ## Add a Search block (optional)
 
-**Add a block → RAGflow search** puts a search box on the page. Note that **choosing the knowledge
+**Add a block → RAGflow file search** puts a search box on the page. Note that **choosing the knowledge
 base** for a search block is reserved to site administrators — ask your admin to point it at the right
 dataset.
 

@@ -40,7 +40,7 @@ Every plugin in the suite is checked, on each change, by:
 
 ### File handling & downloads
 - Uploaded files pass Moodle's **size limits, antivirus scanning and filename sanitisation**.
-- Document downloads use **short-lived, per-user signed tokens** verified with constant-time comparison;
+- Document downloads use **short-lived, per-user signed tokens** (verified with constant-time comparison) or **context-authorised** links;
   content types are restricted and served as attachments with `nosniff`; a user can only reach documents
   that belong to the knowledge base their instance is actually configured for.
 

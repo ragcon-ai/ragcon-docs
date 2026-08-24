@@ -45,7 +45,7 @@ Almost all configuration is **per block instance**, and only **site administrato
 (non-admins see an "only site administrators can choose the knowledge base" message, and their saves
 cannot clear the choice). The only **site-wide** setting is an optional logging toggle (below).
 
-### Per-instance block config (*Configure this RAGflow search block*)
+### Per-instance block config (*Configure this RAGflow file search block*)
 
 <!-- shot:search-04 -->
 
@@ -82,7 +82,7 @@ and **relevance cliff** can be tuned per block (see the config table above), and
   scoring. A higher **semantic weight** (default `0.7`) lets meaning dominate, so a question asked as a full
   sentence matches the right document instead of only its literal keywords. RAGflow's own default is
   keyword-heavy, which scores sentence questions poorly; raising the weight is the main fix.
-- **Images & media kept, not lost** — images (and other media) embed with **low text similarity**, so a
+- **Images and media appear in the same list** — images (and other media) embed with **low text similarity**, so a
   single floor would wrongly hide them. They keep a **lower floor** so they still surface; all results
   (documents and media) then appear in **one list ordered by match score**, so media naturally sit with
   their (lower) scores rather than being dropped or diluting the ranking.

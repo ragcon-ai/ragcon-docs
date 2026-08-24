@@ -49,7 +49,7 @@ key. The provider is the shared backend for every other plugin.
 
 ## 5. Monitor and diagnose
 
-Open *Reports → RAGflow Dashboard* for request volume, success/failure rates, latency and error types.
+Open *Site administration → Reports → RAGflow Dashboard* for request volume, success/failure rates, latency and error types.
 When diagnosing a specific feature, enable its **debug capture** temporarily to record the exact
 request/response (including the technical error cause) — then turn it off again (it captures user
 content). Mind data protection and the retention setting.

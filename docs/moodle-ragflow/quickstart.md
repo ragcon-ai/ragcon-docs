@@ -38,7 +38,7 @@ On a course you teach (with editing turned on):
    **➕ Create new knowledge base** and give it a name.
 3. **Build the knowledge base** — upload, re-process or delete documents in the block's knowledge-base
    panel; wait until files show **green (parsed)** before expecting answers.
-4. *(optional)* **Add a Search block** — **Add a block → RAGflow search**; choosing its knowledge base is
+4. *(optional)* **Add a Search block** — **Add a block → RAGflow file search**; choosing its knowledge base is
    admin-only, so ask your administrator to point it at the right one.
 5. *(optional)* **Personalise** — edit the greeting and system instruction in the block configuration.
 
@@ -50,7 +50,7 @@ No setup needed — just use what your course offers:
 
 1. **Course tutor** — if your course page shows a **RAGflow Tutor**, open the chat and ask about the
    course material.
-2. **Document search** — if there is a **RAGflow search** box, type a query to find the matching files.
+2. **Document search** — if there is a **RAGflow file search** box, type a query to find the matching files.
 3. **Helpdesk** — if your site shows a **RAGflow Helpdesk** in the menu, use it for general questions.
 
 → Full detail: [Student guide](guides/student.md)

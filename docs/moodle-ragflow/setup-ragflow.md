@@ -73,7 +73,7 @@ In your RAGflow instance:
 <!-- shot:setup-08 -->
 <!-- shot:setup-09 -->
 
-1. Go to **Site administration → General → AI → AI providers** (Moodle's AI subsystem).
+1. Go to **Site administration → AI → AI providers** (Moodle's AI subsystem).
 2. **Add** a new *RAGflow* provider instance.
 3. Enter the **base URL** and **API key** from your RAGflow instance.
 4. Configure the actions you want (chat, and optionally source display / memory) and select the
@@ -92,7 +92,7 @@ Each surface is enabled independently:
 
 - **[Tutor block](plugins/tutor.md)** — add the *RAGflow Tutor* block to a course; teachers upload
   course documents into the block's own knowledge base.
-- **[Search block](plugins/search.md)** — add the *RAGflow Search* block to a course or dashboard.
+- **[Search block](plugins/search.md)** — add the *RAGflow file search* block to a course or dashboard.
 - **[Helpdesk placement](plugins/helpdesk.md)** — enable the placement under **AI → AI placements**;
   a help drawer appears site-wide.
 - **[Usage dashboard](plugins/dashboard.md)** — view under **Site administration → Reports → RAGflow

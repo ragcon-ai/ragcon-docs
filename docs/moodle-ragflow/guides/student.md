@@ -21,7 +21,7 @@ answers.
 
 ## Searching documents
 
-If your course or dashboard has a **RAGflow search** box, type a query and you'll get the best-matching
+If your course or dashboard has a **RAGflow file search** box, type a query and you'll get the best-matching
 files back — this is a search, not a chat, so it finds material rather than answering in prose. Results
 appear as **one list ordered by match**, each row showing a **file-type icon**, the **file name** and a
 **"Match NN %"** score; documents and images/media appear together in the same ranked list. Click a file
