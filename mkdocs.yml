@@ -69,6 +69,7 @@ nav:
           - Usage dashboard: moodle-ragflow/plugins/dashboard.md
       - Moodle version specifics: moodle-ragflow/moodle-version-notes.md
       - Security &amp; data protection: moodle-ragflow/security.md
+      - Releases: moodle-ragflow/releases.md
       - User guides:
           - For administrators: moodle-ragflow/guides/admin.md
           - For trainers: moodle-ragflow/guides/trainer.md
