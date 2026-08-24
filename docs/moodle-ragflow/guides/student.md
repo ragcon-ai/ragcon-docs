@@ -5,6 +5,8 @@ your teachers and administrators.
 
 ## The course tutor
 
+<!-- shot:student-01 -->
+
 If your course has a **RAGflow Tutor**, you'll see a chat you can open on the course page.
 
 1. Open the tutor and type your question.
@@ -26,6 +28,8 @@ appear as **one list ordered by match**, each row showing a **file-type icon**, 
 name to open or download it, and hover the **info icon** next to a result to preview the matching text.
 
 ## The help drawer (Helpdesk)
+
+<!-- shot:student-02 -->
 
 Some sites have a site-wide **RAGflow Helpdesk** in the menu — a help chat answering general questions
 about the platform. It can remember your conversation so follow-ups keep context. If **private mode** is

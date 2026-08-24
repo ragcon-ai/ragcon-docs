@@ -11,6 +11,9 @@ provider, so you only do this setup a single time.
 
 ## Before you start: configure your models
 
+<!-- shot:setup-01 -->
+<!-- shot:setup-02 -->
+
 New RAGflow accounts do **not** receive default models automatically — each account adds its **own**
 models under *Model providers* (a **chat**, an **embedding** and, optionally, a **rerank** model) and then
 picks defaults under *Set default models*. Do this **before** using the Moodle plugins.
@@ -27,6 +30,10 @@ picks defaults under *Set default models*. Do this **before** using the Moodle p
       *"Provider not found for model …"* (see the [admin FAQ](guides/admin.md#faq)).
 
 ## 1. Prepare a knowledge base in RAGflow
+
+<!-- shot:setup-03 -->
+<!-- shot:setup-04 -->
+<!-- shot:setup-05 -->
 
 In your RAGflow instance:
 
@@ -48,6 +55,11 @@ In your RAGflow instance:
     model appropriate to your content.
 
 ## 2. Add the RAGflow AI provider in Moodle
+
+<!-- shot:setup-06 -->
+<!-- shot:setup-07 -->
+<!-- shot:setup-08 -->
+<!-- shot:setup-09 -->
 
 1. Go to **Site administration → General → AI → AI providers** (Moodle's AI subsystem).
 2. **Add** a new *RAGflow* provider instance.
@@ -77,12 +89,14 @@ Each surface is enabled independently:
 ## 4. Permissions
 
 - `aiprovider/ragflow:viewerrordetails` — who may see the **technical error cause** on a failed chat
-  (default: Manager + Teacher; site admins always). Keep it off for ordinary users, since the cause
+  (default: Manager + editing Teacher; site admins always). Keep it off for ordinary users, since the cause
   can reveal server-side internals.
 - Each surface has its own `:use` capability (e.g. `block/ragflowtutor:use`,
   `aiplacement/ragflowhelpdesk:use`) and management capabilities for editing knowledge bases.
 
 ## Troubleshooting
+
+<!-- shot:setup-10 -->
 
 | Symptom | Likely cause | What to check |
 |---|---|---|

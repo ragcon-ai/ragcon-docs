@@ -12,7 +12,15 @@ course. Each block instance has its **own knowledge base**: teachers upload cour
 manage them directly in the block. The chat engine, credentials and knowledge-base API live in the
 shared [AI provider](provider.md).
 
+<!-- shot:tutor-01 -->
+
 ## Features
+
+<!-- shot:tutor-02 -->
+<!-- shot:tutor-07 -->
+<!-- shot:tutor-08 -->
+<!-- shot:tutor-09 -->
+<!-- shot:tutor-10 -->
 
 - **Course tutor chat drawer** for anyone with the *use* capability; the transcript is browser-side,
   with a per-user rate guard in the shared engine.
@@ -52,6 +60,8 @@ Fields are shown according to the editor's capabilities (site admins see all).
 
 **Knowledge base / assistant** *(admin, change-KB or create-KB)*
 
+<!-- shot:tutor-04 -->
+
 | Field | Type | Default | Meaning |
 |---|---|---|---|
 | **Knowledge base / assistant** (`config_chatid`) | select | — | The RAGflow assistant this Tutor uses. Users with *create KB* also get "➕ Create new knowledge base …". |
@@ -59,12 +69,16 @@ Fields are shown according to the editor's capabilities (site admins see all).
 
 **Content** *(admin or edit-content — trainers)*
 
+<!-- shot:tutor-05 -->
+
 | Field | Type | Default | Meaning |
 |---|---|---|---|
 | **Greeting message** (`config_greeting`) | text | course-tutor default | First message shown when the chat opens. |
 | **System instruction** (`config_systeminstruction`) | textarea | built-in default prompt | Instruction prepended to each request. |
 
 **Document source & citations** *(site admin only; labels from the provider)*
+
+<!-- shot:tutor-06 -->
 
 | Field | Type | Default | Meaning |
 |---|---|---|---|
@@ -86,6 +100,8 @@ Fields are shown according to the editor's capabilities (site admins see all).
     cannot clear the admin-only knowledge-base / source settings.
 
 ## Sources & citations
+
+<!-- shot:tutor-03 -->
 
 When **Include sources** is on, the Tutor lists the documents behind each answer **from the model's own
 citations** — i.e. only the documents the answer actually used, not a separate, blind similarity search.

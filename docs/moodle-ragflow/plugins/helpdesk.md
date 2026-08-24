@@ -11,7 +11,13 @@ primary/more menu that opens a chat page answering from an organisation-wide RAG
 (system context, no course scope) — typically your help/FAQ/support content. It owns its own settings
 and drives the shared chat engine from the [AI provider](provider.md).
 
+<!-- shot:helpdesk-02 -->
+
 ## Features
+
+<!-- shot:helpdesk-01 -->
+<!-- shot:helpdesk-03 -->
+<!-- shot:helpdesk-04 -->
 
 - **Site-wide navigation entry → chat page** at the system context, shown only when the user is logged
   in (not a guest), has the *use* capability, and the placement is enabled and configured.
@@ -26,6 +32,8 @@ and drives the shared chat engine from the [AI provider](provider.md).
 ## Configuration
 
 ### Admin settings — *Site administration → Plugins → AI placements → RAGflow Helpdesk*
+
+<!-- shot:helpdesk-05 -->
 
 | Setting | Type | Default | Meaning |
 |---|---|---|---|

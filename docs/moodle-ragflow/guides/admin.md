@@ -11,6 +11,8 @@ For teaching staff see the [trainer guide](trainer.md); for learners the [studen
 
 ## 1. Install the plugins
 
+<!-- shot:admin-01 -->
+
 Install in dependency order — the **AI provider first**, then the rest:
 
 1. `aiprovider_ragflow` (provider — required by all others)
@@ -36,6 +38,8 @@ key. The provider is the shared backend for every other plugin.
 | **[Usage dashboard](../plugins/dashboard.md)** | *Plugins → Local plugins → RAGflow Dashboard settings* | retention, anonymise, debug content limit, per-feature debug, raw API-call log |
 
 ## 4. Permissions
+
+<!-- shot:admin-02 -->
 
 - `aiprovider/ragflow:viewerrordetails` — who sees the **technical cause** of a failed chat (default
   Manager + editing Teacher; admins always). Keep it off for ordinary users, as it can reveal server internals.

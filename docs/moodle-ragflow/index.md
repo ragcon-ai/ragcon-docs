@@ -5,6 +5,8 @@ learners can ask questions and get answers grounded in your own documents (retri
 generation). It is built on Moodle's **AI subsystem**: a single AI provider talks to RAGflow, and
 several placements/blocks consume it.
 
+<!-- shot:hero-01 -->
+
 ## What's in the suite
 
 | Plugin | Type | What it does |

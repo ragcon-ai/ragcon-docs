@@ -15,6 +15,9 @@ proxy that the Tutor, Search and Helpdesk plugins consume. **Install and configu
 
 ## Features
 
+<!-- shot:provider-02 -->
+<!-- shot:provider-04 -->
+
 - **Core AI actions:** serves `generate_text`, `summarise_text`, `explain_text`, each answered by the
   configured RAGflow assistant.
 - **Assistant-driven model:** the assistant's own model and knowledge base are used; a live dropdown
@@ -53,6 +56,8 @@ config. There is no classic settings page.
 
 ### Provider instance — *Site administration → AI → AI providers → RAGflow API provider*
 
+<!-- shot:provider-01 -->
+
 | Setting | Type | Default | Meaning |
 |---|---|---|---|
 | **RAGflow API key** (`apikey`) | password (required) | — | Your RAGflow API key (RAGflow → *User settings → API*). Sent as the Bearer token and used to list assistants. |
@@ -62,6 +67,8 @@ config. There is no classic settings page.
 The provider counts as *configured* only when both API key and base URL are set.
 
 ### Per-action config — *per Generate / Summarise / Explain text action*
+
+<!-- shot:provider-03 -->
 
 | Setting | Type | Default | Meaning |
 |---|---|---|---|

@@ -60,3 +60,21 @@
     font-size: 0.75rem;
   }
 }
+
+/* -------- Screenshots (docs/moodle-ragflow/img) --------
+   Block images (each on its own line/paragraph) get a light frame + radius so
+   they read well in both the light and dark palettes. Inline icons are not
+   affected. A caption is written as an emphasised line directly under the image. */
+.md-typeset p > img,
+.md-typeset figure img {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.35rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  max-width: 100%;
+  height: auto;
+}
+[data-md-color-scheme="slate"] .md-typeset p > img,
+[data-md-color-scheme="slate"] .md-typeset figure img {
+  border-color: var(--md-default-fg-color--light);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+}

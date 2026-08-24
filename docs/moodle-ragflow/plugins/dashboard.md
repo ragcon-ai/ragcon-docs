@@ -14,6 +14,13 @@ own status checks and analytics.
 
 ## Features
 
+<!-- shot:dashboard-01 -->
+<!-- shot:dashboard-02 -->
+<!-- shot:dashboard-03 -->
+<!-- shot:dashboard-05 -->
+<!-- shot:dashboard-06 -->
+<!-- shot:dashboard-08 -->
+
 The report opens at *Site administration → Reports → RAGflow Dashboard* and is organised into **tabs**. A
 **view** selector (All features + one per installed source) and a **period** selector (today / 2 / 3 / 7 /
 14 / 30 / 90 days, default **today**) filter the analytics tabs; controls reload over AJAX. Charts use
@@ -63,6 +70,8 @@ work).
 
 ## What is counted (tokens)
 
+<!-- shot:dashboard-04 -->
+
 !!! note "Token accounting — scope and no guarantee"
     Tokens are counted **for chat only** (search consumes none) and only for chats that use RAGflow's
     **OpenAI-compatible** endpoint. Chats with **session memory** use RAGflow's native endpoint, which
@@ -73,6 +82,8 @@ work).
 ## Configuration
 
 ### Admin settings — *Site administration → Plugins → Local plugins → RAGflow Dashboard settings*
+
+<!-- shot:dashboard-07 -->
 
 | Setting | Type | Default | Meaning |
 |---|---|---|---|

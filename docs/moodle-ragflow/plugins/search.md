@@ -13,7 +13,13 @@ cheap; the **optional rerank model** is a cross-encoder (it only re-scores/reord
 generate), which sharpens the ordering at a little extra latency. The search widget itself is hosted by
 the shared [AI provider](provider.md); the block chooses the knowledge base and scope per instance.
 
+<!-- shot:search-01 -->
+
 ## Features
+
+<!-- shot:search-02 -->
+<!-- shot:search-03 -->
+<!-- shot:search-06 -->
 
 - **Placeable on any page** (courses, the Dashboard, the front page, …).
 - **Semantic search over one or more RAGflow datasets**, chosen per block instance.
@@ -41,6 +47,8 @@ cannot clear the choice). The only **site-wide** setting is an optional logging 
 
 ### Per-instance block config (*Configure this RAGflow search block*)
 
+<!-- shot:search-04 -->
+
 | Setting | Type | Default | Meaning |
 |---|---|---|---|
 | **Knowledge base(s)** (`config_datasets`) | autocomplete (multiple) | none (required) | The RAGflow dataset(s) this block searches. Select one or more; the block does not search until at least one is chosen. |
@@ -59,6 +67,8 @@ cannot clear the choice). The only **site-wide** setting is an optional logging 
 | **Write log data** (`logtomoodle`) | checkbox | off | Write a concise usage/error entry (metrics only) to the Moodle standard log per search; independent of the RAGflow [dashboard](dashboard.md). |
 
 ## Result quality (fewer, better matches)
+
+<!-- shot:search-05 -->
 
 The search is tuned to return a **short, relevant list** instead of a fixed number of hits. The defaults
 are sensible and work out of the box; the **semantic weight**, **minimum relevance**, **maximum results**
