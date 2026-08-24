@@ -14,9 +14,21 @@ provider, so you only do this setup a single time.
 <!-- shot:setup-01 -->
 <!-- shot:setup-02 -->
 
-New RAGflow accounts do **not** receive default models automatically — each account adds its **own**
-models under *Model providers* (a **chat**, an **embedding** and, optionally, a **rerank** model) and then
-picks defaults under *Set default models*. Do this **before** using the Moodle plugins.
+New RAGflow accounts do **not** receive default models automatically — each account first **connects its
+own models** under *Model providers*, then **sets a default for each type** under *Set default models*. Do
+this **before** using the Moodle plugins: they always use your account's **current default** models.
+
+Connect and set as default, at least:
+
+| Model type | Needed | What it does |
+|---|---|---|
+| **Chat** (LLM) | **Required** | Powers every assistant and answer. |
+| **Embedding** | **Required** | Builds and searches every knowledge base. |
+| **Img2txt** (image-to-text) | **Recommended** | Reads text from images / scanned pages so those documents become searchable. |
+| **Rerank** | **Recommended** | Improves retrieval precision (the Search block can use it). |
+| Other (speech-to-text, TTS, …) | Optional | Only if you have a specific need. |
+
+Then open *Set default models* and pick a **working** default for **each** connected type.
 
 !!! warning "The default embedding model matters"
     A knowledge base is embedded with your account's **current default embedding model** at the moment it

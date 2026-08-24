@@ -11,7 +11,8 @@ Set up the shared backend first, then switch on only the surfaces you want.
 1. **Install the plugins** in dependency order — the **provider first**.
    *Site administration → Plugins → Install plugins* (`/admin/tool/installaddon/index.php`).
    Order: `aiprovider_ragflow` → Helpdesk / Tutor / Search → Dashboard *(optional)*.
-2. **Prepare RAGflow** — create a dataset + assistant in your RAGflow instance.
+2. **[Prepare RAGflow](setup-ragflow.md)** — connect your models (chat + embedding required; img2txt +
+   rerank recommended) and set them as defaults, then create a dataset + assistant.
 3. **Add the AI provider instance** — enter the base URL + API key.
    *Site administration → AI → AI providers* (`/ai/configure_providers.php`).
 4. **Switch on the surfaces you want:**
