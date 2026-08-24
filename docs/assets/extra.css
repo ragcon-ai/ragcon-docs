@@ -78,3 +78,27 @@
   border-color: var(--md-default-fg-color--light);
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
 }
+
+/* A screenshot block is `![alt](img)` immediately followed by `*caption*`, so both land in one paragraph.
+   Put the image on its own line and the caption on its own line BELOW it (not inline beside a narrowed
+   image, which would wrap), rendered small and muted. */
+.md-typeset p > img {
+  display: block;
+}
+.md-typeset p > img + em {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 0.85em;
+  line-height: 1.35;
+  color: var(--md-default-fg-color--light);
+}
+
+/* Narrow banner screenshots (thin, very wide strips) would stretch across the whole column and read like
+   an error at full width. Cap them; the caption still sits below. Matched by file name so a re-captured
+   image needs no markdown change. */
+.md-typeset p > img[src$="helpdesk-01-nav-entry.png"],
+.md-typeset p > img[src$="helpdesk-04-conversation-controls.png"],
+.md-typeset p > img[src$="setup-09-moodle-provider-enabled.png"],
+.md-typeset p > img[src$="dashboard-08-export.png"] {
+  max-width: 50%;
+}
