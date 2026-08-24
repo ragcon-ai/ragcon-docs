@@ -44,6 +44,13 @@ The provider is a dependency of every other plugin, so install it **first**:
    **[administrators](guides/admin.md)**, **[trainers](guides/trainer.md)** and
    **[students](guides/student.md)**.
 
+## Development
+
+!!! info "Developed by RAGcon GmbH"
+    The Moodle RAGflow Suite is developed with the help of a range of **AI tools**, under the professional
+    **supervision of the RAGcon GmbH team** — pairing fast, AI-assisted development with human review,
+    automated testing and security checks before every release.
+
 ## Built on Moodle and RAGflow
 
 !!! info "The software this suite builds on"
