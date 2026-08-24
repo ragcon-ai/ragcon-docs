@@ -105,6 +105,19 @@ with reranking on, noticeably sharper ordering — all with sensible defaults ou
     Choosing the knowledge base and scope is restricted to **site administrators** (not a capability),
     because a dataset is a site-wide resource.
 
+## Roles & permissions (who can do what)
+
+The search block has **no dedicated "use" capability** — anyone who can **see** the block can search it
+and open results. Permissions only govern **who may add the block** and **who wires its knowledge base**.
+
+| Role | What this role can do |
+|---|---|
+| **Site administrator** | Add the block anywhere **and** choose its **knowledge base + scope** (a site-wide dataset resource, admin-only — not a capability). Also sets the site-wide block setting. |
+| **Manager · Teacher (editing)** | **Add** a search block to a course page (`:addinstance`) and set its display options; **cannot** choose the knowledge base / scope (site-admin only). |
+| **Any authenticated user** | Add the block to their **own Dashboard / My home** (`:myaddinstance`). |
+| **Non-editing teacher · Student · anyone who can view the block** | **Search** and open results — no extra permission needed beyond seeing the block. |
+| **Guest / not logged in** | Can search only where guest viewing of the page is allowed; otherwise no access. |
+
 ## Privacy
 
 The block **stores no personal data**. Search queries are sent to the configured RAGflow service by

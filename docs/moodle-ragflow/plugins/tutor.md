@@ -142,6 +142,20 @@ This avoids weakly-related documents showing up as "sources".
     their role. Grant `:editkb` (and optionally `:createkb`) to the teacher role if you want trainers to
     wire it themselves.
 
+## Roles & permissions (who can do what)
+
+| Role | What this role can do |
+|---|---|
+| **Site administrator** | Everything below, in any course. |
+| **Manager** | Add the block, chat, edit the greeting / system instruction, manage the KB's documents — **and** the only role that may **change or create** the knowledge base / assistant (`:editkb` / `:createkb`). Wires the KB. |
+| **Teacher (editing)** | **Add** the block (`:addinstance`), **chat** (`:use`), **edit** the greeting + system instruction (`:editcontent`), and **manage documents** of a Moodle-managed KB — upload / delete / see the KB panel (`:managefiles`). **Cannot** choose or create the KB itself (manager only, by default). |
+| **Non-editing teacher** | **Chat** with the tutor (`:use`). No configuration. |
+| **Student** | **Chat** with the tutor (`:use`). No configuration. |
+| **Guest / not logged in** | No access. |
+
+See the *"Who wires the knowledge base"* note above to let editing teachers wire the KB themselves
+(grant `:editkb` / `:createkb`).
+
 ## Privacy
 
 The block **stores no personal data itself**. The conversation exists only in the browser; prompts are

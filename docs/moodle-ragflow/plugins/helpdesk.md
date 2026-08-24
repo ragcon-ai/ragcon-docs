@@ -58,6 +58,16 @@ and drives the shared chat engine from the [AI provider](provider.md).
 |---|---|---|
 | `aiplacement/ragflowhelpdesk:use` | Authenticated user (site context) | See and use the Helpdesk drawer (guests excluded). |
 
+## Roles & permissions (who can do what)
+
+| Role | What this role can do |
+|---|---|
+| **Site administrator** | Enables and configures the placement (*Site administration → Plugins → AI placements → RAGflow Helpdesk*: which AI actions appear, availability) **and** uses the drawer. |
+| **Manager · Teacher (editing & non-editing) · Student · any authenticated user** | **See and use** the site-wide Helpdesk drawer (`:use`). |
+| **Guest / not logged in** | No access — the drawer requires a logged-in account. |
+
+In short: **everyone who is logged in can use the Helpdesk**; only site administrators configure it.
+
 ## Privacy
 
 The placement **stores no personal data** in Moodle — the conversation exists in the browser / a

@@ -92,6 +92,20 @@ The provider counts as *configured* only when both API key and base URL are set.
 |---|---|---|
 | `aiprovider/ragflow:viewerrordetails` | Manager, Editing teacher (site admins always) | See the **technical cause** of a failed chat (a *Details* disclosure). The cause can reveal server-side internals (e.g. a RAGflow embedding error or `HTTP 502`), so it is withheld from ordinary users — enforced server-side, `RISK_CONFIG`. |
 
+## Roles & permissions (who can do what)
+
+The provider has **no interface of its own** — it powers the Tutor, Helpdesk and Search plugins, each of
+which enforces its own permissions. The only things governed here are **who configures the connection**
+and **who sees the technical cause of a failed request**.
+
+| Role | What this role can do |
+|---|---|
+| **Site administrator** | Full control: create / configure the RAGflow provider instance (URL, API key, models, rate limits) under *Site administration → AI → AI providers*, enable it for the AI actions, and see the *Details* cause of a failed chat everywhere. |
+| **Manager** | Sees the **technical *Details*** of a failed chat (`:viewerrordetails`). Does **not** configure the provider — that is a site-admin area — unless separately granted `moodle/site:config`. |
+| **Teacher (editing)** | Sees the *Details* of a failed chat **in their course**. |
+| **Non-editing teacher · Student · any authenticated user** | Use the AI features built on the provider (per those plugins' own rules), but on a failure only get a **generic message** — the technical cause is withheld. |
+| **Guest / not logged in** | No access. |
+
 ## Privacy
 
 By default the plugin stores **no personal data** in Moodle. Prompts (and, with long-term memory on,

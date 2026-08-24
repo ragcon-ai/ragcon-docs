@@ -102,6 +102,17 @@ work).
 |---|---|---|
 | `local/ragflowdashboard:view` | Manager (admin report) | View the dashboard, logs, debug captures and export. Intentionally **not** granted to teaching roles, since the data reveals usage patterns. |
 
+## Roles & permissions (who can do what)
+
+| Role | What this role can do |
+|---|---|
+| **Site administrator · Manager** | **View** the dashboard — KPIs, charts, logs, debug captures and export (`:view`). |
+| **Teacher (editing & non-editing) · Student** | **No access** by default — the usage data reveals usage patterns, so it is intentionally not granted to any teaching or learning role. |
+| **Guest / not logged in** | No access. |
+
+Grant `local/ragflowdashboard:view` to another role only if you deliberately want it to see site-wide
+usage data.
+
 ## Data model
 
 - **`local_ragflowdashboard_log`** — one row per request, **metrics only**: time, component, action, user
