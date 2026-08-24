@@ -30,3 +30,37 @@
     </p>
   </div>
 {% endblock %}
+
+{#
+  Global docs chat widget (RAGflow shared assistant). RAGflow's own floating widget:
+  a small launcher iframe renders the button; a postMessage listener (RAGflow origin only)
+  creates/toggles the chat window. Loaded at the end of <body> on every page. The `auth`
+  token is a per-assistant PUBLIC share token (scoped to the docs assistant), not the tenant
+  API key — safe to ship in the static site.
+#}
+{% block scripts %}
+  {{ super() }}
+  <iframe
+    src="https://ragflow.ragcon.ai/chats/widget?shared_id=f25673d89fd211f1baa77b4804fbdd53&from=chat&auth=g1ZmNiYmI0Nzc5OTExZjBhNDdhOGU3Zj&visible_avatar=1&locale=en&mode=master&streaming=true&muted=false&widget_accent_color=%232563eb&widget_background_color=%23ffffff&widget_text_color=%23111827&widget_header_text_color=%23ffffff&widget_footer_text_color=%23111827"
+    style="position:fixed;bottom:0;right:0;width:100px;height:100px;border:none;background:transparent;z-index:9999"
+    frameborder="0"
+    allow="microphone;camera"
+    title="RAGcon documentation assistant"
+  ></iframe>
+  <script>
+  window.addEventListener('message', e => {
+    if (e.origin !== 'https://ragflow.ragcon.ai') return;
+    if (e.data.type === 'CREATE_CHAT_WINDOW') {
+      if (document.getElementById('chat-win')) return;
+      const i = document.createElement('iframe');
+      i.id = 'chat-win'; i.src = e.data.src;
+      i.style.cssText = 'position:fixed;bottom:104px;right:24px;width:380px;height:500px;border:none;background:transparent;z-index:9998;display:none';
+      i.frameBorder = '0'; i.allow = 'microphone;camera';
+      document.body.appendChild(i);
+    } else if (e.data.type === 'TOGGLE_CHAT') {
+      const w = document.getElementById('chat-win');
+      if (w) w.style.display = e.data.isOpen ? 'block' : 'none';
+    } else if (e.data.type === 'SCROLL_PASSTHROUGH') window.scrollBy(0, e.data.deltaY);
+  });
+  </script>
+{% endblock %}
