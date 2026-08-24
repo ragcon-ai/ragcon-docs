@@ -114,13 +114,13 @@ This avoids weakly-related documents showing up as "sources".
   to which answer as the conversation (and the stacked Sources panel) grows.
 - A cited document is always listed, even if it is an **image or other low-text-similarity file** — the
   model's citation is the relevance signal.
-- If the model cites nothing (rare), the Tutor falls back to a topical document list for the question, so
-  the Sources panel is never empty.
+- If the model cites nothing — including a **"nothing relevant found"** answer — the Sources panel stays
+  **empty**: a not-found answer never shows a source.
 
 !!! note "Keep the `[ID]` markers in a custom system instruction"
     The citation list depends on the model emitting its `[ID]` reference markers. The default **System
     instruction** asks the model to keep them; if you customise it per course, do **not** tell the model
-    to omit `[ID]` references, or the source list falls back to the topical list.
+    to omit `[ID]` references, or answers will show no sources at all.
 
 ## Capabilities
 
