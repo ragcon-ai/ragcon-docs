@@ -41,7 +41,9 @@ counts) and a colour-coded data table (a swatch per row) under each categorical 
   states: **OK** (green), **degraded** (amber — usable but e.g. the knowledge base has no documents yet or
   is not parsed), **missing** (red — the assistant/knowledge base was deleted in RAGflow), **could not be
   verified** (amber — RAGflow was unreachable, so this is a connection problem, *not* a configuration
-  fault) and **not configured** (red). *Missing* and *could not be verified* are never conflated. Each
+  fault) and **not configured** (a **blue notice** — nothing set up yet, e.g. no provider credentials or no
+  assistant/knowledge base chosen; not a fault). *Missing* and *could not be verified* are never conflated.
+  Red is reserved for genuine faults (a deleted reference, an unreachable RAGflow or a failed call). Each
   check is a collapsible row; the concrete **API call** used as proof is shown only to users with the
   *view error details* capability. A per-area refresh re-runs just that box and refreshes the shared result
   for the other surfaces too.
