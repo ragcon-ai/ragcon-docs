@@ -133,6 +133,15 @@ This avoids weakly-related documents showing up as "sources".
 | `block/ragflowtutor:createkb` | Manager | Create a new knowledge base from the block |
 | `block/ragflowtutor:managefiles` | Teacher, Manager | Manage the documents of a Moodle-managed KB (and see the KB panel) |
 
+!!! note "Who wires the knowledge base"
+    Adding the block is a **teacher**-level action, but **choosing or creating** its knowledge base /
+    assistant needs *change* / *create knowledge base* — **Manager** (or site admin) by default. The two
+    roles split cleanly: a manager wires the knowledge base once; teachers then manage its documents and
+    set the greeting / system instruction. Until a manager wires one, a teacher who opens the still
+    unconfigured block is told to **ask a site administrator** — the knowledge-base field is not shown to
+    their role. Grant `:editkb` (and optionally `:createkb`) to the teacher role if you want trainers to
+    wire it themselves.
+
 ## Privacy
 
 The block **stores no personal data itself**. The conversation exists only in the browser; prompts are

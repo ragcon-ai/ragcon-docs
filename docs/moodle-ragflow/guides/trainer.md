@@ -20,13 +20,17 @@ defaults: teachers can use, add and manage files; managers can also create/chang
 
 1. In your course, turn **editing on**.
 2. **Add a block → RAGflow Tutor**.
-3. Open the block's **Configure** screen and choose a **knowledge base / assistant**:
+3. Open the block's **Configure** screen. **Selecting or creating the knowledge base / assistant is a
+   manager / site-administrator task by default** — if your role has it, you'll see the field:
     - pick an existing one, or
-    - (if allowed) choose **➕ Create new knowledge base…** and give it a name — the block creates a
-      fresh RAGflow knowledge base for this course. Leave **Manage files from this block** ticked (the
-      default) to upload and manage its documents from the in-block panel; untick it to only connect
-      Moodle to the new knowledge base and manage the documents in RAGflow itself. This choice is fixed
-      once the block is created.
+    - choose **➕ Create new knowledge base…** and give it a name — the block creates a fresh RAGflow
+      knowledge base for this course. Leave **Manage files from this block** ticked (the default) to
+      upload and manage its documents from the in-block panel; untick it to only connect Moodle to the
+      new knowledge base and manage the documents in RAGflow itself. This choice is fixed once the block
+      is created.
+
+    If you don't see this field, the block shows a hint to **ask a site administrator** to choose a
+    knowledge base. Once they have, come back and add your documents below.
 4. Optionally set a **greeting**, a **system instruction** (tone, rules, "answer only from the course
    materials", etc.) and whether to **show sources** with answers (*Include sources*).
 
