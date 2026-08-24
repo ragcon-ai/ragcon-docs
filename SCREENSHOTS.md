@@ -46,5 +46,7 @@ image file, so every embedded shot must have its PNG committed.
 - `crop: element` = just the relevant card/form; `crop: viewport` only when the page context
   is the point.
 
-> The screenshots currently under `screenshots-staging/` in the marketplace repo are a
-> **discarded test run** (older plugin UI) and are not used.
+> The valid screenshots live under `screenshots-staging/<group>/` in the marketplace repo — the **Round 2**
+> set (2× captures, redacted, OCR-checked). Only `screenshots-staging/_round1-stale/` is a discarded earlier
+> run (older plugin UI); `_inbox/` and `_findings/` are scratch. Import them here with
+> `tools/import-screenshots.py --marketplace <path-to-moodle-marketplace>`.
