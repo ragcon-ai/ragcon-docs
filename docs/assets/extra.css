@@ -95,10 +95,9 @@
 
 /* Narrow banner screenshots (thin, very wide strips) would stretch across the whole column and read like
    an error at full width. Cap them; the caption still sits below. Matched by file name so a re-captured
-   image needs no markdown change. */
+   image needs no markdown change. Only the tall-enough strips are capped -- images that are already very
+   short (helpdesk-04, dashboard-08) stay full width, or shrinking the width would make them illegible. */
 .md-typeset p > img[src$="helpdesk-01-nav-entry.png"],
-.md-typeset p > img[src$="helpdesk-04-conversation-controls.png"],
-.md-typeset p > img[src$="setup-09-moodle-provider-enabled.png"],
-.md-typeset p > img[src$="dashboard-08-export.png"] {
+.md-typeset p > img[src$="setup-09-moodle-provider-enabled.png"] {
   max-width: 50%;
 }
