@@ -7,6 +7,9 @@ your teachers and administrators.
 
 <!-- shot:student-01 -->
 
+![Student view of a Moodle course with the RAGflow Tutor drawer open](../img/guides/student-01-tutor-student-view.png)
+*What students see: the Tutor block and its chat drawer.*
+
 If your course has a **RAGflow Tutor**, you'll see a chat you can open on the course page.
 
 1. Open the tutor and type your question.
@@ -30,6 +33,9 @@ name to open or download it, and hover the **info icon** next to a result to pre
 ## The help drawer (Helpdesk)
 
 <!-- shot:student-02 -->
+
+![Student view of the RAGflow Helpdesk chat page](../img/guides/student-02-helpdesk-student-view.png)
+*The help drawer is available site-wide, outside any course.*
 
 Some sites have a site-wide **RAGflow Helpdesk** in the menu — a help chat answering general questions
 about the platform. It can remember your conversation so follow-ups keep context. If **private mode** is

@@ -7,6 +7,9 @@ several placements/blocks consume it.
 
 <!-- shot:hero-01 -->
 
+![Moodle course page with the RAGflow Tutor block and the RAGflow Search block](img/hero/hero-01-suite-overview.png)
+*The RAGflow suite in a course: Tutor block and Search block side by side.*
+
 ## What's in the suite
 
 | Plugin | Type | What it does |

@@ -13,11 +13,25 @@ and drives the shared chat engine from the [AI provider](provider.md).
 
 <!-- shot:helpdesk-02 -->
 
+![RAGflow Helpdesk chat page with the greeting and a first answer](../img/helpdesk/helpdesk-02-chat-page.png)
+*The help drawer answers from your organisation-wide knowledge base.*
+
 ## Features
 
 <!-- shot:helpdesk-01 -->
+
+![Moodle primary navigation menu with the RAGflow Helpdesk entry](../img/helpdesk/helpdesk-01-nav-entry.png)
+*The placement adds a RAGflow Helpdesk entry to the site's primary menu.*
+
 <!-- shot:helpdesk-03 -->
+
+![Helpdesk conversation where a follow-up question is answered in context](../img/helpdesk/helpdesk-03-session-memory.png)
+*Follow-up questions keep context; the transcript is restored on return.*
+
 <!-- shot:helpdesk-04 -->
+
+![Helpdesk drawer controls for new conversation, forget memory and private mode](../img/helpdesk/helpdesk-04-conversation-controls.png)
+*Users can start a new conversation, forget memory or chat privately.*
 
 - **Site-wide navigation entry → chat page** at the system context, shown only when the user is logged
   in (not a guest), has the *use* capability, and the placement is enabled and configured.
@@ -34,6 +48,9 @@ and drives the shared chat engine from the [AI provider](provider.md).
 ### Admin settings — *Site administration → Plugins → AI placements → RAGflow Helpdesk*
 
 <!-- shot:helpdesk-05 -->
+
+![Admin settings page of the RAGflow Helpdesk placement](../img/helpdesk/helpdesk-05-admin-settings.png)
+*Placement settings: assistant, greeting, memory and citations.*
 
 | Setting | Type | Default | Meaning |
 |---|---|---|---|

@@ -16,7 +16,14 @@ proxy that the Tutor, Search and Helpdesk plugins consume. **Install and configu
 ## Features
 
 <!-- shot:provider-02 -->
+
+![Open dropdown listing RAGflow assistants with their knowledge-base document counts](../img/provider/provider-02-assistant-dropdown.png)
+*The assistant dropdown is fetched live and shows each assistant's document count.*
+
 <!-- shot:provider-04 -->
+
+![AI answer ending with a Sources line and a linked list of source documents](../img/provider/provider-04-answer-with-citations.png)
+*Citations come from the model's own [ID] markers and are numbered per answer.*
 
 - **Core AI actions:** serves `generate_text`, `summarise_text`, `explain_text`, each answered by the
   configured RAGflow assistant.
@@ -58,6 +65,9 @@ config. There is no classic settings page.
 
 <!-- shot:provider-01 -->
 
+![RAGflow AI provider instance settings in Moodle](../img/provider/provider-01-instance-settings.png)
+*The provider instance holds the API key, base URL and download-link lifetime.*
+
 | Setting | Type | Default | Meaning |
 |---|---|---|---|
 | **RAGflow API key** (`apikey`) | password (required) | — | Your RAGflow API key (RAGflow → *User settings → API*). Sent as the Bearer token and used to list assistants. |
@@ -69,6 +79,9 @@ The provider counts as *configured* only when both API key and base URL are set.
 ### Per-action config — *per Generate / Summarise / Explain text action*
 
 <!-- shot:provider-03 -->
+
+![Per-action configuration form for the RAGflow provider showing document source and course scope](../img/provider/provider-03-action-config.png)
+*Per-action configuration: assistant, system instruction, document source and scope.*
 
 | Setting | Type | Default | Meaning |
 |---|---|---|---|

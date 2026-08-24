@@ -70,8 +70,19 @@ In your RAGflow instance:
 
 <!-- shot:setup-06 -->
 <!-- shot:setup-07 -->
+
+![Moodle AI providers overview page with the RAGflow provider listed](img/setup/setup-07-moodle-ai-providers-list.png)
+*Site administration → General → AI → AI providers.*
+
 <!-- shot:setup-08 -->
+
+![Moodle form for adding a RAGflow AI provider instance with base URL and API key](img/setup/setup-08-moodle-provider-form.png)
+*Enter the RAGflow base URL and API key once — all plugins reuse this instance.*
+
 <!-- shot:setup-09 -->
+
+![Moodle AI providers list showing the RAGflow provider enabled](img/setup/setup-09-moodle-provider-enabled.png)
+*Enable the provider — the suite plugins only work once it is active.*
 
 1. Go to **Site administration → AI → AI providers** (Moodle's AI subsystem).
 2. **Add** a new *RAGflow* provider instance.
@@ -109,6 +120,9 @@ Each surface is enabled independently:
 ## Troubleshooting
 
 <!-- shot:setup-10 -->
+
+![RAGflow chat error message with the Details disclosure expanded showing a blocked-URL request exception](img/setup/setup-10-error-details-disclosure.png)
+*Failed chats expose the technical cause under Details — here Moodle's own URL blocklist.*
 
 | Symptom | Likely cause | What to check |
 |---|---|---|

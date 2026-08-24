@@ -23,11 +23,34 @@ feature its own status checks and analytics.
 ## Features
 
 <!-- shot:dashboard-01 -->
+
+![Dashboard status tab with collapsible checks, one row expanded showing the API call](../img/dashboard/dashboard-01-status-tab.png)
+*Status checks per area, each row showing the API call used as proof.*
+
 <!-- shot:dashboard-02 -->
+
+![Dashboard usage tab with KPI cards and a requests-per-day chart](../img/dashboard/dashboard-02-usage-kpis.png)
+*KPI cards and requests per day, split into successful and failed.*
+
 <!-- shot:dashboard-03 -->
+
+![Dashboard charts showing requests by feature, top users and by course](../img/dashboard/dashboard-03-usage-breakdown.png)
+*Requests by feature, top users, user group and course.*
+
 <!-- shot:dashboard-05 -->
+
+![Dashboard API calls tab with filters and one expanded call row](../img/dashboard/dashboard-05-api-calls.png)
+*The raw API-call log with filters — the API key is never logged.*
+
 <!-- shot:dashboard-06 -->
+
+![Dashboard errors tab with a failures-by-error-type chart and recent errors](../img/dashboard/dashboard-06-errors-tab.png)
+*Failures grouped by labelled error type, with a recent-errors list.*
+
 <!-- shot:dashboard-08 -->
+
+![Dashboard export controls with a date range selector](../img/dashboard/dashboard-08-export.png)
+*Export the usage log (metrics only) for a date range.*
 
 The report opens at *Site administration → Reports → RAGflow Dashboard* and is organised into **tabs**. A
 **view** selector (All features + one per installed source) and a **period** selector (today / 2 / 3 / 7 /
@@ -82,6 +105,9 @@ work).
 
 <!-- shot:dashboard-04 -->
 
+![Dashboard tokens tab with prompt, completion and total token KPIs and charts](../img/dashboard/dashboard-04-tokens-tab.png)
+*Token consumption per day, by plugin and by provider instance.*
+
 !!! note "Token accounting — scope and no guarantee"
     Tokens are counted **for chat only** (search consumes none) and only for chats that use RAGflow's
     **OpenAI-compatible** endpoint. Chats with **session memory** use RAGflow's native endpoint, which
@@ -94,6 +120,9 @@ work).
 ### Admin settings — *Site administration → Plugins → Local plugins → RAGflow Dashboard settings*
 
 <!-- shot:dashboard-07 -->
+
+![Admin settings of the RAGflow Dashboard with retention and debug options](../img/dashboard/dashboard-07-admin-settings.png)
+*Retention, anonymisation and the per-feature debug toggles.*
 
 | Setting | Type | Default | Meaning |
 |---|---|---|---|

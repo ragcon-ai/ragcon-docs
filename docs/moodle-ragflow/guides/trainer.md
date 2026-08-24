@@ -18,6 +18,9 @@ defaults: teachers can use, add and manage files; managers can also create/chang
 
 <!-- shot:trainer-01 -->
 
+![Moodle Add a block dialog with RAGflow Tutor highlighted](../img/guides/trainer-01-add-block.png)
+*Turn editing on, then Add a block → RAGflow Tutor.*
+
 1. In your course, turn **editing on**.
 2. **Add a block → RAGflow Tutor**.
 3. Open the block's **Configure** screen. **Selecting or creating the knowledge base / assistant is a

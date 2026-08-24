@@ -13,6 +13,9 @@ For teaching staff see the [trainer guide](trainer.md); for learners the [studen
 
 <!-- shot:admin-01 -->
 
+![Moodle plugins overview listing the five RAGflow suite plugins with versions](../img/guides/admin-01-plugins-overview.png)
+*All five suite plugins after installation.*
+
 Install in dependency order — the **AI provider first**, then the rest:
 
 1. `aiprovider_ragflow` (provider — required by all others)
@@ -40,6 +43,9 @@ key. The provider is the shared backend for every other plugin.
 ## 4. Permissions
 
 <!-- shot:admin-02 -->
+
+![Moodle capability overview filtered for ragflow capabilities](../img/guides/admin-02-capabilities.png)
+*Capability overview — search for 'ragflow' in Define roles.*
 
 - `aiprovider/ragflow:viewerrordetails` — who sees the **technical cause** of a failed chat (default
   Manager + editing Teacher; admins always). Keep it off for ordinary users, as it can reveal server internals.

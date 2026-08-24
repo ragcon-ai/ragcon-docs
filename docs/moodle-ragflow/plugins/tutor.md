@@ -14,13 +14,35 @@ shared [AI provider](provider.md).
 
 <!-- shot:tutor-01 -->
 
+![Moodle course page with the RAGflow Tutor block in the sidebar](../img/tutor/tutor-01-block-in-course.png)
+*The Tutor block sits on the course page and opens a chat drawer.*
+
 ## Features
 
 <!-- shot:tutor-02 -->
+
+![Open RAGflow Tutor chat drawer showing the configured greeting message](../img/tutor/tutor-02-chat-drawer-greeting.png)
+*The drawer opens with the greeting configured for the course.*
+
 <!-- shot:tutor-07 -->
+
+![In-block knowledge base panel with a green status indicator and a list of files](../img/tutor/tutor-07-kb-panel-ready.png)
+*The knowledge-base panel: green means ready, with the file list below.*
+
 <!-- shot:tutor-08 -->
+
+![In-block knowledge base panel with a yellow status indicator during parsing](../img/tutor/tutor-08-kb-panel-parsing.png)
+*Yellow while the knowledge base is linking or files are still parsing.*
+
 <!-- shot:tutor-09 -->
+
+![Knowledge base panel with all three files showing the amber re-processing state](../img/tutor/tutor-09-kb-reprocess.png)
+*Teachers can re-process a document without re-uploading it.*
+
 <!-- shot:tutor-10 -->
+
+![File row in the knowledge base panel with re-process, download and delete actions](../img/tutor/tutor-10-kb-file-actions.png)
+*Per file: re-process, download through a signed link, or delete.*
 
 - **Course tutor chat drawer** for anyone with the *use* capability; the transcript is browser-side,
   with a per-user rate guard in the shared engine.
@@ -62,6 +84,9 @@ Fields are shown according to the editor's capabilities (site admins see all).
 
 <!-- shot:tutor-04 -->
 
+![Tutor block configuration with the knowledge base dropdown open showing Create new knowledge base](../img/tutor/tutor-04-config-knowledge-base.png)
+*Pick an existing assistant or create a brand-new knowledge base inline.*
+
 | Field | Type | Default | Meaning |
 |---|---|---|---|
 | **Knowledge base / assistant** (`config_chatid`) | select | — | The RAGflow assistant this Tutor uses. Users with *create KB* also get "➕ Create new knowledge base …". |
@@ -71,6 +96,9 @@ Fields are shown according to the editor's capabilities (site admins see all).
 
 <!-- shot:tutor-05 -->
 
+![Tutor block configuration showing the greeting and system instruction fields](../img/tutor/tutor-05-config-content.png)
+*Trainers can adjust greeting and system instruction without touching admin settings.*
+
 | Field | Type | Default | Meaning |
 |---|---|---|---|
 | **Greeting message** (`config_greeting`) | text | course-tutor default | First message shown when the chat opens. |
@@ -79,6 +107,9 @@ Fields are shown according to the editor's capabilities (site admins see all).
 **Document source & citations** *(site admin only; labels from the provider)*
 
 <!-- shot:tutor-06 -->
+
+![Tutor block configuration showing the read-only document source and the citation checkboxes](../img/tutor/tutor-06-config-sources.png)
+*The document source is fixed when the block is created; citation options stay editable — site admins only.*
 
 | Field | Type | Default | Meaning |
 |---|---|---|---|
@@ -102,6 +133,9 @@ Fields are shown according to the editor's capabilities (site admins see all).
 ## Sources & citations
 
 <!-- shot:tutor-03 -->
+
+![Tutor drawer with an answer, a Sources line and the Sources panel listing documents](../img/tutor/tutor-03-answer-with-sources-panel.png)
+*Each answer ends with a Sources line; the Sources panel lists the matching files.*
 
 When **Include sources** is on, the Tutor lists the documents behind each answer **from the model's own
 citations** — i.e. only the documents the answer actually used, not a separate, blind similarity search.

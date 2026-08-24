@@ -15,11 +15,20 @@ the shared [AI provider](provider.md); the block chooses the knowledge base and 
 
 <!-- shot:search-01 -->
 
+![RAGflow file search block on a Moodle course page with an empty search field](../img/search/search-01-block-idle.png)
+*The Search block adds a semantic search box to any page.*
+
 ## Features
 
 <!-- shot:search-02 -->
-<!-- shot:search-03 -->
+
+![Search results with relevance scores and text snippets linking to documents](../img/search/search-02-results-ranked.png)
+*Results carry a relevance score and a snippet and link to the source document.*
+
 <!-- shot:search-06 -->
+
+![Search block showing the not configured hint](../img/search/search-06-empty-state.png)
+*Users who may configure the block see a hint instead of a dead search box.*
 
 - **Placeable on any page** (courses, the Dashboard, the front page, …).
 - **Semantic search over one or more RAGflow datasets**, chosen per block instance.
@@ -49,6 +58,9 @@ cannot clear the choice). The only **site-wide** setting is an optional logging 
 
 <!-- shot:search-04 -->
 
+![Configuration form of the RAGflow search block showing datasets, scope and thresholds](../img/search/search-04-block-config.png)
+*All settings are per block instance: datasets, scope, rerank model and thresholds.*
+
 | Setting | Type | Default | Meaning |
 |---|---|---|---|
 | **Knowledge base(s)** (`config_datasets`) | autocomplete (multiple) | none (required) | The RAGflow dataset(s) this block searches. Select one or more; the block does not search until at least one is chosen. |
@@ -69,6 +81,9 @@ cannot clear the choice). The only **site-wide** setting is an optional logging 
 ## Result quality (fewer, better matches)
 
 <!-- shot:search-05 -->
+
+![Open rerank model dropdown listing the models available in RAGflow](../img/search/search-05-rerank-dropdown.png)
+*The rerank dropdown lists the rerank models available in your RAGflow.*
 
 The search is tuned to return a **short, relevant list** instead of a fixed number of hits. The defaults
 are sensible and work out of the box; the **semantic weight**, **minimum relevance**, **maximum results**
