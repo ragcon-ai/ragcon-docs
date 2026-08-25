@@ -93,11 +93,20 @@
   color: var(--md-default-fg-color--light);
 }
 
-/* Narrow banner screenshots (thin, very wide strips) would stretch across the whole column and read like
-   an error at full width. Cap them; the caption still sits below. Matched by file name so a re-captured
-   image needs no markdown change. Only the tall-enough strips are capped -- images that are already very
-   short (helpdesk-04, dashboard-08) stay full width, or shrinking the width would make them illegible. */
+/* Screenshots that read better smaller than the full column width -- narrow banner strips and tall /
+   oversized portrait shots -- are capped at 50%; the caption still sits below. Matched by file name so a
+   re-captured image needs no markdown change. Very short strips (helpdesk-04, dashboard-08) are NOT
+   listed: at 50% their height would shrink until they're illegible, so they stay full width. */
 .md-typeset p > img[src$="helpdesk-01-nav-entry.png"],
-.md-typeset p > img[src$="setup-09-moodle-provider-enabled.png"] {
+.md-typeset p > img[src$="setup-09-moodle-provider-enabled.png"],
+.md-typeset p > img[src$="trainer-01-add-block.png"],
+.md-typeset p > img[src$="tutor-02-chat-drawer-greeting.png"],
+.md-typeset p > img[src$="tutor-03-answer-with-sources-panel.png"],
+.md-typeset p > img[src$="tutor-07-kb-panel-ready.png"],
+.md-typeset p > img[src$="tutor-08-kb-panel-parsing.png"],
+.md-typeset p > img[src$="tutor-09-kb-reprocess.png"],
+.md-typeset p > img[src$="search-01-block-idle.png"],
+.md-typeset p > img[src$="search-02-results-ranked.png"],
+.md-typeset p > img[src$="search-06-empty-state.png"] {
   max-width: 50%;
 }
