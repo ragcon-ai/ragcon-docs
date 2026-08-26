@@ -4,7 +4,9 @@
     - **Repository:** [https://github.com/ragcon-ai/moodle-aiplacement_ragflowhelpdesk](https://github.com/ragcon-ai/moodle-aiplacement_ragflowhelpdesk){ target="_blank" rel="noopener" }
     - **Issues / bug tracker:** [https://github.com/ragcon-ai/moodle-aiplacement_ragflowhelpdesk/issues](https://github.com/ragcon-ai/moodle-aiplacement_ragflowhelpdesk/issues){ target="_blank" rel="noopener" }
 
-**Component:** `aiplacement_ragflowhelpdesk` · **Requires:** Moodle 5.0–5.2 · **Depends on:** `aiprovider_ragflow`
+**Component:** `aiplacement_ragflowhelpdesk`<br>
+**Requires:** Moodle 5.0–5.2<br>
+**Depends on:** `aiprovider_ragflow`
 
 A site-wide **help drawer** (an AI *placement*). It adds a **RAGflow Helpdesk** item to the site's
 primary (More) menu. The item opens a chat page that answers from an organisation-wide RAGflow knowledge

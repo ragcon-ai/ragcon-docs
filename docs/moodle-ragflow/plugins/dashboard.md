@@ -11,7 +11,10 @@
     It remains **GPLv3**: buyers receive the complete source with their purchase. The paywall gates
     access, updates and support — not the code.
 
-**Component:** `local_ragflowdashboard` · **Requires:** Moodle 5.0–5.2 · **Depends on:** `aiprovider_ragflow` · **Licence:** paid (Moodle Marketplace)
+**Component:** `local_ragflowdashboard`<br>
+**Requires:** Moodle 5.0–5.2<br>
+**Depends on:** `aiprovider_ragflow`<br>
+**Licence:** paid (Moodle Marketplace)
 
 An admin-only, **tabbed** report that shows **how the suite is used**: status and health, request
 volume, **token consumption**, raw API calls and error breakdowns, plus an optional per-feature **debug
