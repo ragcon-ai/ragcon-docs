@@ -31,3 +31,20 @@ relevant plugin's repository (linked at the top of each [plugin page](plugins/pr
       route.
 
     See [Tutor block → Knowledge base / assistant](plugins/tutor.md) for where the assistant is chosen.
+
+## Search &amp; retrieval
+
+??? question "Why does RAGflow find more than Moodle's built-in search?"
+
+    Moodle's search is built to find **courses and activities by name** — it matches keywords against
+    titles, text fields, metadata and forum posts. It does not look **inside** your files.
+
+    RAGflow reads the **content** of the documents themselves. Its DeepDoc engine applies **OCR** (so
+    scanned PDFs and photographed pages become text), recognises **layout** (titles, tables, figures,
+    equations and reading order) and captures **table structure**; an optional vision model even
+    **describes images and diagrams**, so their content becomes searchable and can appear as a source.
+    Retrieval then matches by **meaning** (embeddings, optional rerank), not exact keywords, and returns
+    the supporting **passage and image** — which the Tutor and Helpdesk can turn into a cited answer.
+
+    In short: Moodle's search finds *where* something is; RAGflow finds *what a document says*. See
+    [Document understanding](document-understanding.md) for the details.

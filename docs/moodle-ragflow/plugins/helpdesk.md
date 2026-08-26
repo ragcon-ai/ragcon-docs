@@ -8,6 +8,10 @@
 **Requires:** Moodle 5.0–5.2<br>
 **Depends on:** `aiprovider_ragflow`
 
+!!! tip "Deep document understanding"
+    Answers draw on the **content** of your documents — scanned pages, images and tables included, read
+    by OCR, layout and vision models. See [Document understanding](../document-understanding.md).
+
 A site-wide **help drawer** (an AI *placement*). It adds a **RAGflow Helpdesk** item to the site's
 primary (More) menu. The item opens a chat page that answers from an organisation-wide RAGflow knowledge
 base (system context, no course scope), typically your help, FAQ or support content. It has its own

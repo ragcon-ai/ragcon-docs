@@ -9,6 +9,11 @@
 **RAGflow:** 0.25 or later<br>
 **Depends on:** — (root of the suite)
 
+!!! tip "Deep document understanding"
+    Answers and sources draw on the **content** of your documents — scanned pages, images and tables
+    included, read by OCR, layout and vision models. See
+    [Document understanding](../document-understanding.md).
+
 The RAGflow AI provider plugs into Moodle's core **AI subsystem** and connects Moodle's text AI
 actions to an external [RAGflow](https://ragflow.io) instance. Answers are produced by a RAGflow
 **chat assistant** over the OpenAI-compatible endpoint, so they are retrieval-augmented and based on

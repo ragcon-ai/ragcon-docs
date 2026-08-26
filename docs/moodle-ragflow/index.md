@@ -2,8 +2,15 @@
 
 The Moodle RAGflow Suite connects Moodle to a [RAGflow](https://ragflow.io) instance so teachers and
 students can ask questions and get answers based on your own documents (retrieval-augmented
-generation). It is built on Moodle's **AI subsystem**: a single AI provider connects to RAGflow, and
-several blocks and placements use it.
+generation). Everything runs **inside Moodle** — there is no separate portal and no extra sign-up. An
+administrator connects the suite to RAGflow **once, centrally**; after that, trainers and students
+simply use it.
+
+It is built on Moodle's **AI subsystem**: a single AI provider connects to RAGflow, and several blocks
+and placements use it. Because you run RAGflow yourself, your data — and the choice of AI models — stay
+under your control, and every answer is grounded in your own content and cites its **sources**. RAGflow
+even reads scanned pages, images and tables, not just plain text — see
+[Document understanding](document-understanding.md).
 
 <!-- shot:hero-01 -->
 

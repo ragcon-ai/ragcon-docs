@@ -61,6 +61,7 @@ nav:
       - moodle-ragflow/index.md
       - Quickstart: moodle-ragflow/quickstart.md
       - Set up RAGflow: moodle-ragflow/setup-ragflow.md
+      - Document understanding: moodle-ragflow/document-understanding.md
       - Plugins:
           - AI provider (RAGflow): moodle-ragflow/plugins/provider.md
           - Tutor block: moodle-ragflow/plugins/tutor.md

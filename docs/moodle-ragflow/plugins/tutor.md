@@ -8,6 +8,10 @@
 **Requires:** Moodle 5.0–5.2<br>
 **Depends on:** `aiprovider_ragflow`
 
+!!! tip "Deep document understanding"
+    Answers draw on the **content** of your documents — scanned pages, images and tables included, read
+    by OCR, layout and vision models. See [Document understanding](../document-understanding.md).
+
 A per-course **AI tutor** delivered as a Moodle block. Placed on a course or activity page, it renders
 a chat drawer that answers students' questions using a RAGflow knowledge base for that course. Each
 block instance has its **own knowledge base**: teachers upload course documents and manage them
