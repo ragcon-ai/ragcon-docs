@@ -70,6 +70,29 @@ proxy that the Tutor, Search and Helpdesk plugins use. **Install and configure i
 - **Scheduled task:** *Prune stale RAGflow conversation sessions* (daily) removes sessions unused past
   the retention period (default 30 days).
 
+## Use cases
+
+Three ways an institution runs the provider as its shared AI foundation — expand an example. Pair it with
+the [RAGflow Moodle Connector](../../ragflow-moodle-connector/index.md), which feeds the courses' Moodle
+content into the RAGflow knowledge bases the provider serves and keeps them current automatically.
+
+??? example "Enterprise — one governed AI backend"
+    A company configures a single provider instance for the whole site: one base URL and API key to rotate,
+    in one place, and the Tutor, Search and Helpdesk all run through it. Per-action scoping keeps one
+    department's documents from surfacing in another's answers, and the download proxy streams source files
+    server-side so the API key never reaches the browser. IT sets it up once and governs it centrally.
+
+??? example "Universities — standards-based, faculty-wide"
+    A university connects Moodle's native AI subsystem to one self-hosted RAGflow, and every faculty's blocks
+    and placements consume the same backend — answering in each user's Moodle language. Because it sits on
+    the core AI subsystem rather than beside it, administrators get the same enable/disable and logging
+    surface as any other AI provider, and the integration stays aligned with Moodle's roadmap.
+
+??? example "Public sector — data sovereignty &amp; model choice"
+    An authority points the provider at an on-premises RAGflow running local or EU-hosted models, so no
+    learner or citizen data — and no source document — leaves its own infrastructure. Every answer carries a
+    citation for traceability, and the whole AI setup lives in one auditable configuration.
+
 ## Configuration
 
 The provider is configured as an **AI-provider instance** (Moodle's AI subsystem), plus per-action

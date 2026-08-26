@@ -116,6 +116,29 @@ Other: a **usage log — metrics only** (no message content, safe for the standa
 **retention/purge** task; and an **anonymisation** option (rows without a user link, aggregate stats still
 work).
 
+## Use cases
+
+Three ways admins use the dashboard as the suite's operations layer — expand an example. The business case
+in depth is on the [value at scale](dashboard-value.md) page.
+
+??? example "Enterprise — cost control &amp; chargeback"
+    An operations team tracks token consumption per plugin, per provider instance and by top users — enough
+    to set a budget, spot a runaway course early, and attribute cost to the department that owns it. Any date
+    range exports to CSV or PDF for chargeback, and the KPIs show at a glance that the AI is actually being
+    used before the rollout expands.
+
+??? example "Universities — adoption evidence &amp; oversight"
+    A learning-technology team shows requests by feature, course and user group (trainers vs. students) and
+    the success rate over time — the evidence a rollout committee needs to justify and steer it. The Status
+    tab catches a course knowledge base that has stopped parsing, or an assistant deleted in RAGflow, before
+    a student reports that the tutor *"found nothing"*.
+
+??? example "Public sector — accountability without storing content"
+    An authority needs oversight its data-protection officer can sign off: the log holds metrics only — no
+    message content — with an anonymisation option and a daily retention/purge task, and reports export to
+    CSV, XML or PDF for the record. The Status tab tells *misconfigured* apart from *RAGflow unreachable*, so
+    an audit sees a genuine fault, not a network blip.
+
 ## What is counted (tokens)
 
 <!-- shot:dashboard-04 -->

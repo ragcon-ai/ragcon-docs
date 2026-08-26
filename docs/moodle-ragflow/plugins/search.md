@@ -61,6 +61,30 @@ base and scope.
   in RAGflow* notice when a search returns nothing because a configured dataset no longer exists
   (privileged users additionally see which dataset).
 
+## Use cases
+
+Three ways teams use the Search block — expand an example. Pair any of them with the
+[RAGflow Moodle Connector](../../ragflow-moodle-connector/index.md) to keep the searchable knowledge base
+in step with the documents maintained in Moodle, with no manual re-upload.
+
+??? example "Enterprise — find the right document fast"
+    A company keeps policies, product docs and process guides in Moodle, and staff waste time hunting for
+    the right file. The Search block finds it by meaning — a query like *"parental leave"* surfaces the
+    actual policy PDF and the passage that matched, as a link, with no generated answer to second-guess.
+    Scanned forms and posters stay findable because RAGflow reads their content (OCR and a vision model),
+    not just their filename.
+
+??? example "Universities — course library &amp; past papers"
+    Students search across course handouts, lab manuals and past exam papers by meaning rather than exact
+    title — useful when the file they need is a scanned handout or an oddly named PDF. Every result links
+    straight to the source document, so a student verifies the original instead of trusting a summary.
+
+??? example "Public sector — auditable information retrieval"
+    A public body offers a knowledge base of regulations, forms and procedures. Retrieval-only search
+    returns the authoritative document itself — no LLM step, nothing that can hallucinate — which is
+    exactly the property a compliance or citizen-information context needs. It runs self-hosted, so the
+    corpus stays under the body's control.
+
 ## Configuration
 
 Almost all configuration is **per block instance**, and only **site administrators** may set it
