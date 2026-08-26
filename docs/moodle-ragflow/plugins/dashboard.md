@@ -13,11 +13,11 @@
 
 **Component:** `local_ragflowdashboard` · **Requires:** Moodle 5.0–5.2 · **Depends on:** `aiprovider_ragflow` · **Licence:** paid (Moodle Marketplace)
 
-An admin-only, **tabbed** report that visualises **how the suite is used**: status/health, request
-volume, **token consumption**, raw API calls and error breakdowns — plus an optional per-feature **debug
+An admin-only, **tabbed** report that shows **how the suite is used**: status and health, request
+volume, **token consumption**, raw API calls and error breakdowns, plus an optional per-feature **debug
 capture** for diagnosis. It is the suite's **paid add-on** (see above): the free Tutor, Search, Helpdesk
-and provider plugins run without it. It captures the provider's usage through an independent sink, so it is
-entirely optional and harmless if not installed. It also ships `rfdsource_*` sub-plugins that give each
+and provider plugins run without it. It records the provider's usage separately, so it is entirely
+optional and does no harm if it is not installed. It also ships `rfdsource_*` sub-plugins that give each
 feature its own status checks and analytics.
 
 ## Features
@@ -56,7 +56,7 @@ The report opens at *Site administration → Reports → RAGflow Dashboard* and 
 Moodle's built-in Chart API with a consistent palette (green = success, red = errors, blue for neutral
 counts) and a colour-coded data table (a swatch per row) under each categorical chart.
 
-- **Status** — is the provider configured and reachable, and is each configured reference correctly
+- **Status:** is the provider configured and reachable, and is each configured reference correctly
   linked? Organised into two collapsible sections:
     - **System configuration** — three boxes side by side (stacked on narrow screens): **Suite plugins**
       (which of the five are installed — shown even when RAGflow is unreachable, no API call needed),
@@ -77,21 +77,21 @@ counts) and a colour-coded data table (a swatch per row) under each categorical 
   verified** (amber — RAGflow was unreachable, so this is a connection problem, *not* a configuration
   fault) and **not configured** (a **blue notice** — nothing set up yet). *Missing* and *could not be
   verified* are never conflated; red is reserved for genuine faults. A per-area **Refresh** re-runs just
-  that box and refreshes the shared result for the other surfaces too.
-- **Usage** — KPI cards (Requests, Success rate, Failures, Average latency), requests per day (successful
+  that box and refreshes the shared result for the other areas too.
+- **Usage:** KPI cards (Requests, Success rate, Failures, Average latency), requests per day (successful
   vs failed), requests by feature, **Top 10 users**, requests **by user group** (trainers vs.
-  students/users) and **by course**. Sections are collapsible — one open at a time, remembered across
+  students/users) and **by course**. Sections are collapsible: one open at a time, remembered across
   view/period changes.
-- **Tokens** — chat **token consumption** (prompt / completion / total) as KPIs, per day, **by plugin** and
+- **Tokens:** chat **token consumption** (prompt / completion / total) as KPIs, per day, **by plugin** and
   **by provider instance**. See *What is counted* below.
-- **API calls** — the raw RAGflow API-call log (one collapsible row per call) with a per-page selector
+- **API calls:** the raw RAGflow API-call log (one collapsible row per call) with a per-page selector
   (10 / 20 / 50), **paging**, a **live** auto-reload and **filters** (HTTP status, free text, date range).
   Off unless the raw-API-log toggle is on; the **API key is never logged**. Below the log, a **Debug
   captures** panel lists the most recent captured request/response pairs (only for features whose debug
   toggle is on).
-- **Errors** — **failures by error type** (labelled, e.g. *RAGflow server error (5xx)*, *Query too long for
+- **Errors:** **failures by error type** (labelled, e.g. *RAGflow server error (5xx)*, *Query too long for
   embedding model*, *Rate limited*) and a collapsible **recent-errors** list.
-- **Export** — download the usage log (metrics only) for a date range as **CSV** (default), **XML** or
+- **Export:** download the usage log (metrics only) for a date range as **CSV** (default), **XML** or
   **PDF**. The export covers **all views** in one file: rows are labelled with the view (source) that owns
   them and grouped by view — a *View* column in CSV/XML, one section per view in the PDF (with a KPI
   summary). The acting user resolves to a name, or a dash when anonymisation is on.
@@ -143,8 +143,8 @@ work).
 
 | Role | What this role can do |
 |---|---|
-| **Site administrator · Manager** | **View** the dashboard — KPIs, charts, logs, debug captures and export (`:view`). |
-| **Teacher (editing & non-editing) · Student** | **No access** by default — the usage data reveals usage patterns, so it is intentionally not granted to any teaching or learning role. |
+| **Site administrator · Manager** | **View** the dashboard: KPIs, charts, logs, debug captures and export (`:view`). |
+| **Teacher (editing & non-editing) · Student** | **No access** by default: the usage data reveals usage patterns, so it is intentionally not granted to any teaching or learning role. |
 | **Guest / not logged in** | No access. |
 
 Grant `local/ragflowdashboard:view` to another role only if you deliberately want it to see site-wide
@@ -152,13 +152,13 @@ usage data.
 
 ## Data model
 
-- **`local_ragflowdashboard_log`** — one row per request, **metrics only**: time, component, action, user
+- **`local_ragflowdashboard_log`:** one row per request, **metrics only**: time, component, action, user
   id, course id, context id, success, error type, latency (ms), item count, the **provider instance id**
   and the chat **token counts** (prompt / completion / total). Never stores message content.
-- **`local_ragflowdashboard_debug`** — request/response **content** (question + response), written
+- **`local_ragflowdashboard_debug`:** request/response **content** (question + response), written
   **only** while a feature's debug toggle is on, truncated to the debug content limit. Written directly, so
   content never reaches the standard log store.
-- **`local_ragflowdashboard_apilog`** — the raw RAGflow API-call log (URL, JSON request, raw response,
+- **`local_ragflowdashboard_apilog`:** the raw RAGflow API-call log (URL, JSON request, raw response,
   status, duration), written **only** while the raw-API-log toggle is on. The **API key is never stored**.
 
 ## Sub-plugins (`rfdsource_*`)
