@@ -1,1 +1,6 @@
-mkdocs-material>=9.5
+# Pinned to the toolchain the site is known to build cleanly with.
+# Unpinned (mkdocs-material>=9.5) let CI pull a newer Material / MkDocs 2.0,
+# which breaks theme overrides + the strict build. Bump deliberately.
+mkdocs==1.6.1
+mkdocs-material==9.7.7
+pymdown-extensions==11.0.2
