@@ -12,7 +12,8 @@ works](how-it-works.md) for the full table):
 - **Assignment / Quiz** → the activity **description**, as Markdown.
 
 **Not indexed:** `label` and `url` modules; student submissions, quiz questions, grades and messages;
-empty resources/pages.
+and anything **empty** — an activity with no content (a forum with no discussions, or an assignment with
+no description) produces no document.
 
 Each document's **semantic identifier** is `Course fullname / Section name / File-or-activity name`, which
 is what appears when RAGflow cites the document.
@@ -30,7 +31,7 @@ fields; the **course scope** used by the Moodle plugins relies on `course_id` + 
 | `course_shortname` | Course short name. |
 | `section_id` · `section_name` · `section_number` | The section (topic/week) the item is in. |
 | `module_id` · `module_name` · `module_type` | The Moodle course module (its id, display name and type, e.g. `resource`). |
-| `time_created` · `time_modified` | Module timestamps (used for incremental sync). |
+| `time_created` · `time_modified` | Module timestamps, where Moodle provides them. They are often **empty** — file resources and pages, for example, do not expose them. |
 | `visible` | Whether the module is visible to students. |
 | `groupmode` | The module's group mode. |
 
