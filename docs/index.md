@@ -1,6 +1,10 @@
-# RAGcon Documentation
-
-Welcome to the documentation for RAGcon products.
+<div class="rf-hero" markdown="0">
+  <div class="rf-hero__bar"></div>
+  <div class="rf-hero__body">
+    <h1>RAGcon Documentation</h1>
+    <p>Guides &amp; reference for the RAGcon products.</p>
+  </div>
+</div>
 
 ## Products
 

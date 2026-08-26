@@ -1,4 +1,10 @@
-# Tutor block
+<div class="rf-hero" markdown="0">
+  <div class="rf-hero__bar"></div>
+  <div class="rf-hero__body">
+    <h1>RAGflow Tutor</h1>
+    <p>An AI tutor for every course — with sources.</p>
+  </div>
+</div>
 
 !!! info "Repository &amp; issue tracker"
     - **Repository:** [https://github.com/ragcon-ai/moodle-block_ragflowtutor](https://github.com/ragcon-ai/moodle-block_ragflowtutor){ target="_blank" rel="noopener" }

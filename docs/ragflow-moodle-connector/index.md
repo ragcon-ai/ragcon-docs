@@ -1,4 +1,10 @@
-# RAGflow Moodle Connector
+<div class="rf-hero" markdown="0">
+  <div class="rf-hero__bar"></div>
+  <div class="rf-hero__body">
+    <h1>RAGflow Moodle Connector</h1>
+    <p>Sync Moodle content into RAGflow.</p>
+  </div>
+</div>
 
 The **Moodle connector** is a built-in [RAGflow](https://ragflow.io/) **data source**: it syncs the
 content of a Moodle site into a RAGflow **knowledge base**, so that content can be searched, cited and

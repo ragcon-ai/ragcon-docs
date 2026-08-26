@@ -35,6 +35,40 @@
   text-decoration: underline;
 }
 
+/* -------- Page hero: teal keyline + title + tagline (replaces the image cards) -------- */
+.md-typeset .rf-hero {
+  display: flex;
+  gap: 0.9rem;
+  align-items: stretch;
+  margin: 0.2rem 0 1.7rem;
+}
+.md-typeset .rf-hero__bar {
+  flex: 0 0 6px;
+  border-radius: 3px;
+  background: #5FC0D4; /* brand teal */
+}
+.md-typeset .rf-hero__body {
+  min-width: 0;
+}
+.md-typeset .rf-hero h1 {
+  margin: 0;
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1.12;
+  color: #16324D; /* brand navy */
+}
+.md-typeset .rf-hero p {
+  margin: 0.35rem 0 0;
+  font-size: 1.05rem;
+  color: #5B7386; /* muted ink */
+}
+[data-md-color-scheme="slate"] .md-typeset .rf-hero h1 {
+  color: #E6ECF1;
+}
+[data-md-color-scheme="slate"] .md-typeset .rf-hero p {
+  color: #9FB3C2;
+}
+
 /* Give the logo a little more room in the header. */
 .md-header__button.md-logo img,
 .md-nav__button.md-logo img {

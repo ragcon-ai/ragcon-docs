@@ -1,4 +1,10 @@
-# Usage dashboard
+<div class="rf-hero" markdown="0">
+  <div class="rf-hero__bar"></div>
+  <div class="rf-hero__body">
+    <h1>RAGflow Dashboard</h1>
+    <p>See if the AI works, how it's used, what it costs.</p>
+  </div>
+</div>
 
 !!! info "Paid plugin — available on the Moodle Marketplace"
     The Usage Dashboard is the RAGflow suite's one **commercial** plugin. Unlike the free, open-source

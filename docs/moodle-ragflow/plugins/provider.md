@@ -1,4 +1,10 @@
-# AI provider (RAGflow)
+<div class="rf-hero" markdown="0">
+  <div class="rf-hero__bar"></div>
+  <div class="rf-hero__body">
+    <h1>RAGflow AI Provider</h1>
+    <p>One backend. Grounded AI across Moodle.</p>
+  </div>
+</div>
 
 !!! info "Repository &amp; issue tracker"
     - **Repository:** [https://github.com/ragcon-ai/moodle-aiprovider_ragflow](https://github.com/ragcon-ai/moodle-aiprovider_ragflow){ target="_blank" rel="noopener" }

@@ -1,4 +1,10 @@
-# Moodle RAGflow Suite
+<div class="rf-hero" markdown="0">
+  <div class="rf-hero__bar"></div>
+  <div class="rf-hero__body">
+    <h1>Moodle RAGflow Suite</h1>
+    <p>Grounded AI — tutor, search and help desk.</p>
+  </div>
+</div>
 
 The Moodle RAGflow Suite connects Moodle to a [RAGflow](https://ragflow.io) instance so teachers and
 students can ask questions and get answers based on your own documents (retrieval-augmented

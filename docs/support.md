@@ -1,4 +1,10 @@
-# Help &amp; Support
+<div class="rf-hero" markdown="0">
+  <div class="rf-hero__bar"></div>
+  <div class="rf-hero__body">
+    <h1>Help &amp; Support</h1>
+    <p>Docs, issues and professional support.</p>
+  </div>
+</div>
 
 Whether you hit a bug, have a feature idea, or need hands-on help, here is where to go.
 

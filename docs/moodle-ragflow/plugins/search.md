@@ -1,4 +1,10 @@
-# Search block
+<div class="rf-hero" markdown="0">
+  <div class="rf-hero__bar"></div>
+  <div class="rf-hero__body">
+    <h1>RAGflow Search</h1>
+    <p>Find documents by meaning, not keywords.</p>
+  </div>
+</div>
 
 !!! info "Repository &amp; issue tracker"
     - **Repository:** [https://github.com/ragcon-ai/moodle-block_ragflowsearch](https://github.com/ragcon-ai/moodle-block_ragflowsearch){ target="_blank" rel="noopener" }

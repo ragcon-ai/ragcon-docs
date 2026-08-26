@@ -1,4 +1,10 @@
-# Helpdesk placement
+<div class="rf-hero" markdown="0">
+  <div class="rf-hero__bar"></div>
+  <div class="rf-hero__body">
+    <h1>RAGflow Helpdesk</h1>
+    <p>A site-wide help desk from your own docs.</p>
+  </div>
+</div>
 
 !!! info "Repository &amp; issue tracker"
     - **Repository:** [https://github.com/ragcon-ai/moodle-aiplacement_ragflowhelpdesk](https://github.com/ragcon-ai/moodle-aiplacement_ragflowhelpdesk){ target="_blank" rel="noopener" }
