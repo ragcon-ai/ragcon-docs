@@ -69,6 +69,12 @@
   color: #9FB3C2;
 }
 
+/* -------- Use-case accordions: match body text size (Material shrinks admonitions) -------- */
+.md-typeset details.example,
+.md-typeset .admonition.example {
+  font-size: 0.8rem;
+}
+
 /* Give the logo a little more room in the header. */
 .md-header__button.md-logo img,
 .md-nav__button.md-logo img {

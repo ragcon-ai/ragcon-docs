@@ -16,6 +16,13 @@ drawer, and a usage dashboard, all driven by a shared AI provider.
 
 → **[Get started with the Moodle RAGflow Suite](moodle-ragflow/index.md)**
 
+### RAGflow Moodle Connector
+
+A built-in RAGflow data source that syncs a Moodle site's content into a RAGflow knowledge base, so it can
+be searched, cited and answered over — and kept current automatically.
+
+→ **[Read the RAGflow Moodle Connector docs](ragflow-moodle-connector/index.md)**
+
 ---
 
 More RAGcon products will be documented here over time. Each product lives in its own section;

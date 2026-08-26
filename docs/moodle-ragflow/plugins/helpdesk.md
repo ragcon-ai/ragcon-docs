@@ -64,17 +64,23 @@ knowledge base aligned with the policy and FAQ documents maintained in Moodle.
 ??? example "Enterprise — internal IT &amp; HR help desk"
     Staff hit the same questions every week — VPN resets, the expense policy, holiday requests. The
     Helpdesk answers them site-wide from the company's IT and HR documentation, remembers the conversation
-    for follow-ups, and offers a private mode for sensitive questions. When the docs don't cover something
+    for follow-ups, and offers a private mode for sensitive questions.
+
+    When the docs don't cover something
     it says so, instead of inventing a confident answer that costs more support time than none.
 
 ??? example "Universities — student services"
     A university exposes a site-wide help drawer that answers enrolment, certificate, exam-regulation and
-    IT questions from the official student handbook and IT guides. It sits on every page, is available to
+    IT questions from the official student handbook and IT guides.
+
+    It sits on every page, is available to
     logged-in users, and answers in the user's language — taking routine load off the service desk during
     enrolment and exam peaks.
 
 ??? example "Public sector — staff support with data control"
-    An authority runs an internal help desk for procedures, forms and internal policies. Answers are
+    An authority runs an internal help desk for procedures, forms and internal policies.
+
+    Answers are
     grounded and cited, long-term memory is opt-in and user-clearable, the log stores metrics only, and
     everything is self-hosted — the controls a data-protection officer needs to sign it off.
 

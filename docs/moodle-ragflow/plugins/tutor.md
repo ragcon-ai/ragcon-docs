@@ -91,19 +91,23 @@ year's version.
     A manufacturer runs onboarding and safety courses in Moodle. Each course carries a Tutor grounded in
     that course's handbooks, SOPs and safety sheets, so a new hire can ask *"When do I need hearing
     protection in hall 3?"* and get an answer with the source page — instead of interrupting a supervisor.
+
     Because a Tutor only answers from its own course's material, the sales course can't leak into the
     safety course.
 
 ??? example "Universities — large-lecture support"
     In a 400-student lecture, the Tutor answers from the lecture slides, the reading list and the course
     glossary — around the clock, in the student's language, and always citing the slide or paper it used.
+
     Repetitive *"where was this defined?"* questions drop, and the teaching team keeps control of what the
     Tutor knows simply by curating the course materials.
 
 ??? example "Public sector — regulatory &amp; vocational training"
     A public-administration academy teaches procedures and regulations. The Tutor answers strictly from the
     official regulation texts and internal guidance, with a citation for every statement — essential where
-    an answer must be traceable to its source. Everything runs on the authority's self-hosted RAGflow, so
+    an answer must be traceable to its source.
+
+    Everything runs on the authority's self-hosted RAGflow, so
     training content and learner questions never leave its own infrastructure.
 
 ## Configuration
