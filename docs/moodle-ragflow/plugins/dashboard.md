@@ -26,7 +26,14 @@ feature its own status checks and analytics.
 ## Features
 
 <!-- shot:dashboard-01 -->
+
+![Dashboard status tab with the System configuration and Plugin instances sections](../img/dashboard/dashboard-01-status-tab.png)
+*The Status tab: System configuration and the per-instance plugin section, each with its own health.*
+
 <!-- shot:dashboard-09 -->
+
+![A dashboard status plugin instance expanded, showing the course and RAGflow links](../img/dashboard/dashboard-09-status-instance.png)
+*An opened instance links to its Moodle course and to the RAGflow knowledge base and chat app.*
 
 <!-- shot:dashboard-02 -->
 
@@ -89,9 +96,7 @@ counts) and a colour-coded data table (a swatch per row) under each categorical 
   **by provider instance**. See *What is counted* below.
 - **API calls:** the raw RAGflow API-call log (one collapsible row per call) with a per-page selector
   (10 / 20 / 50), **paging**, a **live** auto-reload and **filters** (HTTP status, free text, date range).
-  Off unless the raw-API-log toggle is on; the **API key is never logged**. Below the log, a **Debug
-  captures** panel lists the most recent captured request/response pairs (only for features whose debug
-  toggle is on).
+  Off unless the raw-API-log toggle is on; the **API key is never logged**.
 - **Errors:** **failures by error type** (labelled, e.g. *RAGflow server error (5xx)*, *Query too long for
   embedding model*, *Rate limited*) and a collapsible **recent-errors** list.
 - **Export:** download the usage log (metrics only) for a date range as **CSV** (default), **XML** or

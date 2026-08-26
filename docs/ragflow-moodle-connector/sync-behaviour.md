@@ -17,7 +17,8 @@ and changed items are picked up; untouched items are left as they are. Because d
 
 ## Removing deleted items (stale cleanup)
 
-The connector supports **sync-deleted-files**. Alongside a sync it produces a lightweight **snapshot** of
+The data source has a **Sync deleted files** option; it is **off by default**. With it on, the connector
+produces alongside each sync a lightweight **snapshot** of
 the ids of every module that *could* be indexed (no downloads). RAGflow compares that list to what is in
 the knowledge base and **deletes** any indexed document whose Moodle module no longer exists (or is no
 longer reachable by the token user). So un-enrolling the connector's user from a course, or deleting an
@@ -36,7 +37,8 @@ timestamp and cause a refresh on the next incremental sync.
   cleaned up.
 - **Parsing is RAGflow's job.** The connector delivers the raw documents; RAGflow then parses/embeds them
   into the knowledge base with that KB's configured pipeline and embedding model.
-- **Frequency** is set on the RAGflow side per knowledge base. Pick a cadence that matches how often your
-  courses change.
+- **Frequency** is set on the **data source** itself, not per knowledge base: the **Refresh Freq** field
+  (in minutes) in the Moodle source's settings. Pick a cadence that matches how often your courses change —
+  a short interval on a large site means syncs overlap or run into **Timeout Secs**.
 
 See also: [How it works](how-it-works.md) · [Troubleshooting](troubleshooting.md).

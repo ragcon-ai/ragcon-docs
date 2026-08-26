@@ -13,6 +13,9 @@ a **web-service token**. Everything it can see is what that token's user can see
 
 <!-- shot:connector-04 -->
 
+![A RAGflow knowledge base with documents synced from Moodle courses](img/connector/connector-04-synced-kb.png)
+*Synced Moodle items appear in the knowledge base, each labelled Course / Section / Name.*
+
 ## What becomes a document
 
 | Moodle module | How it is indexed | Document id |

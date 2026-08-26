@@ -12,7 +12,14 @@ provider, so you only do this setup a single time.
 ## Before you start: configure your models
 
 <!-- shot:setup-01 -->
+
+![RAGflow Model providers page with a chat, embedding and rerank model configured](img/setup/setup-01-ragflow-model-providers.png)
+*Add a chat, an embedding and (optionally) a rerank model under Model providers.*
+
 <!-- shot:setup-02 -->
+
+![RAGflow Set default models dialog with chat, embedding and rerank selected](img/setup/setup-02-ragflow-set-default-models.png)
+*The default embedding model is fixed at knowledge-base creation time — set it first.*
 
 New RAGflow accounts do **not** receive default models automatically — each account first **connects its
 own models** under *Model providers*, then **sets a default for each type** under *Set default models*. Do
@@ -44,8 +51,19 @@ Then open *Set default models* and pick a **working** default for **each** conne
 ## 1. Prepare a knowledge base in RAGflow
 
 <!-- shot:setup-03 -->
+
+![RAGflow dataset with uploaded documents, parsing status SUCCESS](img/setup/setup-03-ragflow-dataset-documents.png)
+*Upload your documents and wait until parsing shows SUCCESS.*
+
 <!-- shot:setup-04 -->
+
+![RAGflow assistant configuration with the knowledge base selected](img/setup/setup-04-ragflow-assistant-bound.png)
+*The assistant must be bound to the dataset that holds your documents.*
+
 <!-- shot:setup-05 -->
+
+![RAGflow assistant prompt editor showing the system prompt field](img/setup/setup-05-ragflow-system-prompt.png)
+*Replace RAGflow's default assistant prompt — see the admin guide.*
 
 In your RAGflow instance:
 
@@ -69,6 +87,10 @@ In your RAGflow instance:
 ## 2. Add the RAGflow AI provider in Moodle
 
 <!-- shot:setup-06 -->
+
+![RAGflow API page with a generated key, value masked](img/setup/setup-06-ragflow-api-key.png)
+*Generate an API key in RAGflow — you paste it into the Moodle provider.*
+
 <!-- shot:setup-07 -->
 
 ![Moodle AI providers overview page with the RAGflow provider listed](img/setup/setup-07-moodle-ai-providers-list.png)

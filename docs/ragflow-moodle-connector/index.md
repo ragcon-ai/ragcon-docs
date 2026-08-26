@@ -12,6 +12,9 @@ Drive and Slack connectors and is configured the same way — under *User settin
 
 <!-- shot:connector-01 -->
 
+![RAGflow Data sources page with the Moodle connector among the connectors](img/connector/connector-01-data-sources.png)
+*Moodle is a built-in RAGflow data source, added under User settings → Data sources.*
+
 ## What it does
 
 Given a Moodle site and a web-service token, the connector walks the **courses the token's user is enrolled
