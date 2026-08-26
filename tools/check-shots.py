@@ -112,19 +112,19 @@ def main():
             if caption != shot["caption"]:
                 errors.append(f"{sid}: caption mismatch\n     doc: {caption}\n     man: {shot['caption']}")
         else:
-            # blocked-ragflow: marker present, must have NO image.
+            # Not-yet-captured markers (blocked-ragflow, todo) are present but must have NO image yet.
             if block:
                 errors.append(f"{sid}: {status} marker unexpectedly has an image block ({rel})")
             else:
                 missing_image.append(sid)
 
-    # 5. markers without an image are exactly the blocked-ragflow shots.
+    # 5. markers without an image are exactly the not-yet-captured shots (blocked-ragflow + todo).
     expected_no_image = sorted(
-        sid for sid, s in shots.items() if s.get("status") == "blocked-ragflow"
+        sid for sid, s in shots.items() if s.get("status") in ("blocked-ragflow", "todo")
     )
     if sorted(missing_image) != expected_no_image:
         errors.append(
-            "markers without an image differ from the blocked-ragflow set:\n"
+            "markers without an image differ from the not-yet-captured set:\n"
             f"     have: {sorted(missing_image)}\n"
             f"     want: {expected_no_image}"
         )
@@ -137,7 +137,7 @@ def main():
         return 1
     print(
         f"OK — {len(markers)} markers, {captured} images wired, "
-        f"{len(expected_no_image)} intentional gaps (setup, RAGflow UI), search-03 retired."
+        f"{len(expected_no_image)} awaiting capture (setup + dashboard re-work), search-03 retired."
     )
     return 0
 

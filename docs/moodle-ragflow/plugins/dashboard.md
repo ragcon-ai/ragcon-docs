@@ -23,9 +23,7 @@ feature its own status checks and analytics.
 ## Features
 
 <!-- shot:dashboard-01 -->
-
-![Dashboard status tab with collapsible checks, one row expanded showing the API call](../img/dashboard/dashboard-01-status-tab.png)
-*Status checks per area, each row showing the API call used as proof.*
+<!-- shot:dashboard-09 -->
 
 <!-- shot:dashboard-02 -->
 
@@ -58,26 +56,28 @@ The report opens at *Site administration → Reports → RAGflow Dashboard* and 
 Moodle's built-in Chart API with a consistent palette (green = success, red = errors, blue for neutral
 counts) and a colour-coded data table (a swatch per row) under each categorical chart.
 
-- **Status** — is the provider configured and reachable, and is each configured reference correctly linked?
-  The tab has four kinds of box:
-    - **Suite plugins** — which of the five suite plugins are installed (green) or absent (red). The
-      dashboard depends only on the provider and works with any subset of the feature plugins, so this
-      simply makes the install state visible. Shown even when RAGflow is unreachable (no API call needed).
-    - **Provider & connection** — is the provider configured, and does a probe reach RAGflow?
-    - **Provider actions** — for each configured core_ai action (generate / summarise / explain text), the
-      health of the assistant it uses.
-    - **Per instance** (Tutor / Helpdesk / Search) — is the assistant valid + bound and the knowledge base
-      parsed?
+- **Status** — is the provider configured and reachable, and is each configured reference correctly
+  linked? Organised into two collapsible sections:
+    - **System configuration** — three boxes side by side (stacked on narrow screens): **Suite plugins**
+      (which of the five are installed — shown even when RAGflow is unreachable, no API call needed),
+      **Provider & connection** (is the provider configured, and does a probe reach RAGflow?) and
+      **Provider actions** (for each configured core_ai action — generate / summarise / explain text — the
+      health of the assistant it uses). These are plain checks: a message appears only when something is
+      not OK, and a single **Settings** link leads to the relevant admin page — no API-call proof line
+      here.
+    - **Plugin instances** — one entry per **Tutor / Search / Helpdesk** instance, titled *"Course –
+      instance"* (the RAGflow assistant or knowledge-base name; no link in the title). Opening an entry
+      reveals a link to the **Moodle course** plus clearly-marked links to the **RAGflow knowledge base**
+      and **RAGflow chat app** (these open RAGflow in a new window), the parse status (e.g. *4 parsed
+      documents*), and — for privileged viewers — the concrete **API call** used as proof. Tutor and
+      Search add an instant, client-side **filter** over course and instance name.
   Every reference verdict comes from **one shared check** and is shown as a traffic light with five
   states: **OK** (green), **degraded** (amber — usable but e.g. the knowledge base has no documents yet or
   is not parsed), **missing** (red — the assistant/knowledge base was deleted in RAGflow), **could not be
   verified** (amber — RAGflow was unreachable, so this is a connection problem, *not* a configuration
-  fault) and **not configured** (a **blue notice** — nothing set up yet, e.g. no provider credentials or no
-  assistant/knowledge base chosen; not a fault). *Missing* and *could not be verified* are never conflated.
-  Red is reserved for genuine faults (a deleted reference, an unreachable RAGflow or a failed call). Each
-  check is a collapsible row; the concrete **API call** used as proof is shown only to users with the
-  *view error details* capability. A per-area refresh re-runs just that box and refreshes the shared result
-  for the other surfaces too.
+  fault) and **not configured** (a **blue notice** — nothing set up yet). *Missing* and *could not be
+  verified* are never conflated; red is reserved for genuine faults. A per-area **Refresh** re-runs just
+  that box and refreshes the shared result for the other surfaces too.
 - **Usage** — KPI cards (Requests, Success rate, Failures, Average latency), requests per day (successful
   vs failed), requests by feature, **Top 10 users**, requests **by user group** (trainers vs.
   students/users) and **by course**. Sections are collapsible — one open at a time, remembered across
