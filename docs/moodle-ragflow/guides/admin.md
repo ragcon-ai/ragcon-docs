@@ -6,7 +6,7 @@ For teaching staff see the [trainer guide](trainer.md); for learners the [studen
 ## Your responsibilities
 
 - Install the plugins and connect Moodle to your RAGflow instance (once, centrally).
-- Choose which surfaces are available (Tutor blocks, Search blocks, the Helpdesk drawer).
+- Choose which features are available (Tutor blocks, Search blocks, the Helpdesk drawer).
 - Manage permissions and monitor usage.
 
 ## 1. Install the plugins
@@ -16,13 +16,13 @@ For teaching staff see the [trainer guide](trainer.md); for learners the [studen
 ![Moodle plugins overview listing the five RAGflow suite plugins with versions](../img/guides/admin-01-plugins-overview.png)
 *All five suite plugins after installation.*
 
-Install in dependency order — the **AI provider first**, then the rest:
+Install in dependency order, the **AI provider first**, then the rest:
 
 1. `aiprovider_ragflow` (provider — required by all others)
 2. `aiplacement_ragflowhelpdesk`, `block_ragflowtutor`, `block_ragflowsearch`
 3. `local_ragflowdashboard` (optional)
 
-Use the correct path for your Moodle version (`public/…` on 5.1+) — the plugin installer handles this
+Use the correct path for your Moodle version (`public/…` on 5.1+); the plugin installer handles this
 automatically. See [Moodle version specifics](../moodle-version-notes.md).
 
 ## 2. Connect to RAGflow
@@ -31,9 +31,9 @@ Follow **[Set up RAGflow](../setup-ragflow.md)**: prepare a dataset + assistant 
 **RAGflow AI provider instance** in *Site administration → AI → AI providers* with your base URL and API
 key. The provider is the shared backend for every other plugin.
 
-## 3. Enable and configure the surfaces
+## 3. Enable and configure the features
 
-| Surface | Where to configure | Key settings |
+| Feature | Where to configure | Key settings |
 |---|---|---|
 | **[Helpdesk drawer](../plugins/helpdesk.md)** | *AI → AI placements → RAGflow Helpdesk* | assistant, greeting, conversation memory (on), long-term memory (off), sources |
 | **[Tutor block](../plugins/tutor.md)** | Block added per course; admin setting under *Blocks → RAGflow Tutor* | upload limit, log-to-Moodle; per-block: assistant/KB, document source, sources |
@@ -132,16 +132,16 @@ Yes — the suite is a client for a RAGflow instance (self-hosted or hosted). It
 You provide a reachable base URL and an API key.
 
 **Which models does the suite set up in RAGflow?**
-None. New RAGflow accounts do **not** get default models automatically — you add your own (chat,
+None. New RAGflow accounts do **not** get default models automatically. You add your own (chat,
 embedding, optionally rerank) under *Model providers* and choose defaults under *Set default models*
-before using the plugins. Knowledge bases — including those the Tutor block creates — are embedded with
+before using the plugins. Knowledge bases (including those the Tutor block creates) are embedded with
 your account's **current default embedding model**; the plugins never hard-code one. The embedding model
-of an existing knowledge base **cannot be changed** afterwards, so if a KB got the wrong one (e.g. no
-default was set, or it pointed at an unconfigured provider — the *"Provider not found for model …"*
-error), fix the default in RAGflow and **recreate** the affected knowledge bases.
+of an existing knowledge base **cannot be changed** afterwards, so if a knowledge base got the wrong one
+(e.g. no default was set, or it pointed at an unconfigured provider, giving the *"Provider not found for
+model …"* error), fix the default in RAGflow and **recreate** the affected knowledge bases.
 
 **Is one provider instance enough for all plugins?**
-Yes. Configure the provider once; the Helpdesk, Tutor and Search all use it. Each surface still selects
+Yes. Configure the provider once; the Helpdesk, Tutor and Search all use it. Each feature still selects
 its own assistant/knowledge base.
 
 **Where is data stored?**

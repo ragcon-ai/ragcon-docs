@@ -99,7 +99,7 @@ In your RAGflow instance:
 
 ## 3. Enable the plugins you want
 
-Each surface is enabled independently:
+Each feature is enabled independently:
 
 - **[Tutor block](plugins/tutor.md)** — add the *RAGflow Tutor* block to a course; teachers upload
   course documents into the block's own knowledge base.
@@ -114,7 +114,7 @@ Each surface is enabled independently:
 - `aiprovider/ragflow:viewerrordetails` — who may see the **technical error cause** on a failed chat
   (default: Manager + editing Teacher; site admins always). Keep it off for ordinary users, since the cause
   can reveal server-side internals.
-- Each surface has its own `:use` capability (e.g. `block/ragflowtutor:use`,
+- Each feature has its own `:use` capability (e.g. `block/ragflowtutor:use`,
   `aiplacement/ragflowhelpdesk:use`) and management capabilities for editing knowledge bases.
 
 ## Troubleshooting

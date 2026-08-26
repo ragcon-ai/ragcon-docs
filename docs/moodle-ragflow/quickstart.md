@@ -6,16 +6,16 @@ exists it is given as a site-relative URL (prefix it with your Moodle address).
 
 ## Administrators
 
-Set up the shared backend first, then switch on only the surfaces you want.
+Set up the shared backend first, then switch on only the features you want.
 
-1. **Install the plugins** in dependency order — the **provider first**.
+1. **Install the plugins** in dependency order, the **provider first**.
    *Site administration → Plugins → Install plugins* (`/admin/tool/installaddon/index.php`).
    Order: `aiprovider_ragflow` → Helpdesk / Tutor / Search → Dashboard *(optional, paid)*.
 2. **[Prepare RAGflow](setup-ragflow.md)** — connect your models (chat + embedding required; img2txt +
    rerank recommended) and set them as defaults, then create a dataset + assistant.
 3. **Add the AI provider instance** — enter the base URL + API key.
    *Site administration → AI → AI providers* (`/ai/configure_providers.php`).
-4. **Switch on the surfaces you want:**
+4. **Switch on the features you want:**
       - Helpdesk drawer — *Site administration → AI → AI placements → RAGflow Helpdesk*.
       - Tutor block defaults — *Site administration → Plugins → Blocks → RAGflow Tutor*.
       - Search block defaults — *Site administration → Plugins → Blocks → RAGflow file search*.
@@ -46,7 +46,7 @@ On a course you teach (with editing turned on):
 
 ## Students
 
-No setup needed — just use what your course offers:
+No setup needed. Just use what your course offers:
 
 1. **Course tutor** — if your course page shows a **RAGflow Tutor**, open the chat and ask about the
    course material.
