@@ -8,10 +8,10 @@
 
 The RAGflow AI provider plugs into Moodle's core **AI subsystem** and connects Moodle's text AI
 actions to an external [RAGflow](https://ragflow.io) instance. Answers are produced by a RAGflow
-**chat assistant** over the OpenAI-compatible endpoint, so they are retrieval-augmented and grounded
-in the assistant's knowledge base rather than a plain LLM. It is also the shared backend of the whole
-suite: it hosts the chat engine, session/long-term memory, source citations and a secure download
-proxy that the Tutor, Search and Helpdesk plugins consume. **Install and configure it first.**
+**chat assistant** over the OpenAI-compatible endpoint, so they are retrieval-augmented and based on
+the assistant's knowledge base rather than a plain LLM. It is also the shared backend of the whole
+suite: it runs the chat engine, session and long-term memory, source citations and a secure download
+proxy that the Tutor, Search and Helpdesk plugins use. **Install and configure it first.**
 
 ## Features
 
@@ -28,7 +28,7 @@ proxy that the Tutor, Search and Helpdesk plugins consume. **Install and configu
 - **Core AI actions:** serves `generate_text`, `summarise_text`, `explain_text`, each answered by the
   configured RAGflow assistant.
 - **Assistant-driven model:** the assistant's own model and knowledge base are used; a live dropdown
-  lists the tenant's assistants and annotates each with its knowledge-base document count (or "no
+  lists your RAGflow assistants and labels each with its knowledge-base document count (or "no
   knowledge base — LLM proxy only"), so you can pick a RAG assistant or use RAGflow as a plain LLM.
 - **Knowledge-base scoping & metadata filtering:** answers can be filtered to *this Moodle* (course +
   site), the *whole KB*, or *external/shared* documents, and restricted to the current course or the
@@ -37,20 +37,20 @@ proxy that the Tutor, Search and Helpdesk plugins consume. **Install and configu
   model's own `[ID]` citations** (only the documents actually used). They are numbered per answer as
   `[answer.source]` (e.g. `[1.1]`, `[2.1]`), shown on a `Sources:` line at the end of the answer and as a
   linked list — linking to the Moodle activity when known, otherwise through a secure proxy.
-- **Secure download proxy (`download.php`):** streams a RAGflow document server-side so the API key
-  never reaches the browser; per-click **signed, time-limited** links (token mode) or **token-less**
-  context-authorised links, with a strict content-type allowlist (`nosniff`, forced attachment for
-  anything but PDF/PNG/JPEG/GIF/WebP/plain-text).
+- **Secure download proxy (`download.php`):** streams a RAGflow document from the server, so the API
+  key never reaches the browser. Links are **signed and time-limited**, created when you click, and only
+  safe file types open in the browser (`nosniff`; anything but PDF, PNG, JPEG, GIF, WebP or plain text
+  downloads as a file).
 - **Conversation (session) memory:** for the Helpdesk drawer, RAGflow keeps the conversation so
   follow-ups have context and the transcript is restored on return.
 - **Long-term memory:** optional per-user durable facts via RAGflow's native Memory API (opt-in, off
   by default; disabled in private/incognito mode; cleared with the user's data).
 - **Answers in the user's Moodle language** (profile or course-forced language).
-- **Per-user rate limiting** (20 requests/minute) and a **robust completion path** (120 s timeout,
-  one retry on network/5xx, not on 4xx).
-- **Diagnosable failures:** the real technical cause (HTTP status, RAGflow `{code, message}`,
-  embedding/context-window errors) is surfaced to permitted users and to the [dashboard](dashboard.md);
-  a coarse error type feeds usage analytics.
+- **Per-user rate limiting** (20 requests/minute) and **reliable requests** (120 s timeout,
+  one retry on a network or 5xx error, not on 4xx).
+- **Clear failures:** the real technical cause (HTTP status, RAGflow `{code, message}`, embedding or
+  context-window errors) is shown to permitted users and to the [dashboard](dashboard.md); a coarse
+  error type is recorded for usage analytics.
 - **Usage events (metrics only, no content):** `chat_completed` / `chat_failed` / `search_performed`
   for the optional [dashboard](dashboard.md).
 - **Scheduled task:** *Prune stale RAGflow conversation sessions* (daily) removes sessions unused past
@@ -107,16 +107,16 @@ The provider counts as *configured* only when both API key and base URL are set.
 
 ## Roles & permissions (who can do what)
 
-The provider has **no interface of its own** — it powers the Tutor, Helpdesk and Search plugins, each of
-which enforces its own permissions. The only things governed here are **who configures the connection**
-and **who sees the technical cause of a failed request**.
+The provider has **no interface of its own**. It is the backend for the Tutor, Helpdesk and Search
+plugins, each of which enforces its own permissions. Only two things are governed here: **who configures
+the connection** and **who sees the technical cause of a failed request**.
 
 | Role | What this role can do |
 |---|---|
 | **Site administrator** | Full control: create / configure the RAGflow provider instance (URL, API key, models, rate limits) under *Site administration → AI → AI providers*, enable it for the AI actions, and see the *Details* cause of a failed chat everywhere. |
-| **Manager** | Sees the **technical *Details*** of a failed chat (`:viewerrordetails`). Does **not** configure the provider — that is a site-admin area — unless separately granted `moodle/site:config`. |
+| **Manager** | Sees the **technical *Details*** of a failed chat (`:viewerrordetails`). Does **not** configure the provider (that is a site-admin area) unless separately granted `moodle/site:config`. |
 | **Teacher (editing)** | Sees the *Details* of a failed chat **in their course**. |
-| **Non-editing teacher · Student · any authenticated user** | Use the AI features built on the provider (per those plugins' own rules), but on a failure only get a **generic message** — the technical cause is withheld. |
+| **Non-editing teacher · Student · any authenticated user** | Use the AI features built on the provider, following each plugin's own rules. On a failure they see only a **generic message**; the technical cause is not shown. |
 | **Guest / not logged in** | No access. |
 
 ## Privacy

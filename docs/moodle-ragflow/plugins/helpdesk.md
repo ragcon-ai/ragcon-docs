@@ -6,10 +6,10 @@
 
 **Component:** `aiplacement_ragflowhelpdesk` · **Requires:** Moodle 5.0–5.2 · **Depends on:** `aiprovider_ragflow`
 
-A site-wide **help drawer** (an AI *placement*). It adds a "RAGflow Helpdesk" item to the site's
-primary/more menu that opens a chat page answering from an organisation-wide RAGflow knowledge base
-(system context, no course scope) — typically your help/FAQ/support content. It owns its own settings
-and drives the shared chat engine from the [AI provider](provider.md).
+A site-wide **help drawer** (an AI *placement*). It adds a **RAGflow Helpdesk** item to the site's
+primary (More) menu. The item opens a chat page that answers from an organisation-wide RAGflow knowledge
+base (system context, no course scope), typically your help, FAQ or support content. It has its own
+settings and uses the shared chat engine from the [AI provider](provider.md).
 
 <!-- shot:helpdesk-02 -->
 
@@ -35,12 +35,12 @@ and drives the shared chat engine from the [AI provider](provider.md).
 
 - **Site-wide navigation entry → chat page** at the system context, shown only when the user is logged
   in (not a guest), has the *use* capability, and the placement is enabled and configured.
-- **Conversation (session) memory** — on by default — so follow-ups keep context and the transcript is
+- **Conversation (session) memory** (on by default): follow-ups keep context and the transcript is
   restored on return (stored server-side in RAGflow).
-- **Long-term memory** — optional — carries durable facts about the user (name, role, language,
-  preferences, recurring goals) across conversations via RAGflow's native Memory.
+- **Long-term memory** (optional): carries durable facts about the user (name, role, language,
+  preferences, recurring goals) across conversations, using RAGflow's native Memory.
 - **Configurable greeting**, optional **source citations**, and answers in the user's Moodle language.
-- **Private/incognito mode** and drawer controls — **New conversation**, **New private conversation** and
+- **Private/incognito mode** and drawer controls: **New conversation**, **New private conversation** and
   **Delete all memories about me** (from the shared engine).
 
 ## Configuration

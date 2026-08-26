@@ -7,10 +7,10 @@
 **Component:** `block_ragflowtutor` · **Requires:** Moodle 5.0–5.2 · **Depends on:** `aiprovider_ragflow`
 
 A per-course **AI tutor** delivered as a Moodle block. Placed on a course or activity page, it renders
-a chat drawer that answers students' questions grounded in a RAGflow knowledge base scoped to that
-course. Each block instance has its **own knowledge base**: teachers upload course documents and
-manage them directly in the block. The chat engine, credentials and knowledge-base API live in the
-shared [AI provider](provider.md).
+a chat drawer that answers students' questions using a RAGflow knowledge base for that course. Each
+block instance has its **own knowledge base**: teachers upload course documents and manage them
+directly in the block. The chat engine, credentials and knowledge-base API come from the shared
+[AI provider](provider.md).
 
 <!-- shot:tutor-01 -->
 
@@ -44,23 +44,24 @@ shared [AI provider](provider.md).
 ![File row in the knowledge base panel with re-process, download and delete actions](../img/tutor/tutor-10-kb-file-actions.png)
 *Per file: re-process, download through a signed link, or delete.*
 
-- **Course tutor chat drawer** for anyone with the *use* capability; the transcript is browser-side,
-  with a per-user rate guard in the shared engine.
-- **Greeting & system instruction** per block, to steer tone and behaviour for the course.
+- **Course tutor chat drawer** for anyone with the *use* capability. The transcript is kept in the
+  browser, with a per-user rate limit in the shared engine.
+- **Greeting & system instruction** per block, to set the tone and behaviour for the course.
 - **Per-instance knowledge base / assistant:** pick an existing RAGflow assistant (labelled with its
-  document count) **or create a brand-new knowledge base inline** — the block creates the RAGflow
-  dataset + assistant, seeds a provenance `README.md`, links them, and (for larger parses) finishes
-  binding in the background.
-- **In-block knowledge-base panel** (for managers/trainers with *manage files*): a status line with a
-  traffic-light indicator (green ready / yellow linking-or-parsing / red error), a refresh button, the
-  file list and an upload area. It auto-polls while the KB is linking or files are still parsing.
+  document count) **or create a new knowledge base inline**. The block creates the RAGflow dataset and
+  assistant, adds a small `README.md`, links them, and (for larger uploads) finishes linking in the
+  background.
+- **In-block knowledge-base panel** (for managers and trainers with *manage files*): a status line with
+  a colour-coded status light (green ready / yellow linking or parsing / red error), a refresh button, the
+  file list and an upload area. It refreshes automatically while the knowledge base is linking or files are
+  still parsing.
 - **File management** (only when the block manages the files — a new KB with *Manage files from this block*):
     - **Upload** multiple files (streamed as multipart, so large files are fine); each is virus-scanned
-      (Moodle antivirus), size-checked, pushed into the KB and parsed.
-    - **Re-process** a file, **delete** a file (with confirmation), **download** a file through a
-      short-lived signed proxy link (minted at click time).
-    - An internal seed `README.md` is always hidden and can never be downloaded/deleted/re-parsed; an
-      ownership guard ensures actions only touch this block's own KB.
+      (Moodle antivirus), size-checked, pushed into the knowledge base and parsed.
+    - **Re-process** a file, **delete** a file (with confirmation), or **download** a file through a
+      short-lived signed link that is created when you click.
+    - An internal `README.md` is always hidden and can never be downloaded, deleted or re-parsed, and
+      every action can only touch this block's own knowledge base.
 - **Answers in the user's Moodle language**; optional **source citations**.
 
 !!! warning "Uploaded documents live in RAGflow, not Moodle"
@@ -146,10 +147,10 @@ This avoids weakly-related documents showing up as "sources".
 - References are numbered **per answer** as `[answer.source]`: the first answer's sources are `[1.1]`,
   `[1.2]`, …, the second answer's are `[2.1]`, `[2.2]`, and so on — so it stays clear which files belong
   to which answer as the conversation (and the stacked Sources panel) grows.
-- A cited document is always listed, even if it is an **image or other low-text-similarity file** — the
+- A cited document is always listed, even if it is an **image or other low-text-similarity file**: the
   model's citation is the relevance signal.
-- If the model cites nothing — including a **"nothing relevant found"** answer — the Sources panel stays
-  **empty**: a not-found answer never shows a source.
+- If the model cites nothing (including a **"nothing relevant found"** answer), the Sources panel stays
+  **empty**. A not-found answer never shows a source.
 
 !!! note "Keep the `[ID]` markers in a custom system instruction"
     The citation list depends on the model emitting its `[ID]` reference markers. The default **System
@@ -168,31 +169,31 @@ This avoids weakly-related documents showing up as "sources".
 | `block/ragflowtutor:managefiles` | Teacher, Manager | Manage the documents of a Moodle-managed KB (and see the KB panel) |
 
 !!! note "Who wires the knowledge base"
-    Adding the block is a **teacher**-level action, but **choosing or creating** its knowledge base /
-    assistant needs *change* / *create knowledge base* — **Manager** (or site admin) by default. The two
-    roles split cleanly: a manager wires the knowledge base once; teachers then manage its documents and
-    set the greeting / system instruction. Until a manager wires one, a teacher who opens the still
-    unconfigured block is told to **ask a site administrator** — the knowledge-base field is not shown to
-    their role. Grant `:editkb` (and optionally `:createkb`) to the teacher role if you want trainers to
-    wire it themselves.
+    Adding the block is a **teacher**-level action, but **choosing or creating** its knowledge base and
+    assistant needs *change* or *create knowledge base*, which is **Manager** (or site admin) by default.
+    The two roles split cleanly: a manager sets the knowledge base up once; teachers then manage its
+    documents and set the greeting and system instruction. Until a manager sets one up, a teacher who
+    opens the unconfigured block is asked to **contact a site administrator**, because the knowledge-base
+    field is not shown to their role. Grant `:editkb` (and optionally `:createkb`) to the teacher role if
+    you want trainers to set it up themselves.
 
 ## Roles & permissions (who can do what)
 
 | Role | What this role can do |
 |---|---|
 | **Site administrator** | Everything below, in any course. |
-| **Manager** | Add the block, chat, edit the greeting / system instruction, manage the KB's documents — **and** the only role that may **change or create** the knowledge base / assistant (`:editkb` / `:createkb`). Wires the KB. |
-| **Teacher (editing)** | **Add** the block (`:addinstance`), **chat** (`:use`), **edit** the greeting + system instruction (`:editcontent`), and **manage documents** of a Moodle-managed KB — upload / delete / see the KB panel (`:managefiles`). **Cannot** choose or create the KB itself (manager only, by default). |
+| **Manager** | Add the block, chat, edit the greeting and system instruction, and manage the knowledge base's documents. It is also the only role that may **change or create** the knowledge base or assistant (`:editkb` / `:createkb`), so it sets the knowledge base up. |
+| **Teacher (editing)** | **Add** the block (`:addinstance`), **chat** (`:use`), **edit** the greeting and system instruction (`:editcontent`), and **manage documents** of a Moodle-managed knowledge base: upload, delete and see the panel (`:managefiles`). **Cannot** choose or create the knowledge base itself (manager only, by default). |
 | **Non-editing teacher** | **Chat** with the tutor (`:use`). No configuration. |
 | **Student** | **Chat** with the tutor (`:use`). No configuration. |
 | **Guest / not logged in** | No access. |
 
-See the *"Who wires the knowledge base"* note above to let editing teachers wire the KB themselves
-(grant `:editkb` / `:createkb`).
+See the *"Who wires the knowledge base"* note above to let editing teachers set the knowledge base up
+themselves (grant `:editkb` / `:createkb`).
 
 ## Privacy
 
 The block **stores no personal data itself**. The conversation exists only in the browser; prompts are
 handled by the [AI provider](provider.md). Uploaded documents are stored in RAGflow (see the warning
-above), and a newly created KB's seed `README.md` records provenance (site URL, course, block id,
-creator, timestamp).
+above), and a newly created knowledge base's `README.md` records where it came from (site URL, course,
+block id, creator, timestamp).
