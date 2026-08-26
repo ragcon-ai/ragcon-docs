@@ -5,6 +5,7 @@
     Tutor / Search / Helpdesk plugins and the AI provider, it is a **paid add-on distributed through the
     Moodle Marketplace** — so there is no public source repository for it.
 
+    - **Why it pays off (the business case):** [Usage dashboard — value at scale](dashboard-value.md)
     - **Moodle Marketplace listing:** *link to follow*
     - **Public issue tracker:** [https://github.com/ragcon-ai/moodle-local_ragflowdashboard/issues](https://github.com/ragcon-ai/moodle-local_ragflowdashboard/issues){ target="_blank" rel="noopener" }
 

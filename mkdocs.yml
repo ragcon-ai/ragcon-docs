@@ -68,6 +68,7 @@ nav:
           - Search block: moodle-ragflow/plugins/search.md
           - Helpdesk placement: moodle-ragflow/plugins/helpdesk.md
           - Usage dashboard: moodle-ragflow/plugins/dashboard.md
+          - Usage dashboard — value at scale: moodle-ragflow/plugins/dashboard-value.md
       - Moodle version specifics: moodle-ragflow/moodle-version-notes.md
       - Security &amp; data protection: moodle-ragflow/security.md
       - Releases: moodle-ragflow/releases.md
