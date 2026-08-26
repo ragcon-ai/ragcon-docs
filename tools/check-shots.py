@@ -22,9 +22,13 @@ import yaml
 
 DOCS_REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOCS_DIR = os.path.join(DOCS_REPO, "docs")
-IMG_ROOT = os.path.join(DOCS_DIR, "moodle-ragflow", "img")
 MARKER_RE = re.compile(r"<!--\s*shot:(\S+)\s*-->")
 IMG_RE = re.compile(r"^!\[(?P<alt>.*)\]\((?P<path>[^)]+)\)\s*$")
+
+
+def img_root_for(page):
+    """Images live under each product's own tree: docs/<product>/img (product = page's top folder)."""
+    return os.path.join(DOCS_DIR, page.split("/", 1)[0], "img")
 
 
 def load_shots(marketplace):
@@ -103,7 +107,9 @@ def main():
             if not os.path.exists(img_abs):
                 errors.append(f"{sid}: image file missing: {path} ({rel})")
             # 3. path matches manifest 'file'
-            expected = os.path.relpath(os.path.join(IMG_ROOT, shot["file"]), os.path.dirname(abspath))
+            expected = os.path.relpath(
+                os.path.join(img_root_for(shot["page"]), shot["file"]), os.path.dirname(abspath)
+            )
             if path != expected:
                 errors.append(f"{sid}: image path '{path}' != expected '{expected}' ({rel})")
             # 4. alt + caption verbatim

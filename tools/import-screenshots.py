@@ -22,7 +22,12 @@ import sys
 import yaml
 
 DOCS_REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-IMG_ROOT = os.path.join(DOCS_REPO, "docs", "moodle-ragflow", "img")
+
+
+def img_root_for(page):
+    """Images live under each product's own tree: docs/<product>/img (product = page's top folder)."""
+    product = page.split("/", 1)[0]
+    return os.path.join(DOCS_REPO, "docs", product, "img")
 
 
 def load_manifest(marketplace):
@@ -77,7 +82,7 @@ def main():
             continue
         rel_file = shot["file"]  # e.g. "dashboard/dashboard-01-status-tab.png"
         src = os.path.join(staging, rel_file)
-        dst = os.path.join(IMG_ROOT, rel_file)
+        dst = os.path.join(img_root_for(shot["page"]), rel_file)
         if not os.path.exists(src):
             problems.append(f"SOURCE MISSING: {src}")
             continue

@@ -75,3 +75,12 @@ nav:
           - For trainers: moodle-ragflow/guides/trainer.md
           - For students: moodle-ragflow/guides/student.md
       - FAQ: moodle-ragflow/faq.md
+  - RAGflow Moodle Connector:
+      - ragflow-moodle-connector/index.md
+      - How it works: ragflow-moodle-connector/how-it-works.md
+      - Set up the connector: ragflow-moodle-connector/setup.md
+      - Content &amp; metadata: ragflow-moodle-connector/content-and-metadata.md
+      - Sync behaviour: ragflow-moodle-connector/sync-behaviour.md
+      - With the Moodle RAGflow Suite: ragflow-moodle-connector/moodle-suite.md
+      - Troubleshooting: ragflow-moodle-connector/troubleshooting.md
+      - Security &amp; permissions: ragflow-moodle-connector/security.md
