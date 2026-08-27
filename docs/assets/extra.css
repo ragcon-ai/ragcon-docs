@@ -147,6 +147,22 @@
 .md-typeset p > img[src$="tutor-09-kb-reprocess.png"],
 .md-typeset p > img[src$="search-01-block-idle.png"],
 .md-typeset p > img[src$="search-02-results-ranked.png"],
-.md-typeset p > img[src$="search-06-empty-state.png"] {
+.md-typeset p > img[src$="search-06-empty-state.png"],
+.md-typeset p > img[src$="setup-04-ragflow-assistant-bound.png"],
+.md-typeset p > img[src$="setup-05-ragflow-system-prompt.png"] {
   max-width: 50%;
+}
+
+/* -------- Docs home: header image (square logo/graphic, centred, no frame) -------- */
+.md-typeset .rf-home-header {
+  text-align: center;
+  margin: 0.4rem 0 1.6rem;
+}
+.md-typeset .rf-home-header img {
+  max-width: 360px;
+  width: 100%;
+  height: auto;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
 }

@@ -31,6 +31,12 @@ base and scope.
 ![RAGflow file search block on a Moodle course page with an empty search field](../img/search/search-01-block-idle.png)
 *The Search block adds a semantic search box to any page.*
 
+!!! abstract "At a glance"
+    1. Install the RAGflow AI provider first
+    2. Add the Search block to a page
+    3. Select the knowledge base(s)
+    4. Tune the result quality
+
 ## Features
 
 <!-- shot:search-02 -->

@@ -9,6 +9,13 @@ provider, so you only do this setup a single time.
     - At least one RAGflow **assistant (chat)** bound to a **knowledge base / dataset** that contains
       your documents. See [Prepare a knowledge base](#1-prepare-a-knowledge-base-in-ragflow) below.
 
+!!! abstract "At a glance"
+    1. Configure your RAGflow models
+    2. Prepare a knowledge base
+    3. Add the RAGflow AI provider
+    4. Enable the plugins you want
+    5. Set permissions
+
 ## Before you start: configure your models
 
 <!-- shot:setup-01 -->

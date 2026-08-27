@@ -29,6 +29,12 @@ directly in the block. The chat engine, credentials and knowledge-base API come 
 ![Moodle course page with the RAGflow Tutor block in the sidebar](../img/tutor/tutor-01-block-in-course.png)
 *The Tutor block sits on the course page and opens a chat drawer.*
 
+!!! abstract "At a glance"
+    1. Install the RAGflow AI provider first
+    2. Add the Tutor block to a course
+    3. Choose or create the knowledge base
+    4. Upload the course documents
+
 ## Features
 
 <!-- shot:tutor-02 -->
