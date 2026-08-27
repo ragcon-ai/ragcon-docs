@@ -30,7 +30,7 @@ maintainers and is open to everyone.
 For guaranteed response times, consulting, installation and hosting, integrations, or custom
 development, **RAGcon GmbH** offers professional support and services **in English and German**.
 
-→ **[www.ragcon.ai](https://www.ragcon.ai)**
+→ **[www.ragcon.ai](https://www.ragcon.ai/en)**
 
 RAGcon GmbH is the company behind these products and can help — as an English- and German-speaking
 point of contact — with everything from a first RAGflow setup to a tailored deployment.
