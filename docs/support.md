@@ -34,3 +34,19 @@ development, **RAGcon GmbH** offers professional support and services **in Engli
 
 RAGcon GmbH is the company behind these products and can help — as an English- and German-speaking
 point of contact — with everything from a first RAGflow setup to a tailored deployment.
+
+## Moodle and RAGflow themselves
+
+For the underlying platforms — rather than the RAGcon plugins — go to each project's own help:
+
+!!! info "Moodle"
+    Documentation and community for Moodle itself:
+
+    - Docs: <https://docs.moodle.org>
+    - Community and forums: <https://moodle.org>
+
+!!! info "RAGflow"
+    Documentation and source for RAGflow itself:
+
+    - Docs: <https://ragflow.io/docs/>
+    - Source and issues: <https://github.com/infiniflow/ragflow>

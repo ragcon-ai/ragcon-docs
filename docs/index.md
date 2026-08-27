@@ -41,3 +41,25 @@ be searched, cited and answered over — and kept current automatically.
 
 More RAGcon products will be documented here over time. Each product lives in its own section;
 this site is built from Markdown and published automatically via GitHub Actions.
+
+## Licences and attributions
+
+!!! info "The software these products build on"
+    **Moodle** is software by **Moodle Pty Ltd**, released under the **GNU GPL v3 or later**.
+
+    - Source: <https://github.com/moodle/moodle>
+    - Bug tracker: <https://moodle.atlassian.net/jira/projects>
+
+    *The word Moodle and associated Moodle logos are trademarks or registered trademarks of
+    Moodle Pty Ltd or its related affiliates.*
+
+    ---
+
+    **RAGflow** is open-source software by **InfiniFlow Inc.**, released under the **Apache License 2.0**.
+
+    - Web: <https://ragflow.io>
+    - Source: <https://github.com/infiniflow/ragflow>
+    - Bug tracker: <https://github.com/infiniflow/ragflow/issues>
+
+    These products are independent integrations; they are not affiliated with or endorsed by
+    Moodle Pty Ltd or InfiniFlow Inc.
