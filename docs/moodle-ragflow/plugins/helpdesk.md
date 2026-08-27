@@ -28,10 +28,10 @@ settings and uses the shared chat engine from the [AI provider](provider.md).
 ![RAGflow Helpdesk chat page with the greeting and a first answer](../img/helpdesk/helpdesk-02-chat-page.png)
 *The help drawer answers from your organisation-wide knowledge base.*
 
-!!! abstract "At a glance"
-    1. Install the RAGflow AI provider first
+!!! abstract "Easy setup"
+    1. [Install the RAGflow AI provider first](provider.md)
     2. Enable the Helpdesk placement
-    3. Choose the help assistant
+    3. [Choose the help assistant](#configuration)
     4. Set greeting and memory
 
 ## Features

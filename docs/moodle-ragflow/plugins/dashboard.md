@@ -30,11 +30,11 @@ and provider plugins run without it. It records the provider's usage separately,
 optional and does no harm if it is not installed. It also ships `rfdsource_*` sub-plugins that give each
 feature its own status checks and analytics.
 
-!!! abstract "At a glance"
-    1. Install the RAGflow AI provider first
+!!! abstract "Easy setup"
+    1. [Install the RAGflow AI provider first](provider.md)
     2. Install the Usage dashboard
     3. Open it under Reports → RAGflow Dashboard
-    4. Enable the raw API log if needed
+    4. [Enable the raw API log if needed](#configuration)
 
 ## Features
 

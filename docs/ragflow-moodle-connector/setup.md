@@ -3,11 +3,11 @@
 Two things are needed: a **Moodle web-service token** for the connector to read with, and a **data source**
 in RAGflow that uses it.
 
-!!! abstract "At a glance"
-    1. Enable web services in Moodle
-    2. Create a web-service token
-    3. Add the Moodle data source in RAGflow
-    4. Bind it to a knowledge base and sync
+!!! abstract "Easy setup"
+    1. [Enable web services in Moodle](#1-enable-web-services-in-moodle)
+    2. [Create a web-service token](#2-the-web-service-token)
+    3. [Add the Moodle data source in RAGflow](#3-add-the-data-source-in-ragflow)
+    4. [Bind it to a knowledge base and sync](#4-bind-it-to-a-knowledge-base-and-sync)
 
 ## Prerequisites
 

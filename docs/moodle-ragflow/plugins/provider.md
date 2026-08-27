@@ -27,11 +27,11 @@ the assistant's knowledge base rather than a plain LLM. It is also the shared ba
 suite: it runs the chat engine, session and long-term memory, source citations and a secure download
 proxy that the Tutor, Search and Helpdesk plugins use. **Install and configure it first.**
 
-!!! abstract "At a glance"
+!!! abstract "Easy setup"
     1. Install and enable the provider
-    2. Add a provider instance
+    2. [Add a provider instance](#configuration)
     3. Set the base URL and API key
-    4. Configure the actions you want
+    4. [Configure the actions you want](#configuration)
 
 ## Features
 

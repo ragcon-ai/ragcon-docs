@@ -6,13 +6,13 @@
   </div>
 </div>
 
-<p class="rf-home-header"><img src="assets/RAGflow-Moodle.png" alt="RAGflow for Moodle" width="360"></p>
+<p class="rf-home-header"><img src="assets/RAGflow-Moodle.png" alt="RAGflow for Moodle"></p>
 
 ## Not sure where to start?
 
 Answer one question:
 
-- Bring your Moodle / course content into an AI-powered RAG and keep it current? → **[RAGflow Moodle Connector](ragflow-moodle-connector/index.md)**
+- Bring your Moodle / course content into an AI-powered RAG and keep it in sync? → **[RAGflow Moodle Connector](ragflow-moodle-connector/index.md)**
 - Let Moodle reach RAGflow through its AI subsystem? → **[RAGflow AI provider](moodle-ragflow/plugins/provider.md)**
 - Want an AI tutor in each course? → **[Tutor block](moodle-ragflow/plugins/tutor.md)**
 - Need central AI help across your Moodle site? → **[Helpdesk](moodle-ragflow/plugins/helpdesk.md)**

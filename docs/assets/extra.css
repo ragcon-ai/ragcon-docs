@@ -159,7 +159,7 @@
   margin: 0.4rem 0 1.6rem;
 }
 .md-typeset .rf-home-header img {
-  max-width: 360px;
+  max-width: 100%;
   width: 100%;
   height: auto;
   border: 0;
