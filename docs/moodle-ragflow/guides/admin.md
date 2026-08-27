@@ -60,6 +60,24 @@ When diagnosing a specific feature, enable its **debug capture** temporarily to 
 request/response (including the technical error cause) — then turn it off again (it captures user
 content). Mind data protection and the retention setting.
 
+## 6. Removing the suite
+
+The plugins depend on the AI provider, so uninstall them in reverse order and delete each plugin's
+folder as you go.
+
+1. **Uninstall the feature plugins first** — Dashboard, Tutor, Search, Helpdesk — at *Site administration
+   → Plugins → Plugins overview*. **Delete each plugin's folder** when Moodle asks; otherwise Moodle still
+   sees it on disk and offers to reinstall it (and it keeps the provider "in use").
+2. **Delete the RAGflow provider instance** at *Site administration → AI → AI providers*.
+3. **Uninstall the AI provider last.** It cannot be removed while any feature plugin's folder is still on
+   disk, because Moodle then treats it as still required.
+
+!!! note "Your data lives in RAGflow, not Moodle"
+    The plugins store only **metrics** in Moodle (the dashboard's tables, dropped on uninstall). Your
+    knowledge bases, documents, conversations and long-term memory are held in **RAGflow** — uninstalling
+    the Moodle plugins does **not** delete them. Remove the datasets, assistants and memories in RAGflow
+    itself if you want them gone. For a single user's data, use Moodle's privacy tools.
+
 ## Troubleshooting
 
 | Symptom | Likely cause | Fix |
