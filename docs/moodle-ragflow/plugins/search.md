@@ -88,8 +88,8 @@ in step with the documents maintained in Moodle, with no manual re-upload.
     returns the authoritative document itself — no LLM step, nothing that can hallucinate — which is
     exactly the property a compliance or citizen-information context needs.
 
-    It runs self-hosted, so the
-    corpus stays under the body's control.
+    It runs on a RAGflow instance under the body's control — self-run or privately hosted — so the
+    corpus stays there.
 
 ## Configuration
 

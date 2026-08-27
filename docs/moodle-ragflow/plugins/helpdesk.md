@@ -82,7 +82,7 @@ knowledge base aligned with the policy and FAQ documents maintained in Moodle.
 
     Answers are
     grounded and cited, long-term memory is opt-in and user-clearable, the log stores metrics only, and
-    everything is self-hosted — the controls a data-protection officer needs to sign it off.
+    everything runs on an instance under the authority's control — the controls a data-protection officer needs to sign it off.
 
 ## Configuration
 

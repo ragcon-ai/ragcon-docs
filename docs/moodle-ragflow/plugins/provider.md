@@ -85,7 +85,7 @@ content into the RAGflow knowledge bases the provider serves and keeps them curr
     server-side so the API key never reaches the browser. IT sets it up once and governs it centrally.
 
 ??? example "Universities — standards-based, faculty-wide"
-    A university connects Moodle's native AI subsystem to one self-hosted RAGflow, and every faculty's blocks
+    A university connects Moodle's native AI subsystem to a single RAGflow instance (self-run or hosted by RAGcon), and every faculty's blocks
     and placements consume the same backend — answering in each user's Moodle language.
 
     Because it sits on

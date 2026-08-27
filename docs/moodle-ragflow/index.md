@@ -13,8 +13,8 @@ administrator connects the suite to RAGflow **once, centrally**; after that, tra
 simply use it.
 
 It is built on Moodle's **AI subsystem**: a single AI provider connects to RAGflow, and several blocks
-and placements use it. Because you run RAGflow yourself, your data — and the choice of AI models — stay
-under your control, and every answer is grounded in your own content and cites its **sources**. RAGflow
+and placements use it. Because the RAGflow instance is yours — self-run or hosted by RAGcon — your data and
+the choice of AI models stay under your control, and every answer is grounded in your own content and cites its **sources**. RAGflow
 even reads scanned pages, images and tables, not just plain text — see
 [Document understanding](document-understanding.md).
 

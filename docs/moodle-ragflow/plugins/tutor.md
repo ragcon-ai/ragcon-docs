@@ -107,8 +107,8 @@ year's version.
     official regulation texts and internal guidance, with a citation for every statement — essential where
     an answer must be traceable to its source.
 
-    Everything runs on the authority's self-hosted RAGflow, so
-    training content and learner questions never leave its own infrastructure.
+    Everything runs on a RAGflow instance under the authority's control — self-run or privately hosted —
+    so training content and learner questions stay there.
 
 ## Configuration
 
