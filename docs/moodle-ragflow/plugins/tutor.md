@@ -134,11 +134,11 @@ Fields are shown according to the editor's capabilities (site admins see all).
 <!-- shot:tutor-04 -->
 
 ![Tutor block configuration with the knowledge base dropdown open showing Create new knowledge base](../img/tutor/tutor-04-config-knowledge-base.png)
-*Pick an existing assistant or create a brand-new knowledge base inline.*
+*Pick an existing assistant or create a brand-new knowledge base inline — chosen once, at creation.*
 
 | Field | Type | Default | Meaning |
 |---|---|---|---|
-| **Knowledge base / assistant** (`config_chatid`) | select | — | The RAGflow assistant this Tutor uses. Users with *create KB* also get "➕ Create new knowledge base …". |
+| **Knowledge base / assistant** (`config_chatid`) | select (creation) / read-only (later) | — | The RAGflow assistant this Tutor uses. Users with *create KB* also get "➕ Create new knowledge base …". **Fixed after creation** — when editing a bound block it is shown read-only (its name), so it can't be switched. |
 | **New knowledge base name** (`config_newkbname`) | text | — | Shown only when creating a new KB; must be unique. |
 
 **Content** *(admin or edit-content — trainers)*
@@ -169,11 +169,13 @@ Fields are shown according to the editor's capabilities (site admins see all).
 | **Serve source files via RAGflow proxy** (`config_serveviaproxy`) | checkbox | off | Stream sources through the secure proxy (hidden unless *Include sources* is on). |
 | **Extra parameters (JSON)** (`config_extraparams`) | textarea | — | Extra JSON merged into the request. |
 
-!!! info "Document source is fixed after creation"
-    The document source is structural (it decides the metadata filter and is bound to the knowledge base
-    chosen at creation). It is chosen **once**, via *Manage files from this block* (new KB) or *Metadata
-    filtering* (existing KB); after the block is bound to a knowledge base the choice is shown **read-only**
-    with a short summary. To change it, remove the block and add a new one.
+!!! info "Knowledge base / assistant and document source are fixed after creation"
+    Both are structural: the assistant carries its knowledge base, and the document source decides the
+    metadata filter bound to it. They are chosen **once**, when the block is created (the knowledge base /
+    assistant picker, and — for the source — *Manage files from this block* for a new KB or *Metadata
+    filtering* for an existing one). Once the block is bound, both are shown **read-only** (the assistant's
+    name and a short source summary); changing them would silently break retrieval. To use different
+    settings, remove the block and add a new one.
 
 !!! tip "Trainers can't overwrite admin settings"
     On save, only the fields the current user may change are written, so a trainer editing the greeting
