@@ -41,11 +41,26 @@ relevant plugin's repository (linked at the top of each [plugin page](plugins/pr
 
     See [Tutor block → Knowledge base / assistant](plugins/tutor.md) for where the assistant is chosen.
 
+??? question "The assistant greets the user but lists *sources* (e.g. *[1.1] [1.2]*) that have nothing to do with a plain “hello”. Why?"
+
+    Same cause as the entry above. RAGflow's *default* assistant prompt tells the model to summarise and
+    **cite** the dataset on every turn, so it attaches citation markers even to a greeting. The plugin does
+    not add sources of its own — it turns the model's **own** citation markers into the Sources list — so a
+    spurious citation becomes a spurious source. It is inconsistent (the model only sometimes adds the
+    citations), which is why the same greeting shows sources one time and none the next.
+
+    With a **clean prompt** the model only cites a document it actually used, and a greeting shows no
+    sources. Fix it the same two ways: prefer a **block-created assistant** (clean prompt automatically), or
+    **edit the existing assistant's prompt in RAGflow** and drop the “summarise / list the dataset”
+    instruction. See the entry above and
+    [Answer wording when nothing is found](guides/admin.md#answer-wording-when-nothing-is-found).
+
 ??? question "Can I trust the sources listed under an answer?"
 
     The citations come from the **documents the model actually used** to write the answer (its own reference
-    markers), not a separate keyword search — so the list reflects the real basis of the answer. As with any
-    AI, open the linked source to confirm the detail that matters. Retrieval-only results in the
+    markers), not a separate keyword search — so the list reflects the real basis of the answer. (The one
+    exception is an assistant left on RAGflow's *default* prompt, which can cite documents even for a greeting
+    — see the entries above.) As with any AI, open the linked source to confirm the detail that matters. Retrieval-only results in the
     [Search block](plugins/search.md) are even more direct: every hit is a real document you can open.
 
 ??? question "In which language does it answer?"

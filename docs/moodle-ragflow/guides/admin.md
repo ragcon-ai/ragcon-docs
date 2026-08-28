@@ -89,6 +89,7 @@ folder as you go.
 | Empty answers, no sources | Dataset not parsed, or assistant not bound to it | Confirm parsing finished and the assistant is bound to the dataset |
 | Helpdesk item not in the menu | Placement disabled or no assistant selected | Enable the placement and select an assistant |
 | Answer claims the knowledge base is *"empty"* for a question that has no match | RAGflow assistant's **system prompt** (its default) mishandles no-hit questions | Adjust the assistant's prompt in RAGflow — see [Answer wording](#answer-wording-when-nothing-is-found) below |
+| A greeting or small-talk answer shows **sources / citations** for documents that aren't relevant | Same default assistant prompt — it cites the dataset on every turn, so the model marks even a "hello" | Use a block-created assistant, or edit the assistant's prompt in RAGflow — see [Answer wording](#answer-wording-when-nothing-is-found) below |
 | *This assistant is currently unavailable* (privileged users also see *…assistant no longer exists (id …)*) | The assistant was **deleted in RAGflow** | Pick a valid assistant in the relevant settings — see [When a reference is no longer available](#when-a-reference-is-no-longer-available) |
 | A search shows *…unavailable, ask your administrator to reconnect its knowledge base* | The block's **knowledge base was deleted** in RAGflow | Reconnect a valid knowledge base on the block; the old id stays selectable and is never dropped on save |
 
@@ -117,7 +118,9 @@ The wording of an answer — including what the assistant says when a question h
 matches** — comes from the **RAGflow assistant's own system prompt**, not from Moodle. RAGflow's default
 prompt instructs the model to "list the knowledge-base entries", so on a question with no hits (for
 example a greeting like *"Hallo"*) the model may wrongly claim the *knowledge base is empty*, even though
-it contains documents — there were simply no matches for that question.
+it contains documents — there were simply no matches for that question. The same default prompt also makes
+the model **cite** the dataset on every turn, so a greeting can show **sources it never really used**
+(inconsistently, since the model only sometimes adds the markers); a clean prompt fixes both.
 
 Assistants **created through the Tutor block** get a clean prompt automatically. An assistant you created
 **manually in RAGflow** keeps RAGflow's default and may need adjusting. RAGflow **ignores prompt changes
