@@ -105,10 +105,15 @@ knowledge base aligned with the policy and FAQ documents maintained in Moodle.
 | **Greeting message** (`greeting`) | textarea | "Hello, I am the RAGflow Helpdesk…" | First message shown when the drawer opens; empty to disable. |
 | **Conversation memory** (`sessionmemory`) | checkbox | **on** | Remember the conversation across turns and reloads (RAGflow session). |
 | **Long-term memory** (`longterm`) | checkbox | off | Carry durable user facts across conversations. Requires conversation memory **and** a RAGflow memory (below). |
-| **RAGflow memory** (`memoryid`) | select (live) | — | The RAGflow memory used for long-term memory (create a "semantic" memory in RAGflow). One shared memory serves all users; Moodle separates them per user. |
+| **RAGflow memory** (`memoryid`) | select (live) | — | The RAGflow memory used for long-term memory (create a **RAW** memory in RAGflow — the only supported type). One shared memory serves all users; Moodle separates them per user. |
 | **Include sources** (`includesources`) | checkbox | on | Append linked sources to answers. |
 | **Serve source files via RAGflow proxy** (`serveviaproxy`) | checkbox | off | Stream source files through the secure Moodle proxy. |
 | **Write log data** (`logtomoodle`) | checkbox | off | Write a concise usage/error entry (metrics only, no message content) to the Moodle standard log per request; independent of the RAGflow [dashboard](dashboard.md). |
+
+!!! note "Long-term memory: create a RAW memory"
+    For **long-term memory**, create the RAGflow memory as a **RAW** memory — currently the only
+    supported type. RAGflow's extracting memory types (semantic, episodic, procedural) may be added in a
+    later version.
 
 !!! note "Safe assistant / memory selection"
     The **Chat assistant** and **RAGflow memory** selectors always keep the currently saved value
