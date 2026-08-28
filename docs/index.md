@@ -16,7 +16,7 @@ Answer one question:
 - Let Moodle reach RAGflow through its AI subsystem? → **[RAGflow AI provider](moodle-ragflow/plugins/provider.md)**
 - Want an AI tutor in each course? → **[Tutor block](moodle-ragflow/plugins/tutor.md)**
 - Need central AI help across your Moodle site? → **[Helpdesk](moodle-ragflow/plugins/helpdesk.md)**
-- Want usage metrics for the RAGflow AI plugins? → **[Usage dashboard](moodle-ragflow/plugins/dashboard.md)** (paid)
+- Want usage metrics for the RAGflow AI plugins? → **[Usage dashboard](moodle-ragflow/plugins/dashboard.md)**
 
 The base is always the **RAGflow AI provider** (backend) — install it first.
 

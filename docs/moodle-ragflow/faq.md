@@ -165,5 +165,5 @@ relevant plugin's repository (linked at the top of each [plugin page](plugins/pr
 
 ??? question "Is the usage dashboard required?"
 
-    No. The **[dashboard](plugins/dashboard.md)** is an optional, paid add-on; the four free plugins
+    No. The **[dashboard](plugins/dashboard.md)** is an optional add-on; the other four plugins
     (provider, tutor, search, helpdesk) work fully without it.

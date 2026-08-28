@@ -6,27 +6,18 @@
   </div>
 </div>
 
-!!! info "Paid plugin — available on the Moodle Marketplace"
-    The Usage Dashboard is the RAGflow suite's one **commercial** plugin. Unlike the free, open-source
-    Tutor / Search / Helpdesk plugins and the AI provider, it is a **paid add-on distributed through the
-    Moodle Marketplace** — so there is no public source repository for it.
-
-    - **Why it pays off (the business case):** [Usage dashboard — value at scale](dashboard-value.md)
-    - **Moodle Marketplace listing:** *link to follow*
-    - **Public issue tracker:** [https://github.com/ragcon-ai/moodle-local_ragflowdashboard/issues](https://github.com/ragcon-ai/moodle-local_ragflowdashboard/issues){ target="_blank" rel="noopener" }
-
-    It remains **GPLv3**: buyers receive the complete source with their purchase. The paywall gates
-    access, updates and support — not the code.
+!!! info "Repository &amp; issue tracker"
+    - **Repository:** [https://github.com/ragcon-ai/moodle-local_ragflowdashboard](https://github.com/ragcon-ai/moodle-local_ragflowdashboard){ target="_blank" rel="noopener" }
+    - **Issues / bug tracker:** [https://github.com/ragcon-ai/moodle-local_ragflowdashboard/issues](https://github.com/ragcon-ai/moodle-local_ragflowdashboard/issues){ target="_blank" rel="noopener" }
+    - **The value at scale:** [Usage dashboard — value at scale](dashboard-value.md)
 
 **Component:** `local_ragflowdashboard`<br>
 **Requires:** Moodle 5.0–5.2<br>
-**Depends on:** `aiprovider_ragflow`<br>
-**Licence:** paid (Moodle Marketplace)
+**Depends on:** `aiprovider_ragflow`
 
 An admin-only, **tabbed** report that shows **how the suite is used**: status and health, request
 volume, **token consumption**, raw API calls and error breakdowns, plus an optional per-feature **debug
-capture** for diagnosis. It is the suite's **paid add-on** (see above): the free Tutor, Search, Helpdesk
-and provider plugins run without it. It records the provider's usage separately, so it is entirely
+capture** for diagnosis. It is **optional**: the Tutor, Search, Helpdesk and provider plugins run without it. It records the provider's usage separately, so it is entirely
 optional and does no harm if it is not installed. It also ships `rfdsource_*` sub-plugins that give each
 feature its own status checks and analytics.
 
@@ -218,16 +209,12 @@ package: **RAGflow Tutor** (`rfdsource_tutor`), **RAGflow Helpdesk** (`rfdsource
 Search** (`rfdsource_search`). Installing another `rfdsource_*` adds its section and debug toggle
 automatically.
 
-## Availability, licensing &amp; support
+## Availability &amp; support
 
-The Usage Dashboard is a **paid plugin** — the only commercial component of the RAGflow suite (the Tutor,
-Search and Helpdesk plugins and the AI provider are free and open-source).
-
-- **Where to get it:** the **Moodle Marketplace** — *listing link to follow*. Buy it there, then install the
-  plugin ZIP like any other Moodle plugin.
-- **Licence:** **GPLv3**. The purchase includes the complete source code; the fee covers access, updates and
-  support, not the code itself.
-- **Support &amp; bug reports:** the **[public issue tracker](https://github.com/ragcon-ai/moodle-local_ragflowdashboard/issues)**.
+- **Install** it like any other Moodle plugin (*Site administration → Plugins → Install plugins*), then
+  open it at *Site administration → Reports → RAGflow Dashboard*.
+- **Licence:** **GPLv3**, like the rest of the suite.
+- **Support &amp; bug reports:** the **[issue tracker](https://github.com/ragcon-ai/moodle-local_ragflowdashboard/issues)**.
 
 ## Privacy
 

@@ -18,4 +18,4 @@ its features and settings.
 - **Tutor block** `0.7.0` — initial public release: a per-course tutor chat with its own knowledge base.
 - **Search block** `0.7.0` — initial public release: a knowledge-base search box returning ranked sources.
 - **Helpdesk placement** `0.7.0` — initial public release: a site-wide help chat from the user menu.
-- **Usage dashboard** `0.7.0` — initial release (**paid**, via the Moodle Marketplace): admin usage/health KPIs, charts and logs.
+- **Usage dashboard** `0.7.0` — initial release: admin usage/health KPIs, charts and logs.
