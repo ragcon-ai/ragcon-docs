@@ -87,6 +87,7 @@ folder as you go.
 | Embedding / context-window error | Query too long for the embedding model | Use a larger-context embedding model |
 | *Provider not found for model …*, or a new knowledge base has the wrong embedding model | No / wrong **default embedding model** in the RAGflow account | Set a working default in RAGflow (*Model providers → Set default models*); recreate any KB created with the wrong one (the embedding model of an existing KB can't be changed) |
 | Empty answers, no sources | Dataset not parsed, or assistant not bound to it | Confirm parsing finished and the assistant is bound to the dataset |
+| Assistant answers *"no information"* even though the knowledge base **has** the answer | Assistant's **retrieval settings** too strict — usually a **rerank model** plus the **similarity threshold** filtering out every passage on a small KB | Lower the assistant's *Similarity threshold* (~0.1) or remove the rerank model — see [Set up RAGflow](../setup-ragflow.md) |
 | Helpdesk item not in the menu | Placement disabled or no assistant selected | Enable the placement and select an assistant |
 | Answer claims the knowledge base is *"empty"* for a question that has no match | RAGflow assistant's **system prompt** (its default) mishandles no-hit questions | Adjust the assistant's prompt in RAGflow — see [Answer wording](#answer-wording-when-nothing-is-found) below |
 | A greeting or small-talk answer shows **sources / citations** for documents that aren't relevant | Same default assistant prompt — it cites the dataset on every turn, so the model marks even a "hello" | Use a block-created assistant, or edit the assistant's prompt in RAGflow — see [Answer wording](#answer-wording-when-nothing-is-found) below |
@@ -128,23 +129,35 @@ made through its API** on an existing assistant, so edit it **in the RAGflow UI*
 *Prompt engine* → *System prompt*). A prompt that avoids the problem:
 
 ```
-You are a helpful assistant. Answer the question using only the knowledge base below, and
-reply in the same language as the question. Take the chat history into account.
+You are a helpful assistant. Answer the question using only the information in the knowledge
+base below, and reply in the same language as the question. Take the chat history into account.
 
-Do not list or enumerate the knowledge-base entries — just give the answer.
+Do not list, enumerate or restate the knowledge-base entries, and do not output reference
+identifiers (for example "ID 0", "ID: 1" or "[ID:1]") or a "Sources" / "Documents" section —
+the application shows the sources separately. Just give the answer.
 
-If the knowledge base contains nothing relevant to the question, briefly say that nothing
-was found for this question. Do NOT claim that the knowledge base is empty or has no
-entries — there were simply no matches for this question.
+If the knowledge base contains nothing relevant to the question, say so briefly. Do not claim
+that the knowledge base is empty or has no entries — there were simply no matches for this
+question.
 
 Knowledge base:
 {knowledge}
 ```
 
-Keep the `{knowledge}` placeholder (RAGflow injects the retrieved content there), and do **not** add a
-rule forbidding `[ID]` references — the source list relies on them. The prompt language does not dictate
-the answer language (answers follow the question's language), so you can keep it in English or translate
-it for your team.
+This is the same clean prompt the suite gives to assistants it creates, so pasting it makes a
+manually-created assistant behave identically. What each part is for:
+
+| Part of the prompt | Why it is there |
+|---|---|
+| *Answer using **only** the knowledge base … reply in the **same language** as the question* | Grounds answers in your documents (no invented facts) and makes the reply follow the **question's** language, not the documents' |
+| *Take the **chat history** into account* | Coherent follow-ups in the conversational Helpdesk and Tutor |
+| *Do not list/enumerate … do not output `ID 0`/`[ID:1]` or a "Sources" section — the application shows the sources separately* | Stops the default-prompt behaviour that dumps a *"Sources / ID 0 / ID 1"* list into the answer text **and** cites the dataset on every turn (which surfaces spurious sources even on a greeting). The Sources panel is built by the plugin from RAGflow's own citation data, so the model must not duplicate it |
+| *If nothing relevant … say so briefly. Do not claim the knowledge base is empty* | Graceful "no match" wording; replaces RAGflow's mandated *"not found in the dataset!"* sentence and the false *"the knowledge base is empty"* claim |
+| `Knowledge base:` / `{knowledge}` | **Required** placeholder — RAGflow injects the retrieved passages here. Keep it **verbatim**, or the assistant answers with no context |
+
+Also **clear the assistant's *Empty response* field** if it is set — a fixed string there overrides the
+answer whenever retrieval is empty and defeats the wording above. The prompt language does not dictate the
+answer language (answers follow the question), so keep it in English or translate it for your team.
 
 ## FAQ
 

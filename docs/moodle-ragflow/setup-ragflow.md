@@ -86,6 +86,14 @@ In your RAGflow instance:
     cleaner one — see [Answer wording when nothing is found](guides/admin.md#answer-wording-when-nothing-is-found)
     in the admin guide. (Assistants the Tutor block creates already get a clean prompt.)
 
+!!! warning "Rerank model &amp; similarity threshold"
+    If you set a **rerank model** on the assistant, its relevance scores sit on a different, usually
+    **lower** scale — and the assistant's **Similarity threshold** is compared against *those* scores. On a
+    small or short-document knowledge base this can push **every** passage below the cut-off, so the
+    assistant answers *"no information"* even though the dataset clearly contains the answer. If that
+    happens, **lower the Similarity threshold** (around **0.1**) or **remove the rerank model** on the
+    assistant.
+
 !!! tip "Embedding model & context window"
     Retrieval embeds your query with the dataset's embedding model. Very long queries can exceed a
     small model's context window. The suite already keeps queries short, but choose an embedding

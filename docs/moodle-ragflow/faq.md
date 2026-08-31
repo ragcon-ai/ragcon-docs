@@ -134,6 +134,15 @@ relevant plugin's repository (linked at the top of each [plugin page](plugins/pr
     course page. The **[Helpdesk](plugins/helpdesk.md)** is site-wide, answers from an organisation-wide
     knowledge base, and is reached from the site's user menu on every page.
 
+??? question "The Tutor or Helpdesk says *“no information”* even though the knowledge base has the answer — why?"
+
+    Almost always the **RAGflow assistant's retrieval settings** are too strict for that knowledge base.
+    The usual culprit is a **rerank model** on the assistant: its scores sit on a lower scale, and the
+    assistant's **Similarity threshold** is compared against them, so on a small or short-document knowledge
+    base every passage falls below the cut-off and the assistant answers *“no information”*. Fix it in the
+    RAGflow assistant — **lower the Similarity threshold** (around **0.1**) or **remove the rerank model**.
+    See [Set up RAGflow](setup-ragflow.md).
+
 ??? question "The Search block returns nothing or very few results — is it broken?"
 
     Probably not. A **relevance floor** hides weak matches on purpose, so *“no strong match”* is a valid,
