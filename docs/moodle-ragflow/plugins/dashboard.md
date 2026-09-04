@@ -1,9 +1,6 @@
-<div class="rf-hero" markdown="0">
-  <div class="rf-hero__bar"></div>
-  <div class="rf-hero__body">
-    <h1>RAGflow Dashboard</h1>
-    <p>See if the AI works, how it's used, what it costs.</p>
-  </div>
+<div class="rf-herobanner" markdown="0">
+  <h1 class="rf-visually-hidden">RAGflow Dashboard</h1>
+  <img src="../img/hero/hero-dashboard.png" alt="RAGflow Dashboard — see whether the AI is running, how it is used and what it costs: status, usage, tokens" loading="eager">
 </div>
 
 !!! info "Repository &amp; issue tracker"

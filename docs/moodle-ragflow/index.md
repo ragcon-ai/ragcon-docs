@@ -1,9 +1,6 @@
-<div class="rf-hero" markdown="0">
-  <div class="rf-hero__bar"></div>
-  <div class="rf-hero__body">
-    <h1>Moodle RAGflow Suite</h1>
-    <p>Grounded AI — tutor, search and help desk.</p>
-  </div>
+<div class="rf-herobanner" markdown="0">
+  <h1 class="rf-visually-hidden">Moodle RAGflow Suite</h1>
+  <img src="img/hero/hero-suite.png" alt="Moodle RAGflow Suite — five plugins, free and open source, running fully inside Moodle on your own RAGflow instance" loading="eager">
 </div>
 
 The Moodle RAGflow Suite connects Moodle to a [RAGflow](https://ragflow.io) instance so teachers and

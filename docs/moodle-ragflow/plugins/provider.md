@@ -1,9 +1,6 @@
-<div class="rf-hero" markdown="0">
-  <div class="rf-hero__bar"></div>
-  <div class="rf-hero__body">
-    <h1>RAGflow AI Provider</h1>
-    <p>One backend. Grounded AI across Moodle.</p>
-  </div>
+<div class="rf-herobanner" markdown="0">
+  <h1 class="rf-visually-hidden">RAGflow AI Provider</h1>
+  <img src="../img/hero/hero-provider.png" alt="RAGflow AI Provider — the foundation for RAG in Moodle, connecting Moodle's AI subsystem to your RAGflow instance, set up once centrally" loading="eager">
 </div>
 
 !!! info "Repository &amp; issue tracker"

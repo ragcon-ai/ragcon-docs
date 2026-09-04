@@ -1,9 +1,6 @@
-<div class="rf-hero" markdown="0">
-  <div class="rf-hero__bar"></div>
-  <div class="rf-hero__body">
-    <h1>RAGflow Search</h1>
-    <p>Find documents by meaning, not keywords.</p>
-  </div>
+<div class="rf-herobanner" markdown="0">
+  <h1 class="rf-visually-hidden">RAGflow Search</h1>
+  <img src="../img/hero/hero-search.png" alt="RAGflow file search — find documents by meaning, no hallucinations; understands scans, images and tables" loading="eager">
 </div>
 
 !!! info "Repository &amp; issue tracker"

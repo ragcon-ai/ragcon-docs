@@ -1,9 +1,6 @@
-<div class="rf-hero" markdown="0">
-  <div class="rf-hero__bar"></div>
-  <div class="rf-hero__body">
-    <h1>RAGflow Tutor</h1>
-    <p>An AI tutor for every course — with sources.</p>
-  </div>
+<div class="rf-herobanner" markdown="0">
+  <h1 class="rf-visually-hidden">RAGflow Tutor</h1>
+  <img src="../img/hero/hero-tutor.png" alt="RAGflow Tutor — an AI tutor for every course that answers from the course material, with every statement backed by a source" loading="eager">
 </div>
 
 !!! info "Repository &amp; issue tracker"

@@ -1,9 +1,6 @@
-<div class="rf-hero" markdown="0">
-  <div class="rf-hero__bar"></div>
-  <div class="rf-hero__body">
-    <h1>RAGflow Helpdesk</h1>
-    <p>A site-wide help desk from your own docs.</p>
-  </div>
+<div class="rf-herobanner" markdown="0">
+  <h1 class="rf-visually-hidden">RAGflow Helpdesk</h1>
+  <img src="../img/hero/hero-helpdesk.png" alt="RAGflow Helpdesk — a site-wide help chat in the user menu, answering from your own knowledge base, with memory" loading="eager">
 </div>
 
 !!! info "Repository &amp; issue tracker"

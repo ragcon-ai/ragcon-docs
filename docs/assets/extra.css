@@ -69,6 +69,33 @@
   color: #9FB3C2;
 }
 
+/* -------- Page hero banner: full-width branded image (title/tagline baked in) -------- */
+.md-typeset .rf-herobanner {
+  margin: 0.2rem 0 1.7rem;
+}
+.md-typeset .rf-herobanner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(22, 50, 77, 0.12); /* brand navy, soft */
+}
+[data-md-color-scheme="slate"] .md-typeset .rf-herobanner img {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+/* Keep the page heading in the document outline while the banner carries it visually. */
+.rf-visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* -------- Use-case accordions: match body text size (Material shrinks admonitions) -------- */
 .md-typeset details.example,
 .md-typeset .admonition.example {
