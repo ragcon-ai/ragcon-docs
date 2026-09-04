@@ -1,6 +1,6 @@
 <div class="rf-herobanner" markdown="0">
   <h1 class="rf-visually-hidden">RAGflow Dashboard</h1>
-  <img src="../img/hero/hero-dashboard.png" alt="RAGflow Dashboard — see whether the AI is running, how it is used and what it costs: status, usage, tokens" loading="eager">
+  <img src="../../img/hero/hero-dashboard.png" alt="RAGflow Dashboard — see whether the AI is running, how it is used and what it costs: status, usage, tokens" loading="eager">
 </div>
 
 !!! info "Repository &amp; issue tracker"

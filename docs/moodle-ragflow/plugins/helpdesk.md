@@ -1,6 +1,6 @@
 <div class="rf-herobanner" markdown="0">
   <h1 class="rf-visually-hidden">RAGflow Helpdesk</h1>
-  <img src="../img/hero/hero-helpdesk.png" alt="RAGflow Helpdesk — a site-wide help chat in the user menu, answering from your own knowledge base, with memory" loading="eager">
+  <img src="../../img/hero/hero-helpdesk.png" alt="RAGflow Helpdesk — a site-wide help chat in the user menu, answering from your own knowledge base, with memory" loading="eager">
 </div>
 
 !!! info "Repository &amp; issue tracker"

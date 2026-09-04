@@ -1,6 +1,6 @@
 <div class="rf-herobanner" markdown="0">
   <h1 class="rf-visually-hidden">RAGflow AI Provider</h1>
-  <img src="../img/hero/hero-provider.png" alt="RAGflow AI Provider — the foundation for RAG in Moodle, connecting Moodle's AI subsystem to your RAGflow instance, set up once centrally" loading="eager">
+  <img src="../../img/hero/hero-provider.png" alt="RAGflow AI Provider — the foundation for RAG in Moodle, connecting Moodle's AI subsystem to your RAGflow instance, set up once centrally" loading="eager">
 </div>
 
 !!! info "Repository &amp; issue tracker"

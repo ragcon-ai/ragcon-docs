@@ -1,6 +1,6 @@
 <div class="rf-herobanner" markdown="0">
   <h1 class="rf-visually-hidden">RAGflow Search</h1>
-  <img src="../img/hero/hero-search.png" alt="RAGflow file search — find documents by meaning, no hallucinations; understands scans, images and tables" loading="eager">
+  <img src="../../img/hero/hero-search.png" alt="RAGflow file search — find documents by meaning, no hallucinations; understands scans, images and tables" loading="eager">
 </div>
 
 !!! info "Repository &amp; issue tracker"
